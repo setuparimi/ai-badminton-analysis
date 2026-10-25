@@ -1,0 +1,959 @@
+{
+ "stage": 6,
+ "rallies": [
+  {
+   "rally": 1,
+   "start": 51.83,
+   "end": 70.3,
+   "duration": 18.47,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "right",
+   "score_before": [
+    0,
+    0
+   ],
+   "server_team_confidence": 0.33,
+   "winner": "B",
+   "A_after": 0,
+   "B_after": 1,
+   "user_team_won": false
+  },
+  {
+   "rally": 2,
+   "start": 72.87,
+   "end": 81.4,
+   "duration": 8.53,
+   "server_team": "B",
+   "server_player": null,
+   "court": "left",
+   "score_before": [
+    1,
+    0
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "B",
+   "A_after": 0,
+   "B_after": 2,
+   "user_team_won": false
+  },
+  {
+   "rally": 3,
+   "start": 84.03,
+   "end": 92.93,
+   "duration": 8.9,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "right",
+   "score_before": [
+    2,
+    0
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "A",
+   "A_after": 1,
+   "B_after": 2,
+   "user_team_won": true
+  },
+  {
+   "rally": 4,
+   "start": 95.57,
+   "end": 106.4,
+   "duration": 10.83,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "left",
+   "score_before": [
+    1,
+    2
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "B",
+   "A_after": 1,
+   "B_after": 3,
+   "user_team_won": false
+  },
+  {
+   "rally": 5,
+   "start": 109.03,
+   "end": 118.7,
+   "duration": 9.67,
+   "server_team": "B",
+   "server_player": "B_opp1",
+   "court": "left",
+   "score_before": [
+    3,
+    1
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "B",
+   "A_after": 1,
+   "B_after": 4,
+   "user_team_won": false
+  },
+  {
+   "rally": 6,
+   "start": 121.2,
+   "end": 129.5,
+   "duration": 8.3,
+   "server_team": "B",
+   "server_player": "B_opp1",
+   "court": "right",
+   "score_before": [
+    4,
+    1
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "A",
+   "A_after": 2,
+   "B_after": 4,
+   "user_team_won": true
+  },
+  {
+   "rally": 7,
+   "start": 132.1,
+   "end": 139.47,
+   "duration": 7.37,
+   "server_team": "A",
+   "server_player": null,
+   "court": "right",
+   "score_before": [
+    2,
+    4
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "A",
+   "A_after": 3,
+   "B_after": 4,
+   "user_team_won": true
+  },
+  {
+   "rally": 8,
+   "start": 142.07,
+   "end": 147.33,
+   "duration": 5.27,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "left",
+   "score_before": [
+    3,
+    4
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "A",
+   "A_after": 4,
+   "B_after": 4,
+   "user_team_won": true
+  },
+  {
+   "rally": 9,
+   "start": 150.0,
+   "end": 168.03,
+   "duration": 18.03,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "right",
+   "score_before": [
+    4,
+    4
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "A",
+   "A_after": 5,
+   "B_after": 4,
+   "user_team_won": true
+  },
+  {
+   "rally": 10,
+   "start": 170.57,
+   "end": 175.27,
+   "duration": 4.7,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "left",
+   "score_before": [
+    5,
+    4
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "A",
+   "A_after": 6,
+   "B_after": 4,
+   "user_team_won": true
+  },
+  {
+   "rally": 11,
+   "start": 177.9,
+   "end": 183.2,
+   "duration": 5.3,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "right",
+   "score_before": [
+    6,
+    4
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "A",
+   "A_after": 7,
+   "B_after": 4,
+   "user_team_won": true
+  },
+  {
+   "rally": 12,
+   "start": 185.7,
+   "end": 192.17,
+   "duration": 6.47,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "left",
+   "score_before": [
+    7,
+    4
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "B",
+   "A_after": 7,
+   "B_after": 5,
+   "user_team_won": false
+  },
+  {
+   "rally": 13,
+   "start": 194.67,
+   "end": 205.5,
+   "duration": 10.83,
+   "server_team": "B",
+   "server_player": null,
+   "court": "left",
+   "score_before": [
+    5,
+    7
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "B",
+   "A_after": 7,
+   "B_after": 6,
+   "user_team_won": false
+  },
+  {
+   "rally": 14,
+   "start": 207.9,
+   "end": 215.6,
+   "duration": 7.7,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "right",
+   "score_before": [
+    6,
+    7
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "B",
+   "A_after": 7,
+   "B_after": 7,
+   "user_team_won": false
+  },
+  {
+   "rally": 15,
+   "start": 218.17,
+   "end": 232.6,
+   "duration": 14.43,
+   "server_team": "B",
+   "server_player": null,
+   "court": "left",
+   "score_before": [
+    7,
+    7
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "B",
+   "A_after": 7,
+   "B_after": 8,
+   "user_team_won": false
+  },
+  {
+   "rally": 16,
+   "start": 235.07,
+   "end": 243.1,
+   "duration": 8.03,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "right",
+   "score_before": [
+    8,
+    7
+   ],
+   "server_team_confidence": 0.88,
+   "winner": "B",
+   "A_after": 7,
+   "B_after": 9,
+   "user_team_won": false
+  },
+  {
+   "rally": 17,
+   "start": 245.53,
+   "end": 251.8,
+   "duration": 6.27,
+   "server_team": "B",
+   "server_player": null,
+   "court": "left",
+   "score_before": [
+    9,
+    7
+   ],
+   "server_team_confidence": 0.88,
+   "winner": "B",
+   "A_after": 7,
+   "B_after": 10,
+   "user_team_won": false
+  },
+  {
+   "rally": 18,
+   "start": 254.47,
+   "end": 260.47,
+   "duration": 6.0,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "right",
+   "score_before": [
+    10,
+    7
+   ],
+   "server_team_confidence": 0.88,
+   "winner": "A",
+   "A_after": 8,
+   "B_after": 10,
+   "user_team_won": true
+  },
+  {
+   "rally": 19,
+   "start": 263.47,
+   "end": 267.2,
+   "duration": 3.73,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "right",
+   "score_before": [
+    8,
+    10
+   ],
+   "server_team_confidence": 0.88,
+   "winner": "B",
+   "A_after": 8,
+   "B_after": 11,
+   "user_team_won": false
+  },
+  {
+   "rally": 20,
+   "start": 269.73,
+   "end": 287.6,
+   "duration": 17.87,
+   "server_team": "B",
+   "server_player": "B_opp1",
+   "court": "left",
+   "score_before": [
+    11,
+    8
+   ],
+   "server_team_confidence": 0.88,
+   "winner": "A",
+   "A_after": 9,
+   "B_after": 11,
+   "user_team_won": true
+  },
+  {
+   "rally": 21,
+   "start": 290.0,
+   "end": 302.23,
+   "duration": 12.23,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "left",
+   "score_before": [
+    9,
+    11
+   ],
+   "server_team_confidence": 0.88,
+   "winner": "A",
+   "A_after": 10,
+   "B_after": 11,
+   "user_team_won": true
+  },
+  {
+   "rally": 22,
+   "start": 304.97,
+   "end": 310.73,
+   "duration": 5.77,
+   "server_team": "A",
+   "server_player": null,
+   "court": "right",
+   "score_before": [
+    10,
+    11
+   ],
+   "server_team_confidence": 0.88,
+   "winner": "A",
+   "A_after": 11,
+   "B_after": 11,
+   "user_team_won": true
+  },
+  {
+   "rally": 23,
+   "start": 313.37,
+   "end": 324.23,
+   "duration": 10.87,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "left",
+   "score_before": [
+    11,
+    11
+   ],
+   "server_team_confidence": 0.88,
+   "winner": "A",
+   "A_after": 12,
+   "B_after": 11,
+   "user_team_won": true
+  },
+  {
+   "rally": 24,
+   "start": 326.83,
+   "end": 332.3,
+   "duration": 5.47,
+   "server_team": "A",
+   "server_player": null,
+   "court": "right",
+   "score_before": [
+    12,
+    11
+   ],
+   "server_team_confidence": 0.83,
+   "winner": "B",
+   "A_after": 12,
+   "B_after": 12,
+   "user_team_won": false
+  },
+  {
+   "rally": 25,
+   "start": 334.87,
+   "end": 342.3,
+   "duration": 7.43,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "right",
+   "score_before": [
+    12,
+    12
+   ],
+   "server_team_confidence": 0.83,
+   "winner": "B",
+   "A_after": 12,
+   "B_after": 13,
+   "user_team_won": false
+  },
+  {
+   "rally": 26,
+   "start": 344.97,
+   "end": 357.8,
+   "duration": 12.83,
+   "server_team": "B",
+   "server_player": null,
+   "court": "left",
+   "score_before": [
+    13,
+    12
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "A",
+   "A_after": 13,
+   "B_after": 13,
+   "user_team_won": true
+  },
+  {
+   "rally": 27,
+   "start": 360.47,
+   "end": 367.93,
+   "duration": 7.47,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "left",
+   "score_before": [
+    13,
+    13
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "A",
+   "A_after": 14,
+   "B_after": 13,
+   "user_team_won": true
+  },
+  {
+   "rally": 28,
+   "start": 370.57,
+   "end": 382.33,
+   "duration": 11.77,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "right",
+   "score_before": [
+    14,
+    13
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "A",
+   "A_after": 15,
+   "B_after": 13,
+   "user_team_won": true
+  },
+  {
+   "rally": 29,
+   "start": 384.87,
+   "end": 395.0,
+   "duration": 10.13,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "left",
+   "score_before": [
+    15,
+    13
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "B",
+   "A_after": 15,
+   "B_after": 14,
+   "user_team_won": false
+  },
+  {
+   "rally": 30,
+   "start": 397.4,
+   "end": 401.87,
+   "duration": 4.47,
+   "server_team": "B",
+   "server_player": null,
+   "court": "right",
+   "score_before": [
+    14,
+    15
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "A",
+   "A_after": 16,
+   "B_after": 14,
+   "user_team_won": true
+  },
+  {
+   "rally": 31,
+   "start": 404.33,
+   "end": 408.0,
+   "duration": 3.67,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "right",
+   "score_before": [
+    16,
+    14
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "B",
+   "A_after": 16,
+   "B_after": 15,
+   "user_team_won": false
+  },
+  {
+   "rally": 32,
+   "start": 410.5,
+   "end": 421.1,
+   "duration": 10.6,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "left",
+   "score_before": [
+    15,
+    16
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "B",
+   "A_after": 16,
+   "B_after": 16,
+   "user_team_won": false
+  },
+  {
+   "rally": 33,
+   "start": 423.7,
+   "end": 442.4,
+   "duration": 18.7,
+   "server_team": "B",
+   "server_player": null,
+   "court": "right",
+   "score_before": [
+    16,
+    16
+   ],
+   "server_team_confidence": 0.56,
+   "winner": "B",
+   "A_after": 16,
+   "B_after": 17,
+   "user_team_won": false
+  },
+  {
+   "rally": 34,
+   "start": 444.93,
+   "end": 454.1,
+   "duration": 9.17,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "left",
+   "score_before": [
+    17,
+    16
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "A",
+   "A_after": 17,
+   "B_after": 17,
+   "user_team_won": true
+  },
+  {
+   "rally": 35,
+   "start": 456.57,
+   "end": 466.03,
+   "duration": 9.47,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "left",
+   "score_before": [
+    17,
+    17
+   ],
+   "server_team_confidence": 0.67,
+   "winner": "B",
+   "A_after": 17,
+   "B_after": 18,
+   "user_team_won": false
+  },
+  {
+   "rally": 36,
+   "start": 468.63,
+   "end": 475.23,
+   "duration": 6.6,
+   "server_team": "B",
+   "server_player": null,
+   "court": "right",
+   "score_before": [
+    18,
+    17
+   ],
+   "server_team_confidence": 0.83,
+   "winner": "A",
+   "A_after": 18,
+   "B_after": 18,
+   "user_team_won": true
+  },
+  {
+   "rally": 37,
+   "start": 477.77,
+   "end": 483.13,
+   "duration": 5.37,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "right",
+   "score_before": [
+    18,
+    18
+   ],
+   "server_team_confidence": 0.83,
+   "winner": "A",
+   "A_after": 19,
+   "B_after": 18,
+   "user_team_won": true
+  },
+  {
+   "rally": 38,
+   "start": 485.73,
+   "end": 495.5,
+   "duration": 9.77,
+   "server_team": "A",
+   "server_player": null,
+   "court": "left",
+   "score_before": [
+    19,
+    18
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 20,
+   "B_after": 18,
+   "user_team_won": true
+  },
+  {
+   "rally": 39,
+   "start": 498.07,
+   "end": 502.83,
+   "duration": 4.77,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "right",
+   "score_before": [
+    20,
+    18
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 21,
+   "B_after": 18,
+   "user_team_won": true
+  },
+  {
+   "rally": 40,
+   "start": 505.4,
+   "end": 512.1,
+   "duration": 6.7,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "left",
+   "score_before": [
+    21,
+    18
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "B",
+   "A_after": 21,
+   "B_after": 19,
+   "user_team_won": false
+  },
+  {
+   "rally": 41,
+   "start": 514.73,
+   "end": 522.63,
+   "duration": 7.9,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "left",
+   "score_before": [
+    19,
+    21
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 22,
+   "B_after": 19,
+   "user_team_won": true
+  },
+  {
+   "rally": 42,
+   "start": 525.37,
+   "end": 537.73,
+   "duration": 12.37,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "right",
+   "score_before": [
+    22,
+    19
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 23,
+   "B_after": 19,
+   "user_team_won": true
+  },
+  {
+   "rally": 43,
+   "start": 540.47,
+   "end": 550.37,
+   "duration": 9.9,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "left",
+   "score_before": [
+    23,
+    19
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "B",
+   "A_after": 23,
+   "B_after": 20,
+   "user_team_won": false
+  },
+  {
+   "rally": 44,
+   "start": 552.9,
+   "end": 558.43,
+   "duration": 5.53,
+   "server_team": "B",
+   "server_player": "B_opp1",
+   "court": "right",
+   "score_before": [
+    20,
+    23
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 24,
+   "B_after": 20,
+   "user_team_won": true
+  },
+  {
+   "rally": 45,
+   "start": 560.97,
+   "end": 573.03,
+   "duration": 12.07,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "right",
+   "score_before": [
+    24,
+    20
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "B",
+   "A_after": 24,
+   "B_after": 21,
+   "user_team_won": false
+  },
+  {
+   "rally": 46,
+   "start": 575.67,
+   "end": 585.4,
+   "duration": 9.73,
+   "server_team": "B",
+   "server_player": "B_opp2",
+   "court": "left",
+   "score_before": [
+    21,
+    24
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 25,
+   "B_after": 21,
+   "user_team_won": true
+  },
+  {
+   "rally": 47,
+   "start": 588.1,
+   "end": 594.07,
+   "duration": 5.97,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "left",
+   "score_before": [
+    25,
+    21
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 26,
+   "B_after": 21,
+   "user_team_won": true
+  },
+  {
+   "rally": 48,
+   "start": 596.83,
+   "end": 608.9,
+   "duration": 12.07,
+   "server_team": "A",
+   "server_player": "A_you",
+   "court": "right",
+   "score_before": [
+    26,
+    21
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "B",
+   "A_after": 26,
+   "B_after": 22,
+   "user_team_won": false
+  },
+  {
+   "rally": 49,
+   "start": 611.43,
+   "end": 619.7,
+   "duration": 8.27,
+   "server_team": "B",
+   "server_player": null,
+   "court": "right",
+   "score_before": [
+    22,
+    26
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "B",
+   "A_after": 26,
+   "B_after": 23,
+   "user_team_won": false
+  },
+  {
+   "rally": 50,
+   "start": 622.4,
+   "end": 632.1,
+   "duration": 9.7,
+   "server_team": "B",
+   "server_player": "B_opp1",
+   "court": "left",
+   "score_before": [
+    23,
+    26
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 27,
+   "B_after": 23,
+   "user_team_won": true
+  },
+  {
+   "rally": 51,
+   "start": 634.83,
+   "end": 652.13,
+   "duration": 17.3,
+   "server_team": "A",
+   "server_player": null,
+   "court": "left",
+   "score_before": [
+    27,
+    23
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 28,
+   "B_after": 23,
+   "user_team_won": true
+  },
+  {
+   "rally": 52,
+   "start": 654.73,
+   "end": 659.4,
+   "duration": 4.67,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "right",
+   "score_before": [
+    28,
+    23
+   ],
+   "server_team_confidence": 0.75,
+   "winner": "A",
+   "A_after": 29,
+   "B_after": 23,
+   "user_team_won": true
+  },
+  {
+   "rally": 53,
+   "start": 662.0,
+   "end": 682.7,
+   "duration": 20.7,
+   "server_team": "A",
+   "server_player": "A_partner",
+   "court": "left",
+   "score_before": [
+    29,
+    23
+   ],
+   "server_team_confidence": 0.75,
+   "winner": null,
+   "A_after": null,
+   "B_after": null,
+   "user_team_won": null
+  }
+ ]
+}

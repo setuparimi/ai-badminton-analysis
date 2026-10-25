@@ -1,0 +1,757 @@
+{
+ "stage": 9,
+ "ratio": 0.72,
+ "events_per_player": {
+  "A_partner": 48,
+  "A_you": 31,
+  "B_opp1": 30,
+  "B_opp2": 45
+ },
+ "rows": [
+  {
+   "rally": 1,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 2,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 3,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      93.7,
+      94.4
+     ],
+     [
+      "A_partner",
+      94.6,
+      95.0
+     ]
+    ],
+    "B": [
+     [
+      "B_opp1",
+      93.1,
+      94.5
+     ],
+     [
+      "B_opp1",
+      95.2,
+      95.4
+     ],
+     [
+      "B_opp2",
+      92.7,
+      92.9
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 4,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 5,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 6,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_you",
+      129.7,
+      130.4
+     ],
+     [
+      "A_you",
+      130.7,
+      131.0
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 7,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [
+     [
+      "A_you",
+      141.2,
+      141.4
+     ],
+     [
+      "A_you",
+      141.7,
+      141.9
+     ]
+    ],
+    "B": [
+     [
+      "B_opp2",
+      139.3,
+      139.5
+     ],
+     [
+      "B_opp2",
+      141.1,
+      141.3
+     ],
+     [
+      "B_opp2",
+      142.1,
+      142.7
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 8,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      148.7,
+      148.9
+     ],
+     [
+      "A_partner",
+      149.1,
+      149.3
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 9,
+   "loser": "B",
+   "bend_team": "B",
+   "events": {
+    "A": [],
+    "B": [
+     [
+      "B_opp1",
+      166.7,
+      168.1
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 10,
+   "loser": "B",
+   "bend_team": "B",
+   "events": {
+    "A": [],
+    "B": [
+     [
+      "B_opp1",
+      175.5,
+      177.5
+     ],
+     [
+      "B_opp2",
+      173.5,
+      174.3
+     ],
+     [
+      "B_opp2",
+      174.5,
+      174.7
+     ],
+     [
+      "B_opp2",
+      178.0,
+      178.2
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 11,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [
+     [
+      "A_you",
+      183.5,
+      185.0
+     ]
+    ],
+    "B": [
+     [
+      "B_opp2",
+      185.7,
+      186.0
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 12,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 13,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 14,
+   "loser": "A",
+   "bend_team": "B",
+   "events": {
+    "A": [],
+    "B": [
+     [
+      "B_opp2",
+      215.1,
+      215.8
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 15,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 16,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 17,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 18,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 19,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 20,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      286.4,
+      286.6
+     ],
+     [
+      "A_you",
+      288.8,
+      289.0
+     ]
+    ],
+    "B": [
+     [
+      "B_opp1",
+      288.7,
+      289.7
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 21,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      304.7,
+      305.0
+     ]
+    ],
+    "B": [
+     [
+      "B_opp1",
+      302.4,
+      302.7
+     ],
+     [
+      "B_opp2",
+      302.4,
+      304.3
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 22,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 23,
+   "loser": "B",
+   "bend_team": "B",
+   "events": {
+    "A": [],
+    "B": [
+     [
+      "B_opp2",
+      324.4,
+      325.5
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 24,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 25,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 26,
+   "loser": "B",
+   "bend_team": "B",
+   "events": {
+    "A": [],
+    "B": [
+     [
+      "B_opp2",
+      357.9,
+      359.1
+     ],
+     [
+      "B_opp2",
+      360.8,
+      361.2
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 27,
+   "loser": "B",
+   "bend_team": "B",
+   "events": {
+    "A": [],
+    "B": [
+     [
+      "B_opp1",
+      368.6,
+      368.9
+     ]
+    ]
+   }
+  },
+  {
+   "rally": 28,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      380.9,
+      382.2
+     ],
+     [
+      "A_you",
+      380.9,
+      382.3
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 29,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 30,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 31,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 32,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 33,
+   "loser": "A",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      442.5,
+      442.9
+     ],
+     [
+      "A_you",
+      442.5,
+      442.7
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 34,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 35,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 36,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 37,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 38,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      497.9,
+      498.3
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 39,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_you",
+      502.4,
+      502.9
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 40,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 41,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 42,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      536.7,
+      537.1
+     ],
+     [
+      "A_partner",
+      537.3,
+      537.6
+     ],
+     [
+      "A_you",
+      536.0,
+      536.8
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 43,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 44,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      558.6,
+      560.5
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 45,
+   "loser": "A",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      571.1,
+      573.1
+     ],
+     [
+      "A_you",
+      573.3,
+      575.1
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 46,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 47,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 48,
+   "loser": "A",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  },
+  {
+   "rally": 49,
+   "loser": "A",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      619.8,
+      621.7
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 50,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_you",
+      635.0,
+      635.4
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 51,
+   "loser": "B",
+   "bend_team": "A",
+   "events": {
+    "A": [
+     [
+      "A_partner",
+      650.8,
+      651.2
+     ],
+     [
+      "A_partner",
+      655.1,
+      655.9
+     ],
+     [
+      "A_you",
+      650.4,
+      650.8
+     ]
+    ],
+    "B": []
+   }
+  },
+  {
+   "rally": 52,
+   "loser": "B",
+   "bend_team": null,
+   "events": {
+    "A": [],
+    "B": []
+   }
+  }
+ ],
+ "rallies_with_single_bending_team": 18,
+ "agree_with_loser": 8,
+ "p_value": 0.8145294189453125,
+ "usable": false
+}

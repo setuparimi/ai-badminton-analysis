@@ -1,0 +1,38 @@
+[
+ {
+  "title": "Nothing in your running separates won from lost rallies",
+  "body": "Distance 8.0 m (won) vs 7.7 m (lost) per rally, speed 0.91 vs 0.83 m/s. No sign you run less or sit deeper in lost rallies.",
+  "watch": "Watch: nothing to fix here. Do not read this as a fitness problem.",
+  "sure": "How sure: medium. Small effects could hide in 28 vs 23 rallies."
+ },
+ {
+  "title": "Look at your own serve",
+  "body": "You won 4 of 10 points on your serve; your partner won 9 of 13. Is the serve too high or too predictable, and what is the third shot?",
+  "watch": "Watch: 1:35, 4:23, 6:24, 7:36, 9:00, 9:56",
+  "sure": "How sure: low. 10 serves is a hint, not proof (p about 0.22)."
+ },
+ {
+  "title": "Win it early, prepare for long rallies",
+  "body": "Your team won 10 of 13 rallies under 6 s but only 19 of 39 longer ones.",
+  "watch": "Watch the longest lost rallies: R33 at 7:03, R1 at 0:51, R15 at 3:38",
+  "sure": "How sure: low to medium (p about 0.11)."
+ },
+ {
+  "title": "Ready stance: get lower",
+  "body": "Your legs are nearly straight in 82% of near-half frames (median 166 degrees), a bit more bent than your partner's. Your left racket hand is held up 84% of the time, which is good.",
+  "watch": "Bent-knee ready stance is general advice for a quicker first step; this video does not test it.",
+  "sure": "How sure: medium for the measurement. Posture does not differ between won and lost rallies here."
+ },
+ {
+  "title": "A question for the video: stay compact?",
+  "body": "Your pair is within 1.5 m of each other 26% of the time in won rallies vs 16% in lost ones. The opponents show the same direction.",
+  "watch": "Watch: 1:12, 4:23, 9:00 (lost rallies where you two were furthest apart).",
+  "sure": "How sure: lowest. One of 9 comparisons; overlapping players are where tracking is weakest."
+ },
+ {
+  "title": "Momentum was steady",
+  "body": "Points won by quarter: 7/13, 6/13, 8/13, 8/13. Your best run was 6 points from 2:01; theirs was 6 points from 3:05.",
+  "watch": "Watch the opponents' run from 3:05 (R12) to see what changed.",
+  "sure": "How sure: high. This is read straight from the scoreboard."
+ }
+]

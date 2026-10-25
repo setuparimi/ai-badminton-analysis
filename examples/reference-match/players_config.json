@@ -1,0 +1,6 @@
+{
+  "A_you":     {"shirt": "white", "describe": "white tee"},
+  "A_partner": {"shirt": "red",   "describe": "red shirt"},
+  "B_opp1":    {"shirt": "black", "describe": "dark top"},
+  "B_opp2":    {"shirt": "grey",  "describe": "grey top"}
+}

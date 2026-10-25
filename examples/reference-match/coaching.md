@@ -1,0 +1,8 @@
+What the numbers support, in order of confidence. Times are video time.
+
+1. **Nothing in your running separates won from lost rallies.** Distance, speed and court position are about the same in both (all p above 0.2). With 28 against 23 rallies a small effect could be hidden, but there is no sign that you run less, or sit deeper, in the rallies you lose.
+2. **Look at your own serve.** You won 4 of 10 points on your serve against 9 of 13 on your partner's (p about 0.22, so a hint only). Watch 1:35, 4:23, 6:24, 7:36, 9:00 and 9:56 and ask whether the serve is too high or too predictable, and what the third shot looks like.
+3. **Finish quickly, and prepare for long rallies.** Your team won 10 of 13 rallies under 6 s, but 19 of 39 longer ones (p about 0.11). Check the three longest rallies you lost: R33 at 7:03, R1 at 0:51 and R15 at 3:38, and see who is pushed back first.
+4. **Ready posture.** Your legs are nearly straight in 82% of near-half frames (median 166 degrees), slightly more bent than your partner's. Your left racket hand is held up 84% of the time. A lower, bent-knee stance is general advice for a faster first step; this video does not test it, and posture does not differ between won and lost rallies.
+5. **A question for the video: compactness.** Your pair is closer together in rallies you win (26% of the time within 1.5 m against 16%), but this is one of nine comparisons, the average gap in your half is the same in won and lost rallies, and it is not significant on either half of the court alone. Watch R2 at 1:12, R19 at 4:23 and R43 at 9:00.
+6. **Momentum.** Points won by quarter were 7/13, 6/13, 8/13 and 8/13: no collapse and a small lift late. The opponents' six-point run from R12 at 3:05 is the stretch to watch to see what changed.

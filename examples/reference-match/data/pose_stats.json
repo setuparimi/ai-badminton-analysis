@@ -1,0 +1,144 @@
+{
+ "stage": 8,
+ "min_height": 150,
+ "stats": {
+  "A_you": {
+   "samples": 3169,
+   "rallies": 51,
+   "knee_median": 168.7006072998047,
+   "bent_lt150": 0.12480101878382681,
+   "deep_lt130": 0.021012416427889206,
+   "stance_median": 1.19681978225708,
+   "overhead_left": 12,
+   "overhead_right": 10,
+   "racket_arm": "L",
+   "racket_up_share": 0.8433018537950332,
+   "racket_down_share": 0.1566981462049668,
+   "won_vs_lost": {
+    "n_samples_won": 1735,
+    "n_samples_lost": 1434,
+    "knee_won": 164.955676553137,
+    "knee_lost": 164.58492529341945,
+    "stance_won": 1.6795269723441588,
+    "stance_lost": 1.611657805166603,
+    "racket_up_won": 0.8548282566429034,
+    "racket_up_lost": 0.8297872340425532
+   },
+   "by_side": {
+    "near": {
+     "samples": 1926,
+     "rallies": 25,
+     "knee_median": 165.9628143310547,
+     "bent_lt150": 0.17591623036649215,
+     "stance_median": 1.6058326363563538,
+     "racket_up_share": 0.8400481058328322,
+     "won": {
+      "samples": 1022,
+      "rallies": 15,
+      "knee_median": 166.29530334472656,
+      "bent_lt150": 0.16930693069306932,
+      "racket_up_share": 0.875725900116144
+     },
+     "lost": {
+      "samples": 904,
+      "rallies": 10,
+      "knee_median": 165.24145126342773,
+      "bent_lt150": 0.18333333333333332,
+      "racket_up_share": 0.8017456359102244
+     }
+    },
+    "far": {
+     "samples": 1243,
+     "rallies": 27,
+     "knee_median": 171.58928680419922,
+     "bent_lt150": 0.045491470349309504,
+     "stance_median": 0.7765836119651794,
+     "racket_up_share": 0.8478260869565217,
+     "won": {
+      "samples": 713,
+      "rallies": 14,
+      "knee_median": 170.79144287109375,
+      "bent_lt150": 0.05923836389280677,
+      "racket_up_share": 0.8284457478005866
+     },
+     "lost": {
+      "samples": 530,
+      "rallies": 13,
+      "knee_median": 172.25656509399414,
+      "bent_lt150": 0.02681992337164751,
+      "racket_up_share": 0.8735408560311284
+     }
+    }
+   }
+  },
+  "A_partner": {
+   "samples": 2921,
+   "rallies": 50,
+   "knee_median": 169.59801483154297,
+   "bent_lt150": 0.09268795056642637,
+   "deep_lt130": 0.014074836937864744,
+   "stance_median": 1.3110511302947998,
+   "overhead_left": 8,
+   "overhead_right": 5,
+   "racket_arm": "L",
+   "racket_up_share": 0.8430987023200944,
+   "racket_down_share": 0.15690129767990557,
+   "won_vs_lost": {
+    "n_samples_won": 1581,
+    "n_samples_lost": 1340,
+    "knee_won": 166.1422382194781,
+    "knee_lost": 166.22305247710656,
+    "stance_won": 1.6620249608921933,
+    "stance_lost": 1.6354098160591877,
+    "racket_up_won": 0.8473722102231821,
+    "racket_up_lost": 0.8379549393414212
+   },
+   "by_side": {
+    "near": {
+     "samples": 1860,
+     "rallies": 25,
+     "knee_median": 168.1665496826172,
+     "bent_lt150": 0.12157073695535234,
+     "stance_median": 1.8097306489944458,
+     "racket_up_share": 0.7864321608040201,
+     "won": {
+      "samples": 993,
+      "rallies": 15,
+      "knee_median": 168.10380172729492,
+      "bent_lt150": 0.13608870967741934,
+      "racket_up_share": 0.7967853042479908
+     },
+     "lost": {
+      "samples": 867,
+      "rallies": 10,
+      "knee_median": 168.2501983642578,
+      "bent_lt150": 0.104959630911188,
+      "racket_up_share": 0.7739251040221914
+     }
+    },
+    "far": {
+     "samples": 1061,
+     "rallies": 26,
+     "knee_median": 171.5416603088379,
+     "bent_lt150": 0.04174573055028463,
+     "stance_median": 0.8141234219074249,
+     "racket_up_share": 0.9379600420609885,
+     "won": {
+      "samples": 588,
+      "rallies": 15,
+      "knee_median": 172.67633819580078,
+      "bent_lt150": 0.029209621993127148,
+      "racket_up_share": 0.9324324324324325
+     },
+     "lost": {
+      "samples": 473,
+      "rallies": 11,
+      "knee_median": 170.28681564331055,
+      "bent_lt150": 0.057203389830508475,
+      "racket_up_share": 0.9445727482678984
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,31 @@
+# Environment and downloads
+.venv/
+models/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+
+# Your match: videos, intermediate data and results never belong in git
+work/
+work_*/
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.m4v
+*.webm
+*.npz
+*.pt
+*.pth
+*.onnx
+*.log
+
+# Local assistant settings
+.claude/settings.local.json
+
+# examples/ holds reviewed, anonymised numbers and blurred images only. The rules above still apply there:
+# a video or .npz placed in examples/ stays ignored (and tools/check_repo.sh would flag it).

@@ -1,0 +1,1906 @@
+{
+ "stage": 4,
+ "tc": 378.8,
+ "first_near": "B",
+ "chains": [
+  {
+   "rallies": [
+    1,
+    1
+   ],
+   "n": 1,
+   "vote": -0.5,
+   "used": 1,
+   "confidence": 0.33,
+   "decided": true
+  },
+  {
+   "rallies": [
+    2,
+    9
+   ],
+   "n": 8,
+   "vote": -8.0,
+   "used": 8,
+   "confidence": 0.67,
+   "decided": true
+  },
+  {
+   "rallies": [
+    10,
+    15
+   ],
+   "n": 6,
+   "vote": 5.0,
+   "used": 4,
+   "confidence": 0.56,
+   "decided": true
+  },
+  {
+   "rallies": [
+    16,
+    23
+   ],
+   "n": 8,
+   "vote": -10.5,
+   "used": 8,
+   "confidence": 0.88,
+   "decided": true
+  },
+  {
+   "rallies": [
+    24,
+    25
+   ],
+   "n": 2,
+   "vote": 2.5,
+   "used": 2,
+   "confidence": 0.83,
+   "decided": true
+  },
+  {
+   "rallies": [
+    26,
+    27
+   ],
+   "n": 2,
+   "vote": -2.0,
+   "used": 2,
+   "confidence": 0.67,
+   "decided": true
+  },
+  {
+   "rallies": [
+    28,
+    33
+   ],
+   "n": 6,
+   "vote": 5.0,
+   "used": 4,
+   "confidence": 0.56,
+   "decided": true
+  },
+  {
+   "rallies": [
+    34,
+    35
+   ],
+   "n": 2,
+   "vote": -2.0,
+   "used": 2,
+   "confidence": 0.67,
+   "decided": true
+  },
+  {
+   "rallies": [
+    36,
+    37
+   ],
+   "n": 2,
+   "vote": -2.5,
+   "used": 2,
+   "confidence": 0.83,
+   "decided": true
+  },
+  {
+   "rallies": [
+    38,
+    53
+   ],
+   "n": 16,
+   "vote": 18.0,
+   "used": 14,
+   "confidence": 0.75,
+   "decided": true
+  }
+ ],
+ "serves": [
+  {
+   "rally": 1,
+   "window_on": 48.833333333333336,
+   "window_off": 51.833333333333336,
+   "source": "first serve window",
+   "server_score": 0,
+   "receiver_score": 0,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": -0.24,
+   "spreadY_near_minus_far": 1.32,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.9939558506011963,
+     10.26439380645752
+    ],
+    "A_you": [
+     3.5032525062561035,
+     10.837079048156738
+    ],
+    "B_opp1": [
+     3.0956921577453613,
+     2.101792335510254
+    ],
+    "B_opp2": [
+     3.3668272495269775,
+     3.9973883628845215
+    ]
+   }
+  },
+  {
+   "rally": 2,
+   "window_on": 70.3,
+   "window_off": 72.867,
+   "source": "overlay 1",
+   "server_score": 1,
+   "receiver_score": 0,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": null,
+   "spreadX_near_minus_far": -1.02,
+   "spreadY_near_minus_far": 0.9,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.5856568813323975,
+     10.383974075317383
+    ],
+    "A_you": [
+     4.685754299163818,
+     9.186627388000488
+    ],
+    "B_opp1": [
+     3.3045926094055176,
+     2.0883946418762207
+    ],
+    "B_opp2": [
+     3.2294888496398926,
+     4.183506965637207
+    ]
+   }
+  },
+  {
+   "rally": 3,
+   "window_on": 81.4,
+   "window_off": 84.033,
+   "source": "overlay 2",
+   "server_score": 2,
+   "receiver_score": 0,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": -0.6,
+   "spreadY_near_minus_far": 0.4,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.385436773300171,
+     9.01581859588623
+    ],
+    "A_you": [
+     3.453373670578003,
+     10.549399375915527
+    ],
+    "B_opp1": [
+     3.0498249530792236,
+     2.1529178619384766
+    ],
+    "B_opp2": [
+     3.520578384399414,
+     4.082596302032471
+    ]
+   }
+  },
+  {
+   "rally": 4,
+   "window_on": 92.933,
+   "window_off": 95.567,
+   "source": "overlay 3",
+   "server_score": 1,
+   "receiver_score": 2,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": 0.54,
+   "spreadY_near_minus_far": -0.47,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.9287478923797607,
+     10.833343505859375
+    ],
+    "A_you": [
+     3.6286680698394775,
+     9.326066017150879
+    ],
+    "B_opp1": [
+     1.9190119504928589,
+     3.7257490158081055
+    ],
+    "B_opp2": [
+     3.161409616470337,
+     2.6870133876800537
+    ]
+   }
+  },
+  {
+   "rally": 5,
+   "window_on": 106.4,
+   "window_off": 109.033,
+   "source": "overlay 4",
+   "server_score": 3,
+   "receiver_score": 1,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp1",
+   "spreadX_near_minus_far": -0.41,
+   "spreadY_near_minus_far": 0.35,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.6597166061401367,
+     10.674875259399414
+    ],
+    "A_you": [
+     4.646986961364746,
+     9.119274139404297
+    ],
+    "B_opp1": [
+     2.828138828277588,
+     4.2257914543151855
+    ],
+    "B_opp2": [
+     3.402963399887085,
+     2.3209187984466553
+    ]
+   }
+  },
+  {
+   "rally": 6,
+   "window_on": 118.7,
+   "window_off": 121.2,
+   "source": "overlay 5",
+   "server_score": 4,
+   "receiver_score": 1,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp1",
+   "spreadX_near_minus_far": -0.44,
+   "spreadY_near_minus_far": 0.25,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.402411699295044,
+     9.107688903808594
+    ],
+    "A_you": [
+     3.499730348587036,
+     10.624419212341309
+    ],
+    "B_opp1": [
+     3.6913278102874756,
+     3.9067153930664062
+    ],
+    "B_opp2": [
+     3.029963493347168,
+     2.1444385051727295
+    ]
+   }
+  },
+  {
+   "rally": 7,
+   "window_on": 129.5,
+   "window_off": 132.1,
+   "source": "overlay 6",
+   "server_score": 2,
+   "receiver_score": 4,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": null,
+   "spreadX_near_minus_far": 0.41,
+   "spreadY_near_minus_far": -0.85,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.196380853652954,
+     9.39083194732666
+    ],
+    "A_you": [
+     3.6945090293884277,
+     11.148073196411133
+    ],
+    "B_opp1": [
+     4.3422651290893555,
+     3.4379405975341797
+    ],
+    "B_opp2": [
+     3.430762767791748,
+     2.52938175201416
+    ]
+   }
+  },
+  {
+   "rally": 8,
+   "window_on": 139.467,
+   "window_off": 142.067,
+   "source": "overlay 7",
+   "server_score": 3,
+   "receiver_score": 4,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": 3.92,
+   "spreadY_near_minus_far": -1.96,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.5217409133911133,
+     9.131487846374512
+    ],
+    "A_you": [
+     3.3803296089172363,
+     11.179953575134277
+    ],
+    "B_opp1": [
+     3.2444775104522705,
+     1.7909196615219116
+    ],
+    "B_opp2": [
+     -0.8179846405982971,
+     1.6978569030761719
+    ]
+   }
+  },
+  {
+   "rally": 9,
+   "window_on": 147.333,
+   "window_off": 150.0,
+   "source": "overlay 8",
+   "server_score": 4,
+   "receiver_score": 4,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": -2.04,
+   "spreadY_near_minus_far": -2.37,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     0.44442227482795715,
+     7.986934661865234
+    ],
+    "A_you": [
+     3.6733756065368652,
+     10.987398147583008
+    ],
+    "B_opp1": [
+     4.546416759490967,
+     3.3247761726379395
+    ],
+    "B_opp2": [
+     3.35980224609375,
+     2.6936895847320557
+    ]
+   }
+  },
+  {
+   "rally": 10,
+   "window_on": 168.033,
+   "window_off": 170.567,
+   "source": "overlay 9",
+   "server_score": 5,
+   "receiver_score": 4,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": null,
+   "spreadY_near_minus_far": null,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.2983274459838867,
+     8.606439590454102
+    ],
+    "A_you": [
+     3.202263832092285,
+     10.624373435974121
+    ],
+    "B_opp1": [
+     3.130986452102661,
+     1.8485954999923706
+    ],
+    "B_opp2": null
+   }
+  },
+  {
+   "rally": 11,
+   "window_on": 175.267,
+   "window_off": 177.9,
+   "source": "overlay 10",
+   "server_score": 6,
+   "receiver_score": 4,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": 0.58,
+   "spreadY_near_minus_far": -0.07,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.9468016624450684,
+     9.107057571411133
+    ],
+    "A_you": [
+     3.4183144569396973,
+     10.41873550415039
+    ],
+    "B_opp1": [
+     4.219162464141846,
+     3.267813205718994
+    ],
+    "B_opp2": [
+     3.1717123985290527,
+     2.025139808654785
+    ]
+   }
+  },
+  {
+   "rally": 12,
+   "window_on": 183.2,
+   "window_off": 185.7,
+   "source": "overlay 11",
+   "server_score": 7,
+   "receiver_score": 4,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": null,
+   "spreadY_near_minus_far": null,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.3751471042633057,
+     8.628143310546875
+    ],
+    "A_you": [
+     1.062395453453064,
+     13.695363998413086
+    ],
+    "B_opp1": [
+     3.121953248977661,
+     2.027928113937378
+    ],
+    "B_opp2": null
+   }
+  },
+  {
+   "rally": 13,
+   "window_on": 192.167,
+   "window_off": 194.667,
+   "source": "overlay 12",
+   "server_score": 5,
+   "receiver_score": 7,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": null,
+   "spreadX_near_minus_far": -0.99,
+   "spreadY_near_minus_far": 1.71,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.944343328475952,
+     8.921308517456055
+    ],
+    "A_you": [
+     2.85202693939209,
+     9.406585693359375
+    ],
+    "B_opp1": [
+     3.276463031768799,
+     1.7938785552978516
+    ],
+    "B_opp2": [
+     3.169468879699707,
+     3.987398624420166
+    ]
+   }
+  },
+  {
+   "rally": 14,
+   "window_on": 205.5,
+   "window_off": 207.9,
+   "source": "overlay 13",
+   "server_score": 6,
+   "receiver_score": 7,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": -0.55,
+   "spreadY_near_minus_far": 0.37,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.2392690181732178,
+     10.399020195007324
+    ],
+    "A_you": [
+     2.3127942085266113,
+     8.686532020568848
+    ],
+    "B_opp1": [
+     3.0094070434570312,
+     1.8695675134658813
+    ],
+    "B_opp2": [
+     3.382326602935791,
+     3.954515218734741
+    ]
+   }
+  },
+  {
+   "rally": 15,
+   "window_on": 215.6,
+   "window_off": 218.167,
+   "source": "overlay 14",
+   "server_score": 7,
+   "receiver_score": 7,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": null,
+   "spreadX_near_minus_far": -1.27,
+   "spreadY_near_minus_far": 1.06,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     4.383924961090088,
+     8.68136215209961
+    ],
+    "A_you": [
+     3.021406650543213,
+     9.833967208862305
+    ],
+    "B_opp1": [
+     3.2880313396453857,
+     1.8335901498794556
+    ],
+    "B_opp2": [
+     3.1914021968841553,
+     4.04479455947876
+    ]
+   }
+  },
+  {
+   "rally": 16,
+   "window_on": 232.6,
+   "window_off": 235.067,
+   "source": "overlay 15",
+   "server_score": 8,
+   "receiver_score": 7,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": -0.74,
+   "spreadY_near_minus_far": 1.03,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.412034034729004,
+     9.593944549560547
+    ],
+    "A_you": [
+     2.2787163257598877,
+     8.76148509979248
+    ],
+    "B_opp1": [
+     2.984898090362549,
+     2.0620503425598145
+    ],
+    "B_opp2": [
+     3.3778038024902344,
+     3.9273390769958496
+    ]
+   }
+  },
+  {
+   "rally": 17,
+   "window_on": 243.1,
+   "window_off": 245.533,
+   "source": "overlay 16",
+   "server_score": 9,
+   "receiver_score": 7,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": null,
+   "spreadX_near_minus_far": -1.3,
+   "spreadY_near_minus_far": 0.88,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     4.302125930786133,
+     8.65689754486084
+    ],
+    "A_you": [
+     2.967430591583252,
+     9.67973518371582
+    ],
+    "B_opp1": [
+     3.2398109436035156,
+     2.065573215484619
+    ],
+    "B_opp2": [
+     3.202869415283203,
+     3.9646129608154297
+    ]
+   }
+  },
+  {
+   "rally": 18,
+   "window_on": 251.8,
+   "window_off": 254.467,
+   "source": "overlay 17",
+   "server_score": 10,
+   "receiver_score": 7,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": -0.59,
+   "spreadY_near_minus_far": 0.78,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.250007152557373,
+     10.037193298339844
+    ],
+    "A_you": [
+     2.2566771507263184,
+     8.837215423583984
+    ],
+    "B_opp1": [
+     3.0091021060943604,
+     1.9554212093353271
+    ],
+    "B_opp2": [
+     3.4090359210968018,
+     3.9387521743774414
+    ]
+   }
+  },
+  {
+   "rally": 19,
+   "window_on": 260.467,
+   "window_off": 263.467,
+   "source": "overlay 18",
+   "server_score": 8,
+   "receiver_score": 10,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": 0.48,
+   "spreadY_near_minus_far": 0.25,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.5694563388824463,
+     10.167791366577148
+    ],
+    "A_you": [
+     3.040996551513672,
+     8.848320960998535
+    ],
+    "B_opp1": [
+     3.0954203605651855,
+     1.965262532234192
+    ],
+    "B_opp2": [
+     4.106500148773193,
+     3.5379836559295654
+    ]
+   }
+  },
+  {
+   "rally": 20,
+   "window_on": 267.2,
+   "window_off": 269.733,
+   "source": "overlay 19",
+   "server_score": 11,
+   "receiver_score": 8,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp1",
+   "spreadX_near_minus_far": -1.02,
+   "spreadY_near_minus_far": 0.96,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     4.32161808013916,
+     8.753066062927246
+    ],
+    "A_you": [
+     2.9042904376983643,
+     9.514699935913086
+    ],
+    "B_opp1": [
+     2.868313789367676,
+     3.8279669284820557
+    ],
+    "B_opp2": [
+     3.265320301055908,
+     2.1024348735809326
+    ]
+   }
+  },
+  {
+   "rally": 21,
+   "window_on": 287.6,
+   "window_off": 290.0,
+   "source": "overlay 20",
+   "server_score": 9,
+   "receiver_score": 11,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": 1.09,
+   "spreadY_near_minus_far": -1.22,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.3397767543792725,
+     8.679022789001465
+    ],
+    "A_you": [
+     3.247528076171875,
+     10.726414680480957
+    ],
+    "B_opp1": [
+     1.9499340057373047,
+     3.358978033065796
+    ],
+    "B_opp2": [
+     3.1323447227478027,
+     2.535886764526367
+    ]
+   }
+  },
+  {
+   "rally": 22,
+   "window_on": 302.233,
+   "window_off": 304.967,
+   "source": "overlay 21",
+   "server_score": 10,
+   "receiver_score": 11,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": null,
+   "spreadX_near_minus_far": 0.63,
+   "spreadY_near_minus_far": 0.1,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.070450782775879,
+     8.859602928161621
+    ],
+    "A_you": [
+     3.4453325271606445,
+     10.479373931884766
+    ],
+    "B_opp1": [
+     3.1460516452789307,
+     1.8087661266326904
+    ],
+    "B_opp2": [
+     4.151782989501953,
+     3.52366304397583
+    ]
+   }
+  },
+  {
+   "rally": 23,
+   "window_on": 310.733,
+   "window_off": 313.367,
+   "source": "overlay 22",
+   "server_score": 11,
+   "receiver_score": 11,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": 1.42,
+   "spreadY_near_minus_far": 0.01,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.352303981781006,
+     9.010998725891113
+    ],
+    "A_you": [
+     3.3950634002685547,
+     10.334062576293945
+    ],
+    "B_opp1": [
+     1.5755563974380493,
+     3.1187973022460938
+    ],
+    "B_opp2": [
+     3.0369834899902344,
+     1.7850890159606934
+    ]
+   }
+  },
+  {
+   "rally": 24,
+   "window_on": 324.233,
+   "window_off": 326.833,
+   "source": "overlay 23",
+   "server_score": 12,
+   "receiver_score": 11,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": null,
+   "spreadX_near_minus_far": 0.54,
+   "spreadY_near_minus_far": 0.24,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.05790114402771,
+     8.683712005615234
+    ],
+    "A_you": [
+     3.439467191696167,
+     10.379914283752441
+    ],
+    "B_opp1": [
+     3.22659969329834,
+     1.6598422527313232
+    ],
+    "B_opp2": [
+     4.144834041595459,
+     3.5988786220550537
+    ]
+   }
+  },
+  {
+   "rally": 25,
+   "window_on": 332.3,
+   "window_off": 334.867,
+   "source": "overlay 24",
+   "server_score": 12,
+   "receiver_score": 12,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": -0.68,
+   "spreadY_near_minus_far": 0.89,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.2822940349578857,
+     8.665465354919434
+    ],
+    "A_you": [
+     3.315934419631958,
+     9.88825511932373
+    ],
+    "B_opp1": [
+     3.0695409774780273,
+     1.8157516717910767
+    ],
+    "B_opp2": [
+     3.4233522415161133,
+     3.930950403213501
+    ]
+   }
+  },
+  {
+   "rally": 26,
+   "window_on": 342.3,
+   "window_off": 344.967,
+   "source": "overlay 25",
+   "server_score": 13,
+   "receiver_score": 12,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "B",
+   "server_side": "near",
+   "server_player": null,
+   "spreadX_near_minus_far": -1.19,
+   "spreadY_near_minus_far": 1.08,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.39815616607666,
+     9.944528579711914
+    ],
+    "A_you": [
+     4.688024520874023,
+     9.025205612182617
+    ],
+    "B_opp1": [
+     3.2523694038391113,
+     1.9933446645736694
+    ],
+    "B_opp2": [
+     3.1554665565490723,
+     3.9938106536865234
+    ]
+   }
+  },
+  {
+   "rally": 27,
+   "window_on": 357.8,
+   "window_off": 360.467,
+   "source": "overlay 26",
+   "server_score": 13,
+   "receiver_score": 13,
+   "court": "left",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": 0.81,
+   "spreadY_near_minus_far": 0.58,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.4930408000946045,
+     10.394367218017578
+    ],
+    "A_you": [
+     3.3951659202575684,
+     8.61410140991211
+    ],
+    "B_opp1": [
+     3.012038230895996,
+     1.9440531730651855
+    ],
+    "B_opp2": [
+     2.108161211013794,
+     4.301443099975586
+    ]
+   }
+  },
+  {
+   "rally": 28,
+   "window_on": 367.933,
+   "window_off": 370.567,
+   "source": "overlay 27",
+   "server_score": 14,
+   "receiver_score": 13,
+   "court": "right",
+   "near_team": "B",
+   "server_team": "A",
+   "server_side": "far",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": 0.39,
+   "spreadY_near_minus_far": 0.36,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.689244508743286,
+     10.060660362243652
+    ],
+    "A_you": [
+     2.979001045227051,
+     9.28809642791748
+    ],
+    "B_opp1": [
+     4.332821369171143,
+     3.2033138275146484
+    ],
+    "B_opp2": [
+     3.2303316593170166,
+     2.0726375579833984
+    ]
+   }
+  },
+  {
+   "rally": 29,
+   "window_on": 382.333,
+   "window_off": 384.867,
+   "source": "overlay 28",
+   "server_score": 15,
+   "receiver_score": 13,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": -0.81,
+   "spreadY_near_minus_far": 0.31,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.1885483264923096,
+     2.3642783164978027
+    ],
+    "A_you": [
+     2.959965229034424,
+     3.9234652519226074
+    ],
+    "B_opp1": [
+     3.2801783084869385,
+     10.18586540222168
+    ],
+    "B_opp2": [
+     4.315431594848633,
+     8.941032409667969
+    ]
+   }
+  },
+  {
+   "rally": 30,
+   "window_on": 395.0,
+   "window_off": 397.4,
+   "source": "overlay 29",
+   "server_score": 14,
+   "receiver_score": 15,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": null,
+   "spreadX_near_minus_far": null,
+   "spreadY_near_minus_far": null,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     4.195157051086426,
+     3.7348148822784424
+    ],
+    "A_you": [
+     3.044373035430908,
+     2.695976734161377
+    ],
+    "B_opp1": null,
+    "B_opp2": [
+     3.5714995861053467,
+     10.369479179382324
+    ]
+   }
+  },
+  {
+   "rally": 31,
+   "window_on": 401.867,
+   "window_off": 404.333,
+   "source": "overlay 30",
+   "server_score": 16,
+   "receiver_score": 14,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": -0.63,
+   "spreadY_near_minus_far": 1.89,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.374723434448242,
+     4.246561050415039
+    ],
+    "A_you": [
+     3.0143866539001465,
+     2.0242981910705566
+    ],
+    "B_opp1": [
+     2.152764320373535,
+     9.304937362670898
+    ],
+    "B_opp2": [
+     3.138880729675293,
+     9.636566162109375
+    ]
+   }
+  },
+  {
+   "rally": 32,
+   "window_on": 408.0,
+   "window_off": 410.5,
+   "source": "overlay 31",
+   "server_score": 15,
+   "receiver_score": 16,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": 1.12,
+   "spreadY_near_minus_far": -0.89,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.060457229614258,
+     2.4711225032806396
+    ],
+    "A_you": [
+     1.8946162462234497,
+     3.818387031555176
+    ],
+    "B_opp1": [
+     3.3094868659973145,
+     10.76157283782959
+    ],
+    "B_opp2": [
+     3.3589279651641846,
+     8.52861499786377
+    ]
+   }
+  },
+  {
+   "rally": 33,
+   "window_on": 421.1,
+   "window_off": 423.7,
+   "source": "overlay 32",
+   "server_score": 16,
+   "receiver_score": 16,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": null,
+   "spreadX_near_minus_far": null,
+   "spreadY_near_minus_far": null,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     4.277300834655762,
+     3.701500415802002
+    ],
+    "A_you": [
+     3.1113874912261963,
+     2.4673428535461426
+    ],
+    "B_opp1": [
+     3.4499428272247314,
+     10.348885536193848
+    ],
+    "B_opp2": null
+   }
+  },
+  {
+   "rally": 34,
+   "window_on": 442.4,
+   "window_off": 444.933,
+   "source": "overlay 33",
+   "server_score": 17,
+   "receiver_score": 16,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": 1.04,
+   "spreadY_near_minus_far": -0.42,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.1076290607452393,
+     2.3664960861206055
+    ],
+    "A_you": [
+     1.8887203931808472,
+     3.7812411785125732
+    ],
+    "B_opp1": [
+     3.421902656555176,
+     10.431407928466797
+    ],
+    "B_opp2": [
+     3.2424702644348145,
+     8.599102020263672
+    ]
+   }
+  },
+  {
+   "rally": 35,
+   "window_on": 454.1,
+   "window_off": 456.567,
+   "source": "overlay 34",
+   "server_score": 17,
+   "receiver_score": 17,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": -0.67,
+   "spreadY_near_minus_far": 0.05,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.2660157680511475,
+     2.435019016265869
+    ],
+    "A_you": [
+     2.960329532623291,
+     3.9966025352478027
+    ],
+    "B_opp1": [
+     3.3058292865753174,
+     10.464299201965332
+    ],
+    "B_opp2": [
+     4.284941673278809,
+     8.951946258544922
+    ]
+   }
+  },
+  {
+   "rally": 36,
+   "window_on": 466.033,
+   "window_off": 468.633,
+   "source": "overlay 35",
+   "server_score": 18,
+   "receiver_score": 17,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": null,
+   "spreadX_near_minus_far": 0.88,
+   "spreadY_near_minus_far": -0.12,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     4.195533752441406,
+     3.7245752811431885
+    ],
+    "A_you": [
+     3.006981372833252,
+     2.568624496459961
+    ],
+    "B_opp1": [
+     3.12215256690979,
+     9.10781192779541
+    ],
+    "B_opp2": [
+     3.4311790466308594,
+     10.384289741516113
+    ]
+   }
+  },
+  {
+   "rally": 37,
+   "window_on": 475.233,
+   "window_off": 477.767,
+   "source": "overlay 36",
+   "server_score": 18,
+   "receiver_score": 18,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": -0.41,
+   "spreadY_near_minus_far": 1.24,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.384455680847168,
+     3.9412827491760254
+    ],
+    "A_you": [
+     2.914036750793457,
+     2.1727654933929443
+    ],
+    "B_opp1": [
+     2.1668357849121094,
+     9.119797706604004
+    ],
+    "B_opp2": [
+     3.049050807952881,
+     9.643471717834473
+    ]
+   }
+  },
+  {
+   "rally": 38,
+   "window_on": 483.133,
+   "window_off": 485.733,
+   "source": "overlay 37",
+   "server_score": 19,
+   "receiver_score": 18,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": null,
+   "spreadX_near_minus_far": -0.79,
+   "spreadY_near_minus_far": 0.79,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.057518482208252,
+     4.317328929901123
+    ],
+    "A_you": [
+     3.3950867652893066,
+     2.188701868057251
+    ],
+    "B_opp1": [
+     3.3049142360687256,
+     10.263596534729004
+    ],
+    "B_opp2": [
+     4.429108142852783,
+     8.925832748413086
+    ]
+   }
+  },
+  {
+   "rally": 39,
+   "window_on": 495.5,
+   "window_off": 498.067,
+   "source": "overlay 38",
+   "server_score": 20,
+   "receiver_score": 18,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": -0.44,
+   "spreadY_near_minus_far": 1.37,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.3906784057617188,
+     4.171874046325684
+    ],
+    "A_you": [
+     2.9985148906707764,
+     2.1819517612457275
+    ],
+    "B_opp1": [
+     2.255415201187134,
+     8.987921714782715
+    ],
+    "B_opp2": [
+     3.0915279388427734,
+     9.610275268554688
+    ]
+   }
+  },
+  {
+   "rally": 40,
+   "window_on": 502.833,
+   "window_off": 505.4,
+   "source": "overlay 39",
+   "server_score": 21,
+   "receiver_score": 18,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": -0.56,
+   "spreadY_near_minus_far": 0.49,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.896728515625,
+     4.018830299377441
+    ],
+    "A_you": [
+     3.3268814086914062,
+     2.139133930206299
+    ],
+    "B_opp1": [
+     3.3672902584075928,
+     10.31923770904541
+    ],
+    "B_opp2": [
+     4.356102466583252,
+     8.92977237701416
+    ]
+   }
+  },
+  {
+   "rally": 41,
+   "window_on": 512.1,
+   "window_off": 514.733,
+   "source": "overlay 40",
+   "server_score": 19,
+   "receiver_score": 21,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": 1.32,
+   "spreadY_near_minus_far": -0.93,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.1897850036621094,
+     3.764444589614868
+    ],
+    "A_you": [
+     3.61006760597229,
+     2.754363775253296
+    ],
+    "B_opp1": [
+     3.3445701599121094,
+     10.50577163696289
+    ],
+    "B_opp2": [
+     3.2439303398132324,
+     8.565324783325195
+    ]
+   }
+  },
+  {
+   "rally": 42,
+   "window_on": 522.633,
+   "window_off": 525.367,
+   "source": "overlay 41",
+   "server_score": 22,
+   "receiver_score": 19,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": -0.47,
+   "spreadY_near_minus_far": 0.44,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.863447427749634,
+     2.377823829650879
+    ],
+    "A_you": [
+     3.397914171218872,
+     3.8532371520996094
+    ],
+    "B_opp1": [
+     2.137763261795044,
+     9.178466796875
+    ],
+    "B_opp2": [
+     3.1382784843444824,
+     10.213919639587402
+    ]
+   }
+  },
+  {
+   "rally": 43,
+   "window_on": 537.733,
+   "window_off": 540.467,
+   "source": "overlay 42",
+   "server_score": 23,
+   "receiver_score": 19,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": -0.65,
+   "spreadY_near_minus_far": -0.01,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.2297868728637695,
+     2.348482608795166
+    ],
+    "A_you": [
+     2.9658236503601074,
+     4.000799655914307
+    ],
+    "B_opp1": [
+     3.330408811569214,
+     10.50257682800293
+    ],
+    "B_opp2": [
+     4.246394634246826,
+     8.837915420532227
+    ]
+   }
+  },
+  {
+   "rally": 44,
+   "window_on": 550.367,
+   "window_off": 552.9,
+   "source": "overlay 43",
+   "server_score": 20,
+   "receiver_score": 23,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": "B_opp1",
+   "spreadX_near_minus_far": 0.6,
+   "spreadY_near_minus_far": 0.02,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     4.21267557144165,
+     3.698943614959717
+    ],
+    "A_you": [
+     3.0506699085235596,
+     2.760801315307617
+    ],
+    "B_opp1": [
+     2.9929087162017822,
+     9.488103866577148
+    ],
+    "B_opp2": [
+     3.5593841075897217,
+     10.408333778381348
+    ]
+   }
+  },
+  {
+   "rally": 45,
+   "window_on": 558.433,
+   "window_off": 560.967,
+   "source": "overlay 44",
+   "server_score": 24,
+   "receiver_score": 20,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": -0.52,
+   "spreadY_near_minus_far": 1.08,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.433835983276367,
+     4.195617198944092
+    ],
+    "A_you": [
+     2.9962940216064453,
+     1.9748584032058716
+    ],
+    "B_opp1": [
+     2.239152431488037,
+     9.079455375671387
+    ],
+    "B_opp2": [
+     3.2003443241119385,
+     10.215926170349121
+    ]
+   }
+  },
+  {
+   "rally": 46,
+   "window_on": 573.033,
+   "window_off": 575.667,
+   "source": "overlay 45",
+   "server_score": 21,
+   "receiver_score": 24,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": "B_opp2",
+   "spreadX_near_minus_far": 1.35,
+   "spreadY_near_minus_far": -0.92,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.096120834350586,
+     2.2933449745178223
+    ],
+    "A_you": [
+     1.6895359754562378,
+     3.648672103881836
+    ],
+    "B_opp1": [
+     3.249368190765381,
+     10.860699653625488
+    ],
+    "B_opp2": [
+     3.305447578430176,
+     8.580406188964844
+    ]
+   }
+  },
+  {
+   "rally": 47,
+   "window_on": 585.4,
+   "window_off": 588.1,
+   "source": "overlay 46",
+   "server_score": 25,
+   "receiver_score": 21,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": -0.56,
+   "spreadY_near_minus_far": 0.01,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.2492213249206543,
+     2.3940699100494385
+    ],
+    "A_you": [
+     2.9743900299072266,
+     3.965580940246582
+    ],
+    "B_opp1": [
+     3.360805034637451,
+     10.396604537963867
+    ],
+    "B_opp2": [
+     4.198847770690918,
+     8.837299346923828
+    ]
+   }
+  },
+  {
+   "rally": 48,
+   "window_on": 594.067,
+   "window_off": 596.833,
+   "source": "overlay 47",
+   "server_score": 26,
+   "receiver_score": 21,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_you",
+   "spreadX_near_minus_far": -0.24,
+   "spreadY_near_minus_far": -0.13,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.8561770915985107,
+     2.3610658645629883
+    ],
+    "A_you": [
+     3.401017427444458,
+     3.8739871978759766
+    ],
+    "B_opp1": [
+     2.2748491764068604,
+     8.935267448425293
+    ],
+    "B_opp2": [
+     3.0565669536590576,
+     10.575719833374023
+    ]
+   }
+  },
+  {
+   "rally": 49,
+   "window_on": 608.9,
+   "window_off": 611.433,
+   "source": "overlay 48",
+   "server_score": 22,
+   "receiver_score": 26,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": null,
+   "spreadX_near_minus_far": null,
+   "spreadY_near_minus_far": null,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.179539203643799,
+     2.347641944885254
+    ],
+    "A_you": [
+     4.184259414672852,
+     3.5971362590789795
+    ],
+    "B_opp1": null,
+    "B_opp2": [
+     3.603940486907959,
+     10.387331008911133
+    ]
+   }
+  },
+  {
+   "rally": 50,
+   "window_on": 619.7,
+   "window_off": 622.4,
+   "source": "overlay 49",
+   "server_score": 23,
+   "receiver_score": 26,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "B",
+   "server_side": "far",
+   "server_player": "B_opp1",
+   "spreadX_near_minus_far": 0.82,
+   "spreadY_near_minus_far": -0.57,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.0716352462768555,
+     3.7712459564208984
+    ],
+    "A_you": [
+     3.5456159114837646,
+     2.934082508087158
+    ],
+    "B_opp1": [
+     3.5278005599975586,
+     8.955583572387695
+    ],
+    "B_opp2": [
+     2.870739698410034,
+     10.367642402648926
+    ]
+   }
+  },
+  {
+   "rally": 51,
+   "window_on": 632.1,
+   "window_off": 634.833,
+   "source": "overlay 50",
+   "server_score": 27,
+   "receiver_score": 23,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": null,
+   "spreadX_near_minus_far": -1.08,
+   "spreadY_near_minus_far": 0.51,
+   "diag_quadrants_occupied": false,
+   "positions": {
+    "A_partner": [
+     3.051567554473877,
+     4.2715325355529785
+    ],
+    "A_you": [
+     3.281895875930786,
+     2.100553274154663
+    ],
+    "B_opp1": [
+     4.52143669128418,
+     8.90356159210205
+    ],
+    "B_opp2": [
+     3.2069315910339355,
+     10.5599946975708
+    ]
+   }
+  },
+  {
+   "rally": 52,
+   "window_on": 652.133,
+   "window_off": 654.733,
+   "source": "overlay 51",
+   "server_score": 28,
+   "receiver_score": 23,
+   "court": "right",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": -0.42,
+   "spreadY_near_minus_far": 0.53,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     3.42626690864563,
+     4.100058078765869
+    ],
+    "A_you": [
+     3.0356080532073975,
+     2.162046432495117
+    ],
+    "B_opp1": [
+     3.202354907989502,
+     10.388278007507324
+    ],
+    "B_opp2": [
+     2.3963935375213623,
+     8.976613998413086
+    ]
+   }
+  },
+  {
+   "rally": 53,
+   "window_on": 659.4,
+   "window_off": 662.0,
+   "source": "overlay 52",
+   "server_score": 29,
+   "receiver_score": 23,
+   "court": "left",
+   "near_team": "A",
+   "server_team": "A",
+   "server_side": "near",
+   "server_player": "A_partner",
+   "spreadX_near_minus_far": -0.76,
+   "spreadY_near_minus_far": -0.26,
+   "diag_quadrants_occupied": true,
+   "positions": {
+    "A_partner": [
+     2.987027645111084,
+     4.1456499099731445
+    ],
+    "A_you": [
+     3.3266804218292236,
+     2.152498483657837
+    ],
+    "B_opp1": [
+     4.350941181182861,
+     8.901716232299805
+    ],
+    "B_opp2": [
+     3.246830701828003,
+     11.153642654418945
+    ]
+   }
+  }
+ ]
+}

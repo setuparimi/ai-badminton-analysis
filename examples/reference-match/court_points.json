@@ -1,0 +1,11 @@
+[
+  {"name": "near short service line x right doubles sideline", "px": [1188, 547], "court": [6.1, 4.72]},
+  {"name": "near short service line x right singles sideline", "px": [1104, 537], "court": [5.64, 4.72]},
+  {"name": "near short service line x centre line (T)",       "px": [729, 495],  "court": [3.05, 4.72]},
+  {"name": "near short service line x left singles sideline", "px": [454, 464],  "court": [0.46, 4.72]},
+  {"name": "near short service line x left doubles sideline", "px": [413, 459],  "court": [0.0, 4.72]},
+  {"name": "far short service line x right doubles sideline", "px": [1178, 451], "court": [6.1, 8.68]},
+  {"name": "far short service line x centre line (T)",        "px": [866, 425],  "court": [3.05, 8.68]},
+  {"name": "right net post base",                              "px": [1185, 488], "court": [6.1, 6.7]},
+  {"name": "near doubles long service line x centre line",    "px": [400, 670],  "court": [3.05, 0.76]}
+]

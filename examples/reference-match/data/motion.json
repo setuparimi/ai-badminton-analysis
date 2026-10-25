@@ -1,0 +1,3985 @@
+{
+ "stage": 7,
+ "rallies": [
+  {
+   "rally": 1,
+   "start": 51.83,
+   "end": 70.3,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.78,
+     "distance_m": 14.1,
+     "mean_speed": 0.8,
+     "peak_speed": 3.34,
+     "front": 0.403,
+     "mid": 0.59,
+     "back": 0.007,
+     "mean_depth": 2.85,
+     "mean_lateral_from_centre": 0.7,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 10.3,
+     "mean_speed": 0.59,
+     "peak_speed": 2.17,
+     "front": 0.056,
+     "mid": 0.916,
+     "back": 0.028,
+     "mean_depth": 3.83,
+     "mean_lateral_from_centre": 0.53,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 9.0,
+     "mean_speed": 0.51,
+     "peak_speed": 2.32,
+     "front": 0.0,
+     "mid": 0.202,
+     "back": 0.798,
+     "mean_depth": 4.58,
+     "mean_lateral_from_centre": 0.42,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 8.7,
+     "mean_speed": 0.49,
+     "peak_speed": 1.94,
+     "front": 0.202,
+     "mid": 0.798,
+     "back": 0.0,
+     "mean_depth": 2.83,
+     "mean_lateral_from_centre": 0.61,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.77,
+    "open_gap_over3m": 0.144,
+    "stacked": 0.072,
+    "crowded": 0.302,
+    "front_back": 0.115,
+    "side_by_side": 0.065
+   },
+   "pair_B": {
+    "open_gap_mean": 3.18,
+    "open_gap_over3m": 0.826,
+    "stacked": 0.809,
+    "crowded": 0.135,
+    "front_back": 0.466,
+    "side_by_side": 0.045
+   }
+  },
+  {
+   "rally": 2,
+   "start": 72.87,
+   "end": 81.4,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.9,
+     "distance_m": 3.6,
+     "mean_speed": 0.45,
+     "peak_speed": 2.16,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.89,
+     "mean_lateral_from_centre": 0.46,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 5.7,
+     "mean_speed": 0.72,
+     "peak_speed": 2.03,
+     "front": 0.588,
+     "mid": 0.412,
+     "back": 0.0,
+     "mean_depth": 2.71,
+     "mean_lateral_from_centre": 1.49,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 0.86,
+     "distance_m": 11.2,
+     "mean_speed": 1.44,
+     "peak_speed": 3.83,
+     "front": 0.0,
+     "mid": 0.13,
+     "back": 0.87,
+     "mean_depth": 4.8,
+     "mean_lateral_from_centre": 0.98,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 4.0,
+     "mean_speed": 0.5,
+     "peak_speed": 1.58,
+     "front": 0.388,
+     "mid": 0.613,
+     "back": 0.0,
+     "mean_depth": 2.89,
+     "mean_lateral_from_centre": 0.43,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.5,
+    "open_gap_over3m": 0.972,
+    "stacked": 0.958,
+    "crowded": 0.181,
+    "front_back": 0.153,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.43,
+    "open_gap_over3m": 0.986,
+    "stacked": 0.855,
+    "crowded": 0.13,
+    "front_back": 0.681,
+    "side_by_side": 0.014
+   }
+  },
+  {
+   "rally": 3,
+   "start": 84.03,
+   "end": 92.93,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 7.4,
+     "mean_speed": 0.91,
+     "peak_speed": 3.41,
+     "front": 0.361,
+     "mid": 0.639,
+     "back": 0.0,
+     "mean_depth": 2.69,
+     "mean_lateral_from_centre": 0.51,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 9.0,
+     "mean_speed": 1.1,
+     "peak_speed": 4.33,
+     "front": 0.048,
+     "mid": 0.578,
+     "back": 0.373,
+     "mean_depth": 4.29,
+     "mean_lateral_from_centre": 0.55,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 4.5,
+     "mean_speed": 0.55,
+     "peak_speed": 2.19,
+     "front": 0.0,
+     "mid": 0.181,
+     "back": 0.819,
+     "mean_depth": 4.7,
+     "mean_lateral_from_centre": 0.5,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 8.5,
+     "mean_speed": 1.04,
+     "peak_speed": 2.88,
+     "front": 0.349,
+     "mid": 0.277,
+     "back": 0.373,
+     "mean_depth": 3.58,
+     "mean_lateral_from_centre": 0.58,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.9,
+    "open_gap_over3m": 0.349,
+    "stacked": 0.337,
+    "crowded": 0.205,
+    "front_back": 0.422,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.71,
+    "open_gap_over3m": 0.361,
+    "stacked": 0.145,
+    "crowded": 0.12,
+    "front_back": 0.361,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 4,
+   "start": 95.57,
+   "end": 106.4,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.84,
+     "distance_m": 12.0,
+     "mean_speed": 1.21,
+     "peak_speed": 3.96,
+     "front": 0.184,
+     "mid": 0.621,
+     "back": 0.195,
+     "mean_depth": 3.71,
+     "mean_lateral_from_centre": 0.82,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.91,
+     "distance_m": 11.7,
+     "mean_speed": 1.15,
+     "peak_speed": 4.18,
+     "front": 0.16,
+     "mid": 0.809,
+     "back": 0.032,
+     "mean_depth": 3.29,
+     "mean_lateral_from_centre": 1.13,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 10.2,
+     "mean_speed": 1.0,
+     "peak_speed": 3.13,
+     "front": 0.184,
+     "mid": 0.816,
+     "back": 0.0,
+     "mean_depth": 3.14,
+     "mean_lateral_from_centre": 0.73,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 15.1,
+     "mean_speed": 1.49,
+     "peak_speed": 4.81,
+     "front": 0.0,
+     "mid": 0.466,
+     "back": 0.534,
+     "mean_depth": 4.74,
+     "mean_lateral_from_centre": 0.99,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.7,
+    "open_gap_over3m": 0.291,
+    "stacked": 0.19,
+    "crowded": 0.19,
+    "front_back": 0.114,
+    "side_by_side": 0.266
+   },
+   "pair_B": {
+    "open_gap_mean": 2.96,
+    "open_gap_over3m": 0.505,
+    "stacked": 0.311,
+    "crowded": 0.146,
+    "front_back": 0.32,
+    "side_by_side": 0.291
+   }
+  },
+  {
+   "rally": 5,
+   "start": 109.03,
+   "end": 118.7,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 9.8,
+     "mean_speed": 1.1,
+     "peak_speed": 4.56,
+     "front": 0.0,
+     "mid": 0.789,
+     "back": 0.211,
+     "mean_depth": 4.21,
+     "mean_lateral_from_centre": 0.55,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 13.3,
+     "mean_speed": 1.5,
+     "peak_speed": 4.54,
+     "front": 0.0,
+     "mid": 0.822,
+     "back": 0.178,
+     "mean_depth": 3.74,
+     "mean_lateral_from_centre": 1.43,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 10.4,
+     "mean_speed": 1.16,
+     "peak_speed": 2.94,
+     "front": 0.022,
+     "mid": 0.278,
+     "back": 0.7,
+     "mean_depth": 4.84,
+     "mean_lateral_from_centre": 1.18,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 8.6,
+     "mean_speed": 0.96,
+     "peak_speed": 3.49,
+     "front": 0.0,
+     "mid": 0.867,
+     "back": 0.133,
+     "mean_depth": 3.71,
+     "mean_lateral_from_centre": 0.64,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.95,
+    "open_gap_over3m": 0.422,
+    "stacked": 0.2,
+    "crowded": 0.111,
+    "front_back": 0.067,
+    "side_by_side": 0.356
+   },
+   "pair_B": {
+    "open_gap_mean": 3.02,
+    "open_gap_over3m": 0.4,
+    "stacked": 0.289,
+    "crowded": 0.167,
+    "front_back": 0.311,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 6,
+   "start": 121.2,
+   "end": 129.5,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 7.4,
+     "mean_speed": 0.99,
+     "peak_speed": 3.34,
+     "front": 0.052,
+     "mid": 0.597,
+     "back": 0.351,
+     "mean_depth": 3.97,
+     "mean_lateral_from_centre": 0.51,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 7.3,
+     "mean_speed": 0.96,
+     "peak_speed": 3.42,
+     "front": 0.766,
+     "mid": 0.234,
+     "back": 0.0,
+     "mean_depth": 1.78,
+     "mean_lateral_from_centre": 0.8,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 8.8,
+     "mean_speed": 1.16,
+     "peak_speed": 2.99,
+     "front": 0.0,
+     "mid": 0.506,
+     "back": 0.494,
+     "mean_depth": 4.26,
+     "mean_lateral_from_centre": 0.61,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 9.6,
+     "mean_speed": 1.27,
+     "peak_speed": 3.7,
+     "front": 0.468,
+     "mid": 0.39,
+     "back": 0.143,
+     "mean_depth": 2.81,
+     "mean_lateral_from_centre": 0.49,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.13,
+    "open_gap_over3m": 0.597,
+    "stacked": 0.571,
+    "crowded": 0.026,
+    "front_back": 0.727,
+    "side_by_side": 0.013
+   },
+   "pair_B": {
+    "open_gap_mean": 2.99,
+    "open_gap_over3m": 0.558,
+    "stacked": 0.519,
+    "crowded": 0.117,
+    "front_back": 0.442,
+    "side_by_side": 0.065
+   }
+  },
+  {
+   "rally": 7,
+   "start": 132.1,
+   "end": 139.47,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.75,
+     "distance_m": 7.8,
+     "mean_speed": 1.16,
+     "peak_speed": 2.41,
+     "front": 0.255,
+     "mid": 0.353,
+     "back": 0.392,
+     "mean_depth": 3.88,
+     "mean_lateral_from_centre": 0.44,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 6.6,
+     "mean_speed": 0.99,
+     "peak_speed": 2.69,
+     "front": 0.118,
+     "mid": 0.868,
+     "back": 0.015,
+     "mean_depth": 3.38,
+     "mean_lateral_from_centre": 1.11,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 0.97,
+     "distance_m": 5.5,
+     "mean_speed": 0.83,
+     "peak_speed": 3.34,
+     "front": 0.227,
+     "mid": 0.167,
+     "back": 0.606,
+     "mean_depth": 4.19,
+     "mean_lateral_from_centre": 1.16,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 6.6,
+     "mean_speed": 1.0,
+     "peak_speed": 4.15,
+     "front": 0.0,
+     "mid": 0.132,
+     "back": 0.868,
+     "mean_depth": 5.3,
+     "mean_lateral_from_centre": 0.83,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.18,
+    "open_gap_over3m": 0.706,
+    "stacked": 0.451,
+    "crowded": 0.157,
+    "front_back": 0.373,
+    "side_by_side": 0.02
+   },
+   "pair_B": {
+    "open_gap_mean": 2.73,
+    "open_gap_over3m": 0.273,
+    "stacked": 0.273,
+    "crowded": 0.0,
+    "front_back": 0.227,
+    "side_by_side": 0.591
+   }
+  },
+  {
+   "rally": 8,
+   "start": 142.07,
+   "end": 147.33,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.6,
+     "mean_speed": 0.99,
+     "peak_speed": 3.19,
+     "front": 0.064,
+     "mid": 0.936,
+     "back": 0.0,
+     "mean_depth": 3.59,
+     "mean_lateral_from_centre": 0.83,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.94,
+     "distance_m": 3.2,
+     "mean_speed": 0.69,
+     "peak_speed": 2.96,
+     "front": 0.0,
+     "mid": 0.886,
+     "back": 0.114,
+     "mean_depth": 4.21,
+     "mean_lateral_from_centre": 0.23,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 6.1,
+     "mean_speed": 1.34,
+     "peak_speed": 4.7,
+     "front": 0.0,
+     "mid": 0.979,
+     "back": 0.021,
+     "mean_depth": 3.35,
+     "mean_lateral_from_centre": 0.84,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 2.9,
+     "mean_speed": 0.64,
+     "peak_speed": 1.41,
+     "front": 0.0,
+     "mid": 0.149,
+     "back": 0.851,
+     "mean_depth": 5.17,
+     "mean_lateral_from_centre": 1.16,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.84,
+    "open_gap_over3m": 0.136,
+    "stacked": 0.136,
+    "crowded": 0.75,
+    "front_back": 0.0,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.68,
+    "open_gap_over3m": 0.83,
+    "stacked": 0.745,
+    "crowded": 0.255,
+    "front_back": 0.468,
+    "side_by_side": 0.064
+   }
+  },
+  {
+   "rally": 9,
+   "start": 150.0,
+   "end": 168.03,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.89,
+     "distance_m": 20.7,
+     "mean_speed": 1.19,
+     "peak_speed": 3.19,
+     "front": 0.419,
+     "mid": 0.581,
+     "back": 0.0,
+     "mean_depth": 2.61,
+     "mean_lateral_from_centre": 0.98,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.87,
+     "distance_m": 18.1,
+     "mean_speed": 1.04,
+     "peak_speed": 3.31,
+     "front": 0.086,
+     "mid": 0.711,
+     "back": 0.204,
+     "mean_depth": 3.9,
+     "mean_lateral_from_centre": 0.66,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 0.89,
+     "distance_m": 19.0,
+     "mean_speed": 1.09,
+     "peak_speed": 3.56,
+     "front": 0.641,
+     "mid": 0.359,
+     "back": 0.0,
+     "mean_depth": 2.19,
+     "mean_lateral_from_centre": 1.12,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 10.5,
+     "mean_speed": 0.6,
+     "peak_speed": 2.4,
+     "front": 0.0,
+     "mid": 0.926,
+     "back": 0.074,
+     "mean_depth": 3.85,
+     "mean_lateral_from_centre": 1.03,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.15,
+    "open_gap_over3m": 0.644,
+    "stacked": 0.538,
+    "crowded": 0.129,
+    "front_back": 0.235,
+    "side_by_side": 0.197
+   },
+   "pair_B": {
+    "open_gap_mean": 3.64,
+    "open_gap_over3m": 0.872,
+    "stacked": 0.872,
+    "crowded": 0.34,
+    "front_back": 0.391,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 10,
+   "start": 170.57,
+   "end": 175.27,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 3.6,
+     "mean_speed": 0.91,
+     "peak_speed": 2.62,
+     "front": 1.0,
+     "mid": 0.0,
+     "back": 0.0,
+     "mean_depth": 1.04,
+     "mean_lateral_from_centre": 0.72,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.51
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 1.9,
+     "mean_speed": 0.48,
+     "peak_speed": 1.39,
+     "front": 0.0,
+     "mid": 0.463,
+     "back": 0.537,
+     "mean_depth": 4.33,
+     "mean_lateral_from_centre": 0.47,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 2.0,
+     "mean_speed": 0.5,
+     "peak_speed": 1.83,
+     "front": 0.927,
+     "mid": 0.073,
+     "back": 0.0,
+     "mean_depth": 2.19,
+     "mean_lateral_from_centre": 0.67,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.48,
+    "open_gap_over3m": 1.0,
+    "stacked": 1.0,
+    "crowded": 0.0,
+    "front_back": 1.0,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.53,
+    "open_gap_over3m": 1.0,
+    "stacked": 0.927,
+    "crowded": 0.122,
+    "front_back": 0.732,
+    "side_by_side": 0.049
+   }
+  },
+  {
+   "rally": 11,
+   "start": 177.9,
+   "end": 183.2,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.85,
+     "distance_m": 7.0,
+     "mean_speed": 1.56,
+     "peak_speed": 3.51,
+     "front": 0.846,
+     "mid": 0.154,
+     "back": 0.0,
+     "mean_depth": 1.59,
+     "mean_lateral_from_centre": 1.31,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 4.3,
+     "mean_speed": 0.96,
+     "peak_speed": 2.64,
+     "front": 0.37,
+     "mid": 0.63,
+     "back": 0.0,
+     "mean_depth": 2.65,
+     "mean_lateral_from_centre": 1.36,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 6.9,
+     "mean_speed": 1.53,
+     "peak_speed": 5.74,
+     "front": 0.283,
+     "mid": 0.63,
+     "back": 0.087,
+     "mean_depth": 3.14,
+     "mean_lateral_from_centre": 0.98,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 2.5,
+     "mean_speed": 0.55,
+     "peak_speed": 1.45,
+     "front": 0.0,
+     "mid": 0.022,
+     "back": 0.978,
+     "mean_depth": 5.0,
+     "mean_lateral_from_centre": 1.67,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 4.01,
+    "open_gap_over3m": 1.0,
+    "stacked": 1.0,
+    "crowded": 0.487,
+    "front_back": 0.077,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.85,
+    "open_gap_over3m": 1.0,
+    "stacked": 0.978,
+    "crowded": 0.217,
+    "front_back": 0.565,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 12,
+   "start": 185.7,
+   "end": 192.17,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 2.5,
+     "mean_speed": 0.44,
+     "peak_speed": 1.5,
+     "front": 0.644,
+     "mid": 0.356,
+     "back": 0.0,
+     "mean_depth": 2.22,
+     "mean_lateral_from_centre": 0.1,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 4.3,
+     "mean_speed": 0.74,
+     "peak_speed": 2.31,
+     "front": 0.203,
+     "mid": 0.797,
+     "back": 0.0,
+     "mean_depth": 3.13,
+     "mean_lateral_from_centre": 0.57,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 6.2,
+     "mean_speed": 1.07,
+     "peak_speed": 2.14,
+     "front": 0.0,
+     "mid": 0.0,
+     "back": 1.0,
+     "mean_depth": 5.1,
+     "mean_lateral_from_centre": 1.79,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 5.3,
+     "mean_speed": 0.92,
+     "peak_speed": 2.29,
+     "front": 0.186,
+     "mid": 0.576,
+     "back": 0.237,
+     "mean_depth": 3.59,
+     "mean_lateral_from_centre": 0.64,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.95,
+    "open_gap_over3m": 0.458,
+    "stacked": 0.237,
+    "crowded": 0.508,
+    "front_back": 0.186,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.53,
+    "open_gap_over3m": 0.695,
+    "stacked": 0.373,
+    "crowded": 0.22,
+    "front_back": 0.186,
+    "side_by_side": 0.339
+   }
+  },
+  {
+   "rally": 13,
+   "start": 194.67,
+   "end": 205.5,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.75,
+     "distance_m": 9.3,
+     "mean_speed": 0.92,
+     "peak_speed": 4.0,
+     "front": 0.961,
+     "mid": 0.039,
+     "back": 0.0,
+     "mean_depth": 1.49,
+     "mean_lateral_from_centre": 1.2,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 7.2,
+     "mean_speed": 0.71,
+     "peak_speed": 1.82,
+     "front": 0.127,
+     "mid": 0.873,
+     "back": 0.0,
+     "mean_depth": 2.97,
+     "mean_lateral_from_centre": 0.47,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 5.0,
+     "mean_speed": 0.5,
+     "peak_speed": 2.24,
+     "front": 0.0,
+     "mid": 0.235,
+     "back": 0.765,
+     "mean_depth": 4.69,
+     "mean_lateral_from_centre": 0.52,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 8.1,
+     "mean_speed": 0.8,
+     "peak_speed": 2.73,
+     "front": 0.804,
+     "mid": 0.196,
+     "back": 0.0,
+     "mean_depth": 2.12,
+     "mean_lateral_from_centre": 0.74,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.85,
+    "open_gap_over3m": 0.158,
+    "stacked": 0.132,
+    "crowded": 0.197,
+    "front_back": 0.145,
+    "side_by_side": 0.066
+   },
+   "pair_B": {
+    "open_gap_mean": 3.5,
+    "open_gap_over3m": 1.0,
+    "stacked": 1.0,
+    "crowded": 0.039,
+    "front_back": 0.922,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 14,
+   "start": 207.9,
+   "end": 215.6,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.8,
+     "distance_m": 5.4,
+     "mean_speed": 0.78,
+     "peak_speed": 2.74,
+     "front": 0.0,
+     "mid": 0.554,
+     "back": 0.446,
+     "mean_depth": 4.37,
+     "mean_lateral_from_centre": 0.73,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 4.5,
+     "mean_speed": 0.66,
+     "peak_speed": 2.29,
+     "front": 1.0,
+     "mid": 0.0,
+     "back": 0.0,
+     "mean_depth": 1.62,
+     "mean_lateral_from_centre": 0.33,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 1.4,
+     "mean_speed": 0.21,
+     "peak_speed": 0.91,
+     "front": 0.0,
+     "mid": 0.086,
+     "back": 0.914,
+     "mean_depth": 4.81,
+     "mean_lateral_from_centre": 0.09,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 7.9,
+     "mean_speed": 1.15,
+     "peak_speed": 4.06,
+     "front": 0.271,
+     "mid": 0.529,
+     "back": 0.2,
+     "mean_depth": 3.39,
+     "mean_lateral_from_centre": 0.66,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.99,
+    "open_gap_over3m": 0.5,
+    "stacked": 0.482,
+    "crowded": 0.0,
+    "front_back": 0.714,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.03,
+    "open_gap_over3m": 0.557,
+    "stacked": 0.171,
+    "crowded": 0.286,
+    "front_back": 0.443,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 15,
+   "start": 218.17,
+   "end": 232.6,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.95,
+     "distance_m": 14.8,
+     "mean_speed": 1.08,
+     "peak_speed": 4.4,
+     "front": 0.412,
+     "mid": 0.588,
+     "back": 0.0,
+     "mean_depth": 2.57,
+     "mean_lateral_from_centre": 0.89,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.92,
+     "distance_m": 10.8,
+     "mean_speed": 0.79,
+     "peak_speed": 3.18,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.56,
+     "mean_lateral_from_centre": 0.71,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 10.5,
+     "mean_speed": 0.76,
+     "peak_speed": 2.69,
+     "front": 0.0,
+     "mid": 0.37,
+     "back": 0.63,
+     "mean_depth": 4.21,
+     "mean_lateral_from_centre": 0.53,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 0.81,
+     "distance_m": 15.3,
+     "mean_speed": 1.12,
+     "peak_speed": 3.12,
+     "front": 0.42,
+     "mid": 0.375,
+     "back": 0.205,
+     "mean_depth": 3.17,
+     "mean_lateral_from_centre": 0.71,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.79,
+    "open_gap_over3m": 0.383,
+    "stacked": 0.208,
+    "crowded": 0.15,
+    "front_back": 0.117,
+    "side_by_side": 0.2
+   },
+   "pair_B": {
+    "open_gap_mean": 3.26,
+    "open_gap_over3m": 0.857,
+    "stacked": 0.679,
+    "crowded": 0.17,
+    "front_back": 0.411,
+    "side_by_side": 0.045
+   }
+  },
+  {
+   "rally": 16,
+   "start": 235.07,
+   "end": 243.1,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 5.8,
+     "mean_speed": 0.81,
+     "peak_speed": 2.88,
+     "front": 0.446,
+     "mid": 0.554,
+     "back": 0.0,
+     "mean_depth": 2.2,
+     "mean_lateral_from_centre": 1.1,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 3.8,
+     "mean_speed": 0.53,
+     "peak_speed": 2.33,
+     "front": 1.0,
+     "mid": 0.0,
+     "back": 0.0,
+     "mean_depth": 2.0,
+     "mean_lateral_from_centre": 0.68,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 4.6,
+     "mean_speed": 0.62,
+     "peak_speed": 2.56,
+     "front": 0.0,
+     "mid": 0.0,
+     "back": 1.0,
+     "mean_depth": 4.78,
+     "mean_lateral_from_centre": 0.24,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 5.0,
+     "mean_speed": 0.68,
+     "peak_speed": 2.05,
+     "front": 0.324,
+     "mid": 0.676,
+     "back": 0.0,
+     "mean_depth": 2.75,
+     "mean_lateral_from_centre": 0.26,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.64,
+    "open_gap_over3m": 0.0,
+    "stacked": 0.0,
+    "crowded": 0.257,
+    "front_back": 0.027,
+    "side_by_side": 0.405
+   },
+   "pair_B": {
+    "open_gap_mean": 3.13,
+    "open_gap_over3m": 0.662,
+    "stacked": 0.595,
+    "crowded": 0.108,
+    "front_back": 0.568,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 17,
+   "start": 245.53,
+   "end": 251.8,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.7,
+     "mean_speed": 0.85,
+     "peak_speed": 2.99,
+     "front": 0.964,
+     "mid": 0.036,
+     "back": 0.0,
+     "mean_depth": 1.63,
+     "mean_lateral_from_centre": 0.96,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 3.0,
+     "mean_speed": 0.55,
+     "peak_speed": 1.88,
+     "front": 0.089,
+     "mid": 0.911,
+     "back": 0.0,
+     "mean_depth": 3.08,
+     "mean_lateral_from_centre": 0.11,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 1.5,
+     "mean_speed": 0.28,
+     "peak_speed": 1.08,
+     "front": 0.0,
+     "mid": 0.125,
+     "back": 0.875,
+     "mean_depth": 4.62,
+     "mean_lateral_from_centre": 0.21,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 3.2,
+     "mean_speed": 0.58,
+     "peak_speed": 2.31,
+     "front": 0.482,
+     "mid": 0.518,
+     "back": 0.0,
+     "mean_depth": 2.62,
+     "mean_lateral_from_centre": 0.31,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.1,
+    "open_gap_over3m": 0.643,
+    "stacked": 0.571,
+    "crowded": 0.161,
+    "front_back": 0.304,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.06,
+    "open_gap_over3m": 0.643,
+    "stacked": 0.643,
+    "crowded": 0.143,
+    "front_back": 0.571,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 18,
+   "start": 254.47,
+   "end": 260.47,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 2.4,
+     "mean_speed": 0.45,
+     "peak_speed": 1.66,
+     "front": 0.111,
+     "mid": 0.889,
+     "back": 0.0,
+     "mean_depth": 2.98,
+     "mean_lateral_from_centre": 0.27,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 2.6,
+     "mean_speed": 0.5,
+     "peak_speed": 1.67,
+     "front": 1.0,
+     "mid": 0.0,
+     "back": 0.0,
+     "mean_depth": 1.95,
+     "mean_lateral_from_centre": 0.56,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 1.2,
+     "mean_speed": 0.23,
+     "peak_speed": 0.82,
+     "front": 0.0,
+     "mid": 0.296,
+     "back": 0.704,
+     "mean_depth": 4.6,
+     "mean_lateral_from_centre": 0.08,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 3.5,
+     "mean_speed": 0.66,
+     "peak_speed": 2.69,
+     "front": 0.796,
+     "mid": 0.204,
+     "back": 0.0,
+     "mean_depth": 2.23,
+     "mean_lateral_from_centre": 0.21,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.85,
+    "open_gap_over3m": 0.241,
+    "stacked": 0.111,
+    "crowded": 0.444,
+    "front_back": 0.0,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.05,
+    "open_gap_over3m": 0.87,
+    "stacked": 0.444,
+    "crowded": 0.111,
+    "front_back": 0.741,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 19,
+   "start": 263.47,
+   "end": 267.2,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 1.0,
+     "mean_speed": 0.33,
+     "peak_speed": 0.99,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.64,
+     "mean_lateral_from_centre": 0.66,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 3.1,
+     "mean_speed": 1.04,
+     "peak_speed": 2.85,
+     "front": 1.0,
+     "mid": 0.0,
+     "back": 0.0,
+     "mean_depth": 1.24,
+     "mean_lateral_from_centre": 0.6,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 2.3,
+     "mean_speed": 0.78,
+     "peak_speed": 2.64,
+     "front": 0.0,
+     "mid": 0.742,
+     "back": 0.258,
+     "mean_depth": 3.73,
+     "mean_lateral_from_centre": 0.18,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 2.3,
+     "mean_speed": 0.75,
+     "peak_speed": 1.5,
+     "front": 0.484,
+     "mid": 0.516,
+     "back": 0.0,
+     "mean_depth": 2.67,
+     "mean_lateral_from_centre": 0.45,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.59,
+    "open_gap_over3m": 1.0,
+    "stacked": 1.0,
+    "crowded": 0.032,
+    "front_back": 0.742,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.9,
+    "open_gap_over3m": 0.097,
+    "stacked": 0.097,
+    "crowded": 0.548,
+    "front_back": 0.323,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 20,
+   "start": 269.73,
+   "end": 287.6,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 19.9,
+     "mean_speed": 1.16,
+     "peak_speed": 4.34,
+     "front": 0.366,
+     "mid": 0.419,
+     "back": 0.215,
+     "mean_depth": 3.15,
+     "mean_lateral_from_centre": 0.91,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.95,
+     "distance_m": 19.9,
+     "mean_speed": 1.17,
+     "peak_speed": 2.88,
+     "front": 0.074,
+     "mid": 0.687,
+     "back": 0.239,
+     "mean_depth": 3.86,
+     "mean_lateral_from_centre": 0.8,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 14.8,
+     "mean_speed": 0.87,
+     "peak_speed": 3.41,
+     "front": 0.052,
+     "mid": 0.297,
+     "back": 0.651,
+     "mean_depth": 4.47,
+     "mean_lateral_from_centre": 1.01,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 11.8,
+     "mean_speed": 0.69,
+     "peak_speed": 3.0,
+     "front": 0.0,
+     "mid": 0.174,
+     "back": 0.826,
+     "mean_depth": 5.06,
+     "mean_lateral_from_centre": 0.67,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.33,
+    "open_gap_over3m": 0.656,
+    "stacked": 0.54,
+    "crowded": 0.184,
+    "front_back": 0.423,
+    "side_by_side": 0.006
+   },
+   "pair_B": {
+    "open_gap_mean": 2.92,
+    "open_gap_over3m": 0.459,
+    "stacked": 0.285,
+    "crowded": 0.297,
+    "front_back": 0.058,
+    "side_by_side": 0.169
+   }
+  },
+  {
+   "rally": 21,
+   "start": 290.0,
+   "end": 302.23,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.94,
+     "distance_m": 15.0,
+     "mean_speed": 1.29,
+     "peak_speed": 3.95,
+     "front": 0.436,
+     "mid": 0.564,
+     "back": 0.0,
+     "mean_depth": 2.47,
+     "mean_lateral_from_centre": 0.89,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.93,
+     "distance_m": 10.6,
+     "mean_speed": 0.92,
+     "peak_speed": 3.23,
+     "front": 0.45,
+     "mid": 0.55,
+     "back": 0.0,
+     "mean_depth": 2.76,
+     "mean_lateral_from_centre": 0.81,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 0.94,
+     "distance_m": 9.6,
+     "mean_speed": 0.83,
+     "peak_speed": 2.68,
+     "front": 0.236,
+     "mid": 0.173,
+     "back": 0.591,
+     "mean_depth": 4.56,
+     "mean_lateral_from_centre": 0.84,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 0.93,
+     "distance_m": 7.5,
+     "mean_speed": 0.65,
+     "peak_speed": 1.89,
+     "front": 0.0,
+     "mid": 0.394,
+     "back": 0.606,
+     "mean_depth": 4.83,
+     "mean_lateral_from_centre": 0.47,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.97,
+    "open_gap_over3m": 0.48,
+    "stacked": 0.402,
+    "crowded": 0.127,
+    "front_back": 0.118,
+    "side_by_side": 0.186
+   },
+   "pair_B": {
+    "open_gap_mean": 3.07,
+    "open_gap_over3m": 0.588,
+    "stacked": 0.578,
+    "crowded": 0.353,
+    "front_back": 0.235,
+    "side_by_side": 0.088
+   }
+  },
+  {
+   "rally": 22,
+   "start": 304.97,
+   "end": 310.73,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.9,
+     "mean_speed": 0.96,
+     "peak_speed": 3.73,
+     "front": 0.962,
+     "mid": 0.038,
+     "back": 0.0,
+     "mean_depth": 1.2,
+     "mean_lateral_from_centre": 1.07,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.71,
+     "distance_m": 5.6,
+     "mean_speed": 1.14,
+     "peak_speed": 5.02,
+     "front": 0.27,
+     "mid": 0.703,
+     "back": 0.027,
+     "mean_depth": 2.85,
+     "mean_lateral_from_centre": 0.5,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 3.0,
+     "mean_speed": 0.59,
+     "peak_speed": 1.78,
+     "front": 0.0,
+     "mid": 0.558,
+     "back": 0.442,
+     "mean_depth": 4.39,
+     "mean_lateral_from_centre": 0.39,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 3.0,
+     "mean_speed": 0.6,
+     "peak_speed": 1.75,
+     "front": 0.288,
+     "mid": 0.712,
+     "back": 0.0,
+     "mean_depth": 2.86,
+     "mean_lateral_from_centre": 1.0,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.35,
+    "open_gap_over3m": 0.919,
+    "stacked": 0.919,
+    "crowded": 0.351,
+    "front_back": 0.216,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.32,
+    "open_gap_over3m": 0.846,
+    "stacked": 0.808,
+    "crowded": 0.385,
+    "front_back": 0.462,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 23,
+   "start": 313.37,
+   "end": 324.23,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 9.5,
+     "mean_speed": 0.93,
+     "peak_speed": 2.93,
+     "front": 0.767,
+     "mid": 0.233,
+     "back": 0.0,
+     "mean_depth": 2.2,
+     "mean_lateral_from_centre": 0.43,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.94,
+     "distance_m": 9.4,
+     "mean_speed": 0.92,
+     "peak_speed": 2.77,
+     "front": 0.196,
+     "mid": 0.753,
+     "back": 0.052,
+     "mean_depth": 3.32,
+     "mean_lateral_from_centre": 1.03,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 0.9,
+     "distance_m": 5.8,
+     "mean_speed": 0.57,
+     "peak_speed": 2.29,
+     "front": 0.0,
+     "mid": 0.118,
+     "back": 0.882,
+     "mean_depth": 5.29,
+     "mean_lateral_from_centre": 0.75,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 5.9,
+     "mean_speed": 0.58,
+     "peak_speed": 1.62,
+     "front": 0.0,
+     "mid": 0.175,
+     "back": 0.825,
+     "mean_depth": 5.47,
+     "mean_lateral_from_centre": 0.5,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.3,
+    "open_gap_over3m": 0.68,
+    "stacked": 0.557,
+    "crowded": 0.629,
+    "front_back": 0.165,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.59,
+    "open_gap_over3m": 0.129,
+    "stacked": 0.097,
+    "crowded": 0.72,
+    "front_back": 0.0,
+    "side_by_side": 0.032
+   }
+  },
+  {
+   "rally": 24,
+   "start": 326.83,
+   "end": 332.3,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 2.4,
+     "mean_speed": 0.5,
+     "peak_speed": 1.17,
+     "front": 0.958,
+     "mid": 0.042,
+     "back": 0.0,
+     "mean_depth": 1.89,
+     "mean_lateral_from_centre": 0.25,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 2.6,
+     "mean_speed": 0.54,
+     "peak_speed": 1.7,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.71,
+     "mean_lateral_from_centre": 1.47,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 2.7,
+     "mean_speed": 0.58,
+     "peak_speed": 1.64,
+     "front": 0.0,
+     "mid": 0.604,
+     "back": 0.396,
+     "mean_depth": 4.34,
+     "mean_lateral_from_centre": 0.32,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 3.1,
+     "mean_speed": 0.66,
+     "peak_speed": 1.88,
+     "front": 0.417,
+     "mid": 0.583,
+     "back": 0.0,
+     "mean_depth": 2.61,
+     "mean_lateral_from_centre": 1.21,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.3,
+    "open_gap_over3m": 1.0,
+    "stacked": 0.625,
+    "crowded": 0.0,
+    "front_back": 0.375,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.37,
+    "open_gap_over3m": 1.0,
+    "stacked": 0.958,
+    "crowded": 0.333,
+    "front_back": 0.292,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 25,
+   "start": 334.87,
+   "end": 342.3,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 6.0,
+     "mean_speed": 0.9,
+     "peak_speed": 3.87,
+     "front": 0.662,
+     "mid": 0.338,
+     "back": 0.0,
+     "mean_depth": 2.27,
+     "mean_lateral_from_centre": 0.55,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 0.85,
+     "distance_m": 4.4,
+     "mean_speed": 0.66,
+     "peak_speed": 2.56,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.38,
+     "mean_lateral_from_centre": 0.78,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 2.3,
+     "mean_speed": 0.34,
+     "peak_speed": 1.47,
+     "front": 0.0,
+     "mid": 0.0,
+     "back": 1.0,
+     "mean_depth": 4.89,
+     "mean_lateral_from_centre": 0.27,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 4.6,
+     "mean_speed": 0.69,
+     "peak_speed": 2.46,
+     "front": 0.5,
+     "mid": 0.5,
+     "back": 0.0,
+     "mean_depth": 2.67,
+     "mean_lateral_from_centre": 0.38,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.78,
+    "open_gap_over3m": 0.017,
+    "stacked": 0.0,
+    "crowded": 0.0,
+    "front_back": 0.207,
+    "side_by_side": 0.207
+   },
+   "pair_B": {
+    "open_gap_mean": 3.27,
+    "open_gap_over3m": 1.0,
+    "stacked": 0.985,
+    "crowded": 0.074,
+    "front_back": 0.691,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 26,
+   "start": 344.97,
+   "end": 357.8,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 10.4,
+     "mean_speed": 0.86,
+     "peak_speed": 3.13,
+     "front": 0.025,
+     "mid": 0.803,
+     "back": 0.172,
+     "mean_depth": 3.64,
+     "mean_lateral_from_centre": 0.44,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 10.0,
+     "mean_speed": 0.83,
+     "peak_speed": 3.54,
+     "front": 1.0,
+     "mid": 0.0,
+     "back": 0.0,
+     "mean_depth": 1.82,
+     "mean_lateral_from_centre": 0.95,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 7.2,
+     "mean_speed": 0.6,
+     "peak_speed": 2.3,
+     "front": 0.0,
+     "mid": 0.0,
+     "back": 1.0,
+     "mean_depth": 5.26,
+     "mean_lateral_from_centre": 0.28,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 7.3,
+     "mean_speed": 0.6,
+     "peak_speed": 1.89,
+     "front": 0.23,
+     "mid": 0.377,
+     "back": 0.393,
+     "mean_depth": 4.03,
+     "mean_lateral_from_centre": 1.06,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.32,
+    "open_gap_over3m": 0.877,
+    "stacked": 0.861,
+    "crowded": 0.205,
+    "front_back": 0.377,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.15,
+    "open_gap_over3m": 0.721,
+    "stacked": 0.664,
+    "crowded": 0.238,
+    "front_back": 0.41,
+    "side_by_side": 0.156
+   }
+  },
+  {
+   "rally": 27,
+   "start": 360.47,
+   "end": 367.93,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.87,
+     "distance_m": 4.7,
+     "mean_speed": 0.7,
+     "peak_speed": 1.95,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.46,
+     "mean_lateral_from_centre": 0.47,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 5.5,
+     "mean_speed": 0.81,
+     "peak_speed": 2.32,
+     "front": 0.435,
+     "mid": 0.565,
+     "back": 0.0,
+     "mean_depth": 2.37,
+     "mean_lateral_from_centre": 1.11,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 6.1,
+     "mean_speed": 0.89,
+     "peak_speed": 3.16,
+     "front": 0.0,
+     "mid": 0.0,
+     "back": 1.0,
+     "mean_depth": 5.23,
+     "mean_lateral_from_centre": 0.85,
+     "side": "near"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 9.7,
+     "mean_speed": 1.54,
+     "peak_speed": 5.35,
+     "front": 0.406,
+     "mid": 0.362,
+     "back": 0.232,
+     "mean_depth": 2.95,
+     "mean_lateral_from_centre": 0.65,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.23,
+    "open_gap_over3m": 0.567,
+    "stacked": 0.467,
+    "crowded": 0.333,
+    "front_back": 0.083,
+    "side_by_side": 0.117
+   },
+   "pair_B": {
+    "open_gap_mean": 3.25,
+    "open_gap_over3m": 0.855,
+    "stacked": 0.768,
+    "crowded": 0.217,
+    "front_back": 0.362,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 28,
+   "start": 370.57,
+   "end": 382.33,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": false,
+   "players": {
+    "A_partner": {
+     "coverage": 0.65,
+     "distance_m": 11.0,
+     "mean_speed": 1.01,
+     "peak_speed": 2.45,
+     "front": 0.192,
+     "mid": 0.808,
+     "back": 0.0,
+     "mean_depth": 2.96,
+     "mean_lateral_from_centre": 1.78,
+     "side": "far"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 14.5,
+     "mean_speed": 1.34,
+     "peak_speed": 3.79,
+     "front": 0.884,
+     "mid": 0.116,
+     "back": 0.0,
+     "mean_depth": 1.49,
+     "mean_lateral_from_centre": 1.96,
+     "side": "far"
+    },
+    "B_opp1": {
+     "coverage": 0.54
+    },
+    "B_opp2": {
+     "coverage": 0.74,
+     "distance_m": 10.4,
+     "mean_speed": 0.93,
+     "peak_speed": 3.65,
+     "front": 0.169,
+     "mid": 0.566,
+     "back": 0.265,
+     "mean_depth": 3.6,
+     "mean_lateral_from_centre": 1.63,
+     "side": "near"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 4.33,
+    "open_gap_over3m": 0.986,
+    "stacked": 0.589,
+    "crowded": 0.137,
+    "front_back": 0.315,
+    "side_by_side": 0.274
+   },
+   "pair_B": {
+    "open_gap_mean": 3.18,
+    "open_gap_over3m": 0.508,
+    "stacked": 0.098,
+    "crowded": 0.0,
+    "front_back": 0.213,
+    "side_by_side": 0.557
+   }
+  },
+  {
+   "rally": 29,
+   "start": 384.87,
+   "end": 395.0,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 7.4,
+     "mean_speed": 0.79,
+     "peak_speed": 2.51,
+     "front": 0.568,
+     "mid": 0.432,
+     "back": 0.0,
+     "mean_depth": 2.52,
+     "mean_lateral_from_centre": 0.45,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 7.2,
+     "mean_speed": 0.76,
+     "peak_speed": 2.93,
+     "front": 0.937,
+     "mid": 0.063,
+     "back": 0.0,
+     "mean_depth": 1.65,
+     "mean_lateral_from_centre": 1.39,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.41
+    },
+    "B_opp2": {
+     "coverage": 0.93,
+     "distance_m": 7.7,
+     "mean_speed": 0.82,
+     "peak_speed": 2.7,
+     "front": 0.273,
+     "mid": 0.727,
+     "back": 0.0,
+     "mean_depth": 3.08,
+     "mean_lateral_from_centre": 0.71,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.9,
+    "open_gap_over3m": 0.463,
+    "stacked": 0.242,
+    "crowded": 0.189,
+    "front_back": 0.158,
+    "side_by_side": 0.4
+   },
+   "pair_B": {
+    "open_gap_mean": 3.66,
+    "open_gap_over3m": 1.0,
+    "stacked": 1.0,
+    "crowded": 0.949,
+    "front_back": 0.0,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 30,
+   "start": 397.4,
+   "end": 401.87,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 3.4,
+     "mean_speed": 0.9,
+     "peak_speed": 2.68,
+     "front": 0.359,
+     "mid": 0.641,
+     "back": 0.0,
+     "mean_depth": 2.67,
+     "mean_lateral_from_centre": 0.68,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 2.2,
+     "mean_speed": 0.57,
+     "peak_speed": 2.11,
+     "front": 0.0,
+     "mid": 0.846,
+     "back": 0.154,
+     "mean_depth": 4.04,
+     "mean_lateral_from_centre": 0.13,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.79,
+     "distance_m": 2.1,
+     "mean_speed": 0.56,
+     "peak_speed": 1.03,
+     "front": 0.484,
+     "mid": 0.516,
+     "back": 0.0,
+     "mean_depth": 2.96,
+     "mean_lateral_from_centre": 0.65,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.79,
+     "distance_m": 5.1,
+     "mean_speed": 1.34,
+     "peak_speed": 3.41,
+     "front": 0.226,
+     "mid": 0.774,
+     "back": 0.0,
+     "mean_depth": 3.03,
+     "mean_lateral_from_centre": 1.14,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.1,
+    "open_gap_over3m": 0.718,
+    "stacked": 0.487,
+    "crowded": 0.333,
+    "front_back": 0.308,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.85,
+    "open_gap_over3m": 0.387,
+    "stacked": 0.387,
+    "crowded": 0.161,
+    "front_back": 0.129,
+    "side_by_side": 0.387
+   }
+  },
+  {
+   "rally": 31,
+   "start": 404.33,
+   "end": 408.0,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 2.1,
+     "mean_speed": 0.73,
+     "peak_speed": 1.86,
+     "front": 0.233,
+     "mid": 0.767,
+     "back": 0.0,
+     "mean_depth": 3.13,
+     "mean_lateral_from_centre": 0.11,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 1.4,
+     "mean_speed": 0.49,
+     "peak_speed": 1.73,
+     "front": 0.0,
+     "mid": 0.533,
+     "back": 0.467,
+     "mean_depth": 4.27,
+     "mean_lateral_from_centre": 0.21,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 3.0,
+     "mean_speed": 1.05,
+     "peak_speed": 4.14,
+     "front": 0.567,
+     "mid": 0.433,
+     "back": 0.0,
+     "mean_depth": 2.63,
+     "mean_lateral_from_centre": 0.6,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 0.9,
+     "mean_speed": 0.31,
+     "peak_speed": 1.0,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.07,
+     "mean_lateral_from_centre": 0.35,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.98,
+    "open_gap_over3m": 0.533,
+    "stacked": 0.267,
+    "crowded": 0.533,
+    "front_back": 0.233,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.71,
+    "open_gap_over3m": 0.0,
+    "stacked": 0.0,
+    "crowded": 0.8,
+    "front_back": 0.0,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 32,
+   "start": 410.5,
+   "end": 421.1,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.6,
+     "mean_speed": 0.47,
+     "peak_speed": 1.8,
+     "front": 0.0,
+     "mid": 0.86,
+     "back": 0.14,
+     "mean_depth": 4.34,
+     "mean_lateral_from_centre": 0.31,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 0.83,
+     "distance_m": 6.2,
+     "mean_speed": 0.62,
+     "peak_speed": 1.85,
+     "front": 0.181,
+     "mid": 0.819,
+     "back": 0.0,
+     "mean_depth": 2.81,
+     "mean_lateral_from_centre": 0.76,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.9,
+     "distance_m": 7.4,
+     "mean_speed": 0.75,
+     "peak_speed": 2.37,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.83,
+     "mean_lateral_from_centre": 0.54,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.84,
+     "distance_m": 7.4,
+     "mean_speed": 0.74,
+     "peak_speed": 2.74,
+     "front": 0.738,
+     "mid": 0.262,
+     "back": 0.0,
+     "mean_depth": 2.04,
+     "mean_lateral_from_centre": 0.71,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.94,
+    "open_gap_over3m": 0.53,
+    "stacked": 0.301,
+    "crowded": 0.145,
+    "front_back": 0.241,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.35,
+    "open_gap_over3m": 0.912,
+    "stacked": 0.887,
+    "crowded": 0.087,
+    "front_back": 0.225,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 33,
+   "start": 423.7,
+   "end": 442.4,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 17.1,
+     "mean_speed": 0.95,
+     "peak_speed": 3.13,
+     "front": 0.088,
+     "mid": 0.459,
+     "back": 0.453,
+     "mean_depth": 4.01,
+     "mean_lateral_from_centre": 0.75,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 22.1,
+     "mean_speed": 1.23,
+     "peak_speed": 4.14,
+     "front": 0.127,
+     "mid": 0.624,
+     "back": 0.249,
+     "mean_depth": 3.86,
+     "mean_lateral_from_centre": 1.25,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.81,
+     "distance_m": 12.5,
+     "mean_speed": 0.7,
+     "peak_speed": 2.04,
+     "front": 0.075,
+     "mid": 0.925,
+     "back": 0.0,
+     "mean_depth": 3.58,
+     "mean_lateral_from_centre": 0.64,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.65,
+     "distance_m": 22.8,
+     "mean_speed": 1.27,
+     "peak_speed": 3.67,
+     "front": 0.684,
+     "mid": 0.316,
+     "back": 0.0,
+     "mean_depth": 2.02,
+     "mean_lateral_from_centre": 0.69,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.13,
+    "open_gap_over3m": 0.702,
+    "stacked": 0.42,
+    "crowded": 0.039,
+    "front_back": 0.315,
+    "side_by_side": 0.182
+   },
+   "pair_B": {
+    "open_gap_mean": 2.82,
+    "open_gap_over3m": 0.337,
+    "stacked": 0.303,
+    "crowded": 0.079,
+    "front_back": 0.326,
+    "side_by_side": 0.045
+   }
+  },
+  {
+   "rally": 34,
+   "start": 444.93,
+   "end": 454.1,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.4,
+     "mean_speed": 0.53,
+     "peak_speed": 2.14,
+     "front": 0.0,
+     "mid": 0.918,
+     "back": 0.082,
+     "mean_depth": 4.18,
+     "mean_lateral_from_centre": 0.25,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 0.92,
+     "distance_m": 2.5,
+     "mean_speed": 0.3,
+     "peak_speed": 1.2,
+     "front": 0.628,
+     "mid": 0.372,
+     "back": 0.0,
+     "mean_depth": 2.5,
+     "mean_lateral_from_centre": 0.52,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 2.7,
+     "mean_speed": 0.32,
+     "peak_speed": 1.23,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.63,
+     "mean_lateral_from_centre": 0.24,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 4.3,
+     "mean_speed": 0.52,
+     "peak_speed": 2.07,
+     "front": 0.824,
+     "mid": 0.176,
+     "back": 0.0,
+     "mean_depth": 2.05,
+     "mean_lateral_from_centre": 0.63,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.1,
+    "open_gap_over3m": 0.756,
+    "stacked": 0.538,
+    "crowded": 0.115,
+    "front_back": 0.269,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.23,
+    "open_gap_over3m": 1.0,
+    "stacked": 0.965,
+    "crowded": 0.176,
+    "front_back": 0.082,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 35,
+   "start": 456.57,
+   "end": 466.03,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.1,
+     "mean_speed": 0.47,
+     "peak_speed": 1.94,
+     "front": 0.0,
+     "mid": 0.629,
+     "back": 0.371,
+     "mean_depth": 4.33,
+     "mean_lateral_from_centre": 0.28,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 10.3,
+     "mean_speed": 1.17,
+     "peak_speed": 3.27,
+     "front": 0.281,
+     "mid": 0.483,
+     "back": 0.236,
+     "mean_depth": 3.44,
+     "mean_lateral_from_centre": 1.03,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.87,
+     "distance_m": 10.4,
+     "mean_speed": 1.18,
+     "peak_speed": 3.45,
+     "front": 0.039,
+     "mid": 0.662,
+     "back": 0.299,
+     "mean_depth": 4.04,
+     "mean_lateral_from_centre": 0.62,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.69,
+     "distance_m": 7.6,
+     "mean_speed": 0.86,
+     "peak_speed": 2.57,
+     "front": 0.393,
+     "mid": 0.607,
+     "back": 0.0,
+     "mean_depth": 2.62,
+     "mean_lateral_from_centre": 0.68,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.27,
+    "open_gap_over3m": 0.888,
+    "stacked": 0.674,
+    "crowded": 0.371,
+    "front_back": 0.258,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.92,
+    "open_gap_over3m": 0.491,
+    "stacked": 0.404,
+    "crowded": 0.281,
+    "front_back": 0.298,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 36,
+   "start": 468.63,
+   "end": 475.23,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 5.1,
+     "mean_speed": 0.86,
+     "peak_speed": 2.27,
+     "front": 0.333,
+     "mid": 0.667,
+     "back": 0.0,
+     "mean_depth": 2.62,
+     "mean_lateral_from_centre": 1.55,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 0.87,
+     "distance_m": 4.4,
+     "mean_speed": 0.74,
+     "peak_speed": 1.72,
+     "front": 0.0,
+     "mid": 0.904,
+     "back": 0.096,
+     "mean_depth": 4.32,
+     "mean_lateral_from_centre": 1.24,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.63,
+     "distance_m": 8.1,
+     "mean_speed": 1.41,
+     "peak_speed": 2.66,
+     "front": 0.474,
+     "mid": 0.526,
+     "back": 0.0,
+     "mean_depth": 2.26,
+     "mean_lateral_from_centre": 1.59,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.6,
+     "distance_m": 2.4,
+     "mean_speed": 0.4,
+     "peak_speed": 1.33,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.84,
+     "mean_lateral_from_centre": 0.87,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.94,
+    "open_gap_over3m": 0.692,
+    "stacked": 0.692,
+    "crowded": 0.135,
+    "front_back": 0.385,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.85,
+    "open_gap_over3m": 1.0,
+    "stacked": 0.885,
+    "crowded": 0.423,
+    "front_back": 0.5,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 37,
+   "start": 477.77,
+   "end": 483.13,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.4,
+     "mean_speed": 0.93,
+     "peak_speed": 2.74,
+     "front": 0.458,
+     "mid": 0.542,
+     "back": 0.0,
+     "mean_depth": 2.64,
+     "mean_lateral_from_centre": 0.18,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 4.9,
+     "mean_speed": 1.04,
+     "peak_speed": 2.38,
+     "front": 0.0,
+     "mid": 0.667,
+     "back": 0.333,
+     "mean_depth": 4.05,
+     "mean_lateral_from_centre": 0.67,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 6.8,
+     "mean_speed": 1.44,
+     "peak_speed": 3.92,
+     "front": 0.438,
+     "mid": 0.562,
+     "back": 0.0,
+     "mean_depth": 2.7,
+     "mean_lateral_from_centre": 0.84,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 3.8,
+     "mean_speed": 0.81,
+     "peak_speed": 2.95,
+     "front": 0.271,
+     "mid": 0.729,
+     "back": 0.0,
+     "mean_depth": 2.94,
+     "mean_lateral_from_centre": 0.3,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.95,
+    "open_gap_over3m": 0.375,
+    "stacked": 0.229,
+    "crowded": 0.271,
+    "front_back": 0.292,
+    "side_by_side": 0.083
+   },
+   "pair_B": {
+    "open_gap_mean": 2.82,
+    "open_gap_over3m": 0.375,
+    "stacked": 0.312,
+    "crowded": 0.125,
+    "front_back": 0.208,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 38,
+   "start": 485.73,
+   "end": 495.5,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 0.89,
+     "distance_m": 9.7,
+     "mean_speed": 1.08,
+     "peak_speed": 3.9,
+     "front": 0.716,
+     "mid": 0.284,
+     "back": 0.0,
+     "mean_depth": 2.31,
+     "mean_lateral_from_centre": 0.71,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 8.3,
+     "mean_speed": 0.92,
+     "peak_speed": 2.93,
+     "front": 0.0,
+     "mid": 0.582,
+     "back": 0.418,
+     "mean_depth": 4.1,
+     "mean_lateral_from_centre": 0.8,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.64,
+     "distance_m": 6.8,
+     "mean_speed": 0.76,
+     "peak_speed": 2.58,
+     "front": 0.172,
+     "mid": 0.81,
+     "back": 0.017,
+     "mean_depth": 3.56,
+     "mean_lateral_from_centre": 0.43,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.85,
+     "distance_m": 8.6,
+     "mean_speed": 0.97,
+     "peak_speed": 2.65,
+     "front": 0.766,
+     "mid": 0.182,
+     "back": 0.052,
+     "mean_depth": 2.27,
+     "mean_lateral_from_centre": 0.6,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.4,
+    "open_gap_over3m": 0.494,
+    "stacked": 0.432,
+    "crowded": 0.259,
+    "front_back": 0.457,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.16,
+    "open_gap_over3m": 0.456,
+    "stacked": 0.439,
+    "crowded": 0.474,
+    "front_back": 0.281,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 39,
+   "start": 498.07,
+   "end": 502.83,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 3.1,
+     "mean_speed": 0.76,
+     "peak_speed": 1.99,
+     "front": 0.024,
+     "mid": 0.976,
+     "back": 0.0,
+     "mean_depth": 3.31,
+     "mean_lateral_from_centre": 0.23,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 4.5,
+     "mean_speed": 1.1,
+     "peak_speed": 2.81,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.46,
+     "mean_lateral_from_centre": 0.93,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.57
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 3.2,
+     "mean_speed": 0.78,
+     "peak_speed": 2.02,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.52,
+     "mean_lateral_from_centre": 1.14,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.96,
+    "open_gap_over3m": 0.548,
+    "stacked": 0.31,
+    "crowded": 0.548,
+    "front_back": 0.0,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.7,
+    "open_gap_over3m": 0.292,
+    "stacked": 0.0,
+    "crowded": 0.042,
+    "front_back": 0.0,
+    "side_by_side": 0.5
+   }
+  },
+  {
+   "rally": 40,
+   "start": 505.4,
+   "end": 512.1,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.8,
+     "mean_speed": 0.8,
+     "peak_speed": 2.15,
+     "front": 0.902,
+     "mid": 0.098,
+     "back": 0.0,
+     "mean_depth": 1.85,
+     "mean_lateral_from_centre": 0.38,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 2.1,
+     "mean_speed": 0.35,
+     "peak_speed": 1.06,
+     "front": 0.0,
+     "mid": 0.541,
+     "back": 0.459,
+     "mean_depth": 4.19,
+     "mean_lateral_from_centre": 0.36,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.64,
+     "distance_m": 5.1,
+     "mean_speed": 0.86,
+     "peak_speed": 2.11,
+     "front": 0.333,
+     "mid": 0.667,
+     "back": 0.0,
+     "mean_depth": 2.8,
+     "mean_lateral_from_centre": 0.19,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.87,
+     "distance_m": 3.0,
+     "mean_speed": 0.5,
+     "peak_speed": 1.81,
+     "front": 1.0,
+     "mid": 0.0,
+     "back": 0.0,
+     "mean_depth": 1.88,
+     "mean_lateral_from_centre": 0.75,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.25,
+    "open_gap_over3m": 0.951,
+    "stacked": 0.902,
+    "crowded": 0.131,
+    "front_back": 0.754,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.17,
+    "open_gap_over3m": 0.727,
+    "stacked": 0.606,
+    "crowded": 0.697,
+    "front_back": 0.091,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 41,
+   "start": 514.73,
+   "end": 522.63,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 7.0,
+     "mean_speed": 0.97,
+     "peak_speed": 2.56,
+     "front": 0.247,
+     "mid": 0.726,
+     "back": 0.027,
+     "mean_depth": 2.97,
+     "mean_lateral_from_centre": 1.06,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 5.7,
+     "mean_speed": 0.8,
+     "peak_speed": 2.1,
+     "front": 0.0,
+     "mid": 0.795,
+     "back": 0.205,
+     "mean_depth": 4.1,
+     "mean_lateral_from_centre": 0.53,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.85,
+     "distance_m": 4.9,
+     "mean_speed": 0.68,
+     "peak_speed": 2.6,
+     "front": 0.0,
+     "mid": 0.935,
+     "back": 0.065,
+     "mean_depth": 3.97,
+     "mean_lateral_from_centre": 0.59,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 5.1,
+     "mean_speed": 0.71,
+     "peak_speed": 2.08,
+     "front": 0.521,
+     "mid": 0.479,
+     "back": 0.0,
+     "mean_depth": 2.53,
+     "mean_lateral_from_centre": 0.51,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.23,
+    "open_gap_over3m": 0.603,
+    "stacked": 0.37,
+    "crowded": 0.192,
+    "front_back": 0.192,
+    "side_by_side": 0.137
+   },
+   "pair_B": {
+    "open_gap_mean": 3.3,
+    "open_gap_over3m": 0.839,
+    "stacked": 0.774,
+    "crowded": 0.387,
+    "front_back": 0.468,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 42,
+   "start": 525.37,
+   "end": 537.73,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 16.7,
+     "mean_speed": 1.42,
+     "peak_speed": 4.29,
+     "front": 0.322,
+     "mid": 0.559,
+     "back": 0.119,
+     "mean_depth": 3.2,
+     "mean_lateral_from_centre": 0.81,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 15.3,
+     "mean_speed": 1.31,
+     "peak_speed": 4.05,
+     "front": 0.28,
+     "mid": 0.627,
+     "back": 0.093,
+     "mean_depth": 3.08,
+     "mean_lateral_from_centre": 0.84,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 12.9,
+     "mean_speed": 1.11,
+     "peak_speed": 3.22,
+     "front": 0.856,
+     "mid": 0.144,
+     "back": 0.0,
+     "mean_depth": 1.66,
+     "mean_lateral_from_centre": 0.34,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.7,
+     "distance_m": 13.7,
+     "mean_speed": 1.17,
+     "peak_speed": 3.44,
+     "front": 0.0,
+     "mid": 0.771,
+     "back": 0.229,
+     "mean_depth": 3.98,
+     "mean_lateral_from_centre": 1.24,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.86,
+    "open_gap_over3m": 0.28,
+    "stacked": 0.186,
+    "crowded": 0.085,
+    "front_back": 0.017,
+    "side_by_side": 0.246
+   },
+   "pair_B": {
+    "open_gap_mean": 3.17,
+    "open_gap_over3m": 0.723,
+    "stacked": 0.398,
+    "crowded": 0.036,
+    "front_back": 0.759,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 43,
+   "start": 540.47,
+   "end": 550.37,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 8.1,
+     "mean_speed": 0.88,
+     "peak_speed": 2.69,
+     "front": 0.0,
+     "mid": 0.57,
+     "back": 0.43,
+     "mean_depth": 4.55,
+     "mean_lateral_from_centre": 1.31,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 0.88,
+     "distance_m": 7.6,
+     "mean_speed": 0.82,
+     "peak_speed": 2.01,
+     "front": 0.024,
+     "mid": 0.976,
+     "back": 0.0,
+     "mean_depth": 3.72,
+     "mean_lateral_from_centre": 1.46,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.82,
+     "distance_m": 4.8,
+     "mean_speed": 0.53,
+     "peak_speed": 1.31,
+     "front": 0.013,
+     "mid": 0.987,
+     "back": 0.0,
+     "mean_depth": 3.31,
+     "mean_lateral_from_centre": 0.37,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.92,
+     "distance_m": 11.0,
+     "mean_speed": 1.2,
+     "peak_speed": 3.41,
+     "front": 0.756,
+     "mid": 0.244,
+     "back": 0.0,
+     "mean_depth": 2.06,
+     "mean_lateral_from_centre": 0.69,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.49,
+    "open_gap_over3m": 0.72,
+    "stacked": 0.427,
+    "crowded": 0.134,
+    "front_back": 0.0,
+    "side_by_side": 0.451
+   },
+   "pair_B": {
+    "open_gap_mean": 3.13,
+    "open_gap_over3m": 0.662,
+    "stacked": 0.38,
+    "crowded": 0.423,
+    "front_back": 0.07,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 44,
+   "start": 552.9,
+   "end": 558.43,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.3,
+     "mean_speed": 0.87,
+     "peak_speed": 3.02,
+     "front": 0.22,
+     "mid": 0.68,
+     "back": 0.1,
+     "mean_depth": 3.26,
+     "mean_lateral_from_centre": 0.86,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 3.4,
+     "mean_speed": 0.7,
+     "peak_speed": 2.28,
+     "front": 0.0,
+     "mid": 0.74,
+     "back": 0.26,
+     "mean_depth": 3.98,
+     "mean_lateral_from_centre": 0.19,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.96,
+     "distance_m": 2.9,
+     "mean_speed": 0.6,
+     "peak_speed": 2.2,
+     "front": 0.375,
+     "mid": 0.625,
+     "back": 0.0,
+     "mean_depth": 2.38,
+     "mean_lateral_from_centre": 0.48,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.78,
+     "distance_m": 3.4,
+     "mean_speed": 0.68,
+     "peak_speed": 1.58,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.7,
+     "mean_lateral_from_centre": 1.24,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.19,
+    "open_gap_over3m": 0.8,
+    "stacked": 0.66,
+    "crowded": 0.38,
+    "front_back": 0.3,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.93,
+    "open_gap_over3m": 0.378,
+    "stacked": 0.378,
+    "crowded": 0.081,
+    "front_back": 0.189,
+    "side_by_side": 0.324
+   }
+  },
+  {
+   "rally": 45,
+   "start": 560.97,
+   "end": 573.03,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 0.41
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 14.9,
+     "mean_speed": 1.31,
+     "peak_speed": 4.12,
+     "front": 0.0,
+     "mid": 0.183,
+     "back": 0.817,
+     "mean_depth": 5.52,
+     "mean_lateral_from_centre": 0.85,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.93,
+     "distance_m": 13.9,
+     "mean_speed": 1.22,
+     "peak_speed": 3.16,
+     "front": 0.206,
+     "mid": 0.785,
+     "back": 0.009,
+     "mean_depth": 3.17,
+     "mean_lateral_from_centre": 0.82,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.93,
+     "distance_m": 14.6,
+     "mean_speed": 1.29,
+     "peak_speed": 3.91,
+     "front": 0.0,
+     "mid": 0.981,
+     "back": 0.019,
+     "mean_depth": 3.53,
+     "mean_lateral_from_centre": 1.12,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.42,
+    "open_gap_over3m": 0.723,
+    "stacked": 0.617,
+    "crowded": 0.0,
+    "front_back": 0.851,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.88,
+    "open_gap_over3m": 0.343,
+    "stacked": 0.232,
+    "crowded": 0.303,
+    "front_back": 0.081,
+    "side_by_side": 0.434
+   }
+  },
+  {
+   "rally": 46,
+   "start": 575.67,
+   "end": 585.4,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 5.2,
+     "mean_speed": 0.58,
+     "peak_speed": 2.49,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 4.13,
+     "mean_lateral_from_centre": 0.49,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 0.86,
+     "distance_m": 7.8,
+     "mean_speed": 0.87,
+     "peak_speed": 3.26,
+     "front": 0.346,
+     "mid": 0.654,
+     "back": 0.0,
+     "mean_depth": 2.72,
+     "mean_lateral_from_centre": 0.79,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 8.6,
+     "mean_speed": 0.96,
+     "peak_speed": 5.16,
+     "front": 0.033,
+     "mid": 0.868,
+     "back": 0.099,
+     "mean_depth": 3.86,
+     "mean_lateral_from_centre": 0.23,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.87,
+     "distance_m": 7.1,
+     "mean_speed": 0.84,
+     "peak_speed": 2.91,
+     "front": 0.62,
+     "mid": 0.38,
+     "back": 0.0,
+     "mean_depth": 2.47,
+     "mean_lateral_from_centre": 0.93,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.1,
+    "open_gap_over3m": 0.333,
+    "stacked": 0.269,
+    "crowded": 0.192,
+    "front_back": 0.205,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.17,
+    "open_gap_over3m": 0.861,
+    "stacked": 0.557,
+    "crowded": 0.139,
+    "front_back": 0.468,
+    "side_by_side": 0.139
+   }
+  },
+  {
+   "rally": 47,
+   "start": 588.1,
+   "end": 594.07,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 2.8,
+     "mean_speed": 0.53,
+     "peak_speed": 1.41,
+     "front": 0.0,
+     "mid": 0.889,
+     "back": 0.111,
+     "mean_depth": 3.97,
+     "mean_lateral_from_centre": 0.32,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 2.3,
+     "mean_speed": 0.43,
+     "peak_speed": 1.27,
+     "front": 0.407,
+     "mid": 0.593,
+     "back": 0.0,
+     "mean_depth": 2.51,
+     "mean_lateral_from_centre": 0.11,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.5
+    },
+    "B_opp2": {
+     "coverage": 1.0,
+     "distance_m": 4.0,
+     "mean_speed": 0.76,
+     "peak_speed": 2.64,
+     "front": 0.389,
+     "mid": 0.611,
+     "back": 0.0,
+     "mean_depth": 2.79,
+     "mean_lateral_from_centre": 0.48,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.06,
+    "open_gap_over3m": 0.722,
+    "stacked": 0.63,
+    "crowded": 0.278,
+    "front_back": 0.0,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 3.08,
+    "open_gap_over3m": 0.704,
+    "stacked": 0.704,
+    "crowded": 0.333,
+    "front_back": 0.148,
+    "side_by_side": 0.037
+   }
+  },
+  {
+   "rally": 48,
+   "start": 596.83,
+   "end": 608.9,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 8.9,
+     "mean_speed": 0.78,
+     "peak_speed": 3.07,
+     "front": 0.491,
+     "mid": 0.509,
+     "back": 0.0,
+     "mean_depth": 2.73,
+     "mean_lateral_from_centre": 0.73,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 11.1,
+     "mean_speed": 0.98,
+     "peak_speed": 2.53,
+     "front": 0.044,
+     "mid": 0.395,
+     "back": 0.561,
+     "mean_depth": 4.47,
+     "mean_lateral_from_centre": 0.71,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.7,
+     "distance_m": 13.0,
+     "mean_speed": 1.15,
+     "peak_speed": 4.59,
+     "front": 0.4,
+     "mid": 0.6,
+     "back": 0.0,
+     "mean_depth": 2.73,
+     "mean_lateral_from_centre": 0.94,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.94,
+     "distance_m": 11.5,
+     "mean_speed": 1.01,
+     "peak_speed": 2.99,
+     "front": 0.234,
+     "mid": 0.766,
+     "back": 0.0,
+     "mean_depth": 3.04,
+     "mean_lateral_from_centre": 0.61,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.22,
+    "open_gap_over3m": 0.763,
+    "stacked": 0.693,
+    "crowded": 0.0,
+    "front_back": 0.491,
+    "side_by_side": 0.149
+   },
+   "pair_B": {
+    "open_gap_mean": 3.13,
+    "open_gap_over3m": 0.521,
+    "stacked": 0.466,
+    "crowded": 0.137,
+    "front_back": 0.315,
+    "side_by_side": 0.151
+   }
+  },
+  {
+   "rally": 49,
+   "start": 611.43,
+   "end": 619.7,
+   "winner": "B",
+   "user_team_won": false,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.2,
+     "mean_speed": 0.55,
+     "peak_speed": 2.63,
+     "front": 0.0,
+     "mid": 0.221,
+     "back": 0.779,
+     "mean_depth": 4.89,
+     "mean_lateral_from_centre": 1.4,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 9.8,
+     "mean_speed": 1.29,
+     "peak_speed": 3.16,
+     "front": 0.195,
+     "mid": 0.13,
+     "back": 0.675,
+     "mean_depth": 4.66,
+     "mean_lateral_from_centre": 0.57,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 9.9,
+     "mean_speed": 1.32,
+     "peak_speed": 4.84,
+     "front": 0.338,
+     "mid": 0.455,
+     "back": 0.208,
+     "mean_depth": 3.31,
+     "mean_lateral_from_centre": 1.18,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.91,
+     "distance_m": 4.7,
+     "mean_speed": 0.62,
+     "peak_speed": 1.62,
+     "front": 0.0,
+     "mid": 0.829,
+     "back": 0.171,
+     "mean_depth": 3.9,
+     "mean_lateral_from_centre": 0.39,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.01,
+    "open_gap_over3m": 0.506,
+    "stacked": 0.416,
+    "crowded": 0.117,
+    "front_back": 0.195,
+    "side_by_side": 0.338
+   },
+   "pair_B": {
+    "open_gap_mean": 3.43,
+    "open_gap_over3m": 1.0,
+    "stacked": 0.929,
+    "crowded": 0.429,
+    "front_back": 0.271,
+    "side_by_side": 0.0
+   }
+  },
+  {
+   "rally": 50,
+   "start": 622.4,
+   "end": 632.1,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "B",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 6.5,
+     "mean_speed": 0.71,
+     "peak_speed": 2.5,
+     "front": 0.228,
+     "mid": 0.772,
+     "back": 0.0,
+     "mean_depth": 2.79,
+     "mean_lateral_from_centre": 0.37,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 7.1,
+     "mean_speed": 0.78,
+     "peak_speed": 2.31,
+     "front": 0.0,
+     "mid": 0.913,
+     "back": 0.087,
+     "mean_depth": 4.14,
+     "mean_lateral_from_centre": 0.54,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.92,
+     "distance_m": 10.3,
+     "mean_speed": 1.14,
+     "peak_speed": 3.18,
+     "front": 0.224,
+     "mid": 0.729,
+     "back": 0.047,
+     "mean_depth": 3.12,
+     "mean_lateral_from_centre": 1.03,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.9,
+     "distance_m": 7.3,
+     "mean_speed": 0.8,
+     "peak_speed": 2.69,
+     "front": 0.253,
+     "mid": 0.747,
+     "back": 0.0,
+     "mean_depth": 3.22,
+     "mean_lateral_from_centre": 0.51,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.89,
+    "open_gap_over3m": 0.391,
+    "stacked": 0.293,
+    "crowded": 0.283,
+    "front_back": 0.185,
+    "side_by_side": 0.0
+   },
+   "pair_B": {
+    "open_gap_mean": 2.65,
+    "open_gap_over3m": 0.158,
+    "stacked": 0.158,
+    "crowded": 0.132,
+    "front_back": 0.053,
+    "side_by_side": 0.158
+   }
+  },
+  {
+   "rally": 51,
+   "start": 634.83,
+   "end": 652.13,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 0.93,
+     "distance_m": 25.8,
+     "mean_speed": 1.55,
+     "peak_speed": 4.48,
+     "front": 0.168,
+     "mid": 0.503,
+     "back": 0.329,
+     "mean_depth": 3.72,
+     "mean_lateral_from_centre": 0.86,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 23.4,
+     "mean_speed": 1.42,
+     "peak_speed": 3.69,
+     "front": 0.263,
+     "mid": 0.449,
+     "back": 0.287,
+     "mean_depth": 3.56,
+     "mean_lateral_from_centre": 1.12,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 0.57
+    },
+    "B_opp2": {
+     "coverage": 0.75,
+     "distance_m": 21.7,
+     "mean_speed": 1.34,
+     "peak_speed": 4.62,
+     "front": 0.111,
+     "mid": 0.532,
+     "back": 0.357,
+     "mean_depth": 3.82,
+     "mean_lateral_from_centre": 0.7,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 3.21,
+    "open_gap_over3m": 0.574,
+    "stacked": 0.303,
+    "crowded": 0.019,
+    "front_back": 0.381,
+    "side_by_side": 0.303
+   },
+   "pair_B": {
+    "open_gap_mean": 2.74,
+    "open_gap_over3m": 0.288,
+    "stacked": 0.205,
+    "crowded": 0.014,
+    "front_back": 0.342,
+    "side_by_side": 0.452
+   }
+  },
+  {
+   "rally": 52,
+   "start": 654.73,
+   "end": 659.4,
+   "winner": "A",
+   "user_team_won": true,
+   "server_team": "A",
+   "A_is_near": true,
+   "players": {
+    "A_partner": {
+     "coverage": 1.0,
+     "distance_m": 4.3,
+     "mean_speed": 1.09,
+     "peak_speed": 4.11,
+     "front": 0.2,
+     "mid": 0.8,
+     "back": 0.0,
+     "mean_depth": 3.39,
+     "mean_lateral_from_centre": 0.43,
+     "side": "near"
+    },
+    "A_you": {
+     "coverage": 1.0,
+     "distance_m": 4.3,
+     "mean_speed": 1.1,
+     "peak_speed": 3.11,
+     "front": 0.0,
+     "mid": 0.625,
+     "back": 0.375,
+     "mean_depth": 4.3,
+     "mean_lateral_from_centre": 1.22,
+     "side": "near"
+    },
+    "B_opp1": {
+     "coverage": 1.0,
+     "distance_m": 0.9,
+     "mean_speed": 0.22,
+     "peak_speed": 0.82,
+     "front": 0.0,
+     "mid": 1.0,
+     "back": 0.0,
+     "mean_depth": 3.64,
+     "mean_lateral_from_centre": 0.26,
+     "side": "far"
+    },
+    "B_opp2": {
+     "coverage": 0.78,
+     "distance_m": 3.7,
+     "mean_speed": 0.96,
+     "peak_speed": 3.37,
+     "front": 0.581,
+     "mid": 0.419,
+     "back": 0.0,
+     "mean_depth": 2.43,
+     "mean_lateral_from_centre": 1.54,
+     "side": "far"
+    }
+   },
+   "pair_A": {
+    "open_gap_mean": 2.93,
+    "open_gap_over3m": 0.475,
+    "stacked": 0.475,
+    "crowded": 0.275,
+    "front_back": 0.2,
+    "side_by_side": 0.4
+   },
+   "pair_B": {
+    "open_gap_mean": 2.8,
+    "open_gap_over3m": 0.0,
+    "stacked": 0.0,
+    "crowded": 0.0,
+    "front_back": 0.129,
+    "side_by_side": 0.484
+   }
+  }
+ ],
+ "summary": {
+  "you": {
+   "distance_m": {
+    "won": 7.95357142857143,
+    "lost": 7.71304347826087,
+    "p": 0.9320997055734875,
+    "n_won": 28,
+    "n_lost": 23
+   },
+   "mean_speed": {
+    "won": 0.9089285714285715,
+    "lost": 0.8347826086956521,
+    "p": 0.24035527709404214,
+    "n_won": 28,
+    "n_lost": 23
+   },
+   "peak_speed": {
+    "won": 2.849642857142857,
+    "lost": 2.6365217391304347,
+    "p": 0.30220294633751177,
+    "n_won": 28,
+    "n_lost": 23
+   },
+   "front": {
+    "won": 0.27217857142857144,
+    "lost": 0.2613913043478261,
+    "p": 0.8545324885520588,
+    "n_won": 28,
+    "n_lost": 23
+   },
+   "mid": {
+    "won": 0.6088571428571429,
+    "lost": 0.577695652173913,
+    "p": 0.969779115950865,
+    "n_won": 28,
+    "n_lost": 23
+   },
+   "back": {
+    "won": 0.11900000000000001,
+    "lost": 0.16095652173913044,
+    "p": 0.6599521029755295,
+    "n_won": 28,
+    "n_lost": 23
+   },
+   "mean_depth": {
+    "won": 3.2675000000000005,
+    "lost": 3.3413043478260867,
+    "p": 0.9321073702039193,
+    "n_won": 28,
+    "n_lost": 23
+   }
+  },
+  "partner": {
+   "distance_m": {
+    "won": 8.24137931034483,
+    "lost": 6.9409090909090905,
+    "n_won": 29,
+    "n_lost": 22
+   },
+   "mean_speed": {
+    "won": 0.960344827586207,
+    "lost": 0.7540909090909093,
+    "n_won": 29,
+    "n_lost": 22
+   },
+   "peak_speed": {
+    "won": 2.978965517241379,
+    "lost": 2.7427272727272727,
+    "n_won": 29,
+    "n_lost": 22
+   }
+  },
+  "pair": {
+   "open_gap_mean": {
+    "won": 3.2168965517241377,
+    "lost": 3.0660869565217395,
+    "p": 0.16970153867249504,
+    "n_won": 29,
+    "n_lost": 23
+   },
+   "open_gap_over3m": {
+    "won": 0.6068620689655172,
+    "lost": 0.5550869565217392,
+    "p": 0.6058620305248106,
+    "n_won": 29,
+    "n_lost": 23
+   },
+   "stacked": {
+    "won": 0.49493103448275866,
+    "lost": 0.4188695652173912,
+    "p": 0.24944947621584446,
+    "n_won": 29,
+    "n_lost": 23
+   },
+   "crowded": {
+    "won": 0.25962068965517243,
+    "lost": 0.16295652173913042,
+    "p": 0.028885450279543316,
+    "n_won": 29,
+    "n_lost": 23
+   },
+   "front_back": {
+    "won": 0.2662758620689655,
+    "lost": 0.294,
+    "p": 0.9779422856469357,
+    "n_won": 29,
+    "n_lost": 23
+   },
+   "side_by_side": {
+    "won": 0.0683448275862069,
+    "lost": 0.13413043478260872,
+    "p": 0.19930803642457462,
+    "n_won": 29,
+    "n_lost": 23
+   }
+  }
+ },
+ "totals": {
+  "A_partner": {
+   "rallies_used": 51,
+   "distance_per_rally": 7.680392156862746,
+   "total_distance_m": 391.70000000000005,
+   "mean_speed": 0.8713725490196078
+  },
+  "A_you": {
+   "rallies_used": 51,
+   "distance_per_rally": 7.845098039215687,
+   "total_distance_m": 400.1,
+   "mean_speed": 0.8754901960784314
+  },
+  "B_opp1": {
+   "rallies_used": 47,
+   "distance_per_rally": 6.908510638297871,
+   "total_distance_m": 324.69999999999993,
+   "mean_speed": 0.8248936170212766
+  },
+  "B_opp2": {
+   "rallies_used": 52,
+   "distance_per_rally": 7.259615384615383,
+   "total_distance_m": 377.49999999999994,
+   "mean_speed": 0.8334615384615385
+  }
+ }
+}

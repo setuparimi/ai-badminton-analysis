@@ -1,0 +1,12 @@
+# Versions this project was built and checked with (macOS, Apple Silicon, Python 3.11).
+# Newer versions will probably work; if something breaks, try these exact ones first.
+numpy==2.4.6
+scipy==1.17.1
+matplotlib==3.11.2
+opencv-python==5.0.0.93
+torch==2.14.1
+torchvision==0.29.1
+ultralytics==8.4.188
+# macOS only: reads an on-screen scoreboard with Apple's text recognition (stage 4a, optional)
+pyobjc-framework-Vision==12.2.2; sys_platform == "darwin"
+pyobjc-framework-Quartz==12.2.2; sys_platform == "darwin"

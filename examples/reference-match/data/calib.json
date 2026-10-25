@@ -1,0 +1,165 @@
+{
+  "stage": 2,
+  "court": {
+    "width": 6.1,
+    "length": 13.4,
+    "net_y": 6.7,
+    "ssl": 1.98,
+    "lsl_inset": 0.76,
+    "singles_inset": 0.46
+  },
+  "points": [
+    {
+      "name": "near short service line x right doubles sideline",
+      "px": [
+        1188,
+        547
+      ],
+      "court": [
+        6.1,
+        4.72
+      ]
+    },
+    {
+      "name": "near short service line x right singles sideline",
+      "px": [
+        1104,
+        537
+      ],
+      "court": [
+        5.64,
+        4.72
+      ]
+    },
+    {
+      "name": "near short service line x centre line (T)",
+      "px": [
+        729,
+        495
+      ],
+      "court": [
+        3.05,
+        4.72
+      ]
+    },
+    {
+      "name": "near short service line x left singles sideline",
+      "px": [
+        454,
+        464
+      ],
+      "court": [
+        0.46,
+        4.72
+      ]
+    },
+    {
+      "name": "near short service line x left doubles sideline",
+      "px": [
+        413,
+        459
+      ],
+      "court": [
+        0.0,
+        4.72
+      ]
+    },
+    {
+      "name": "far short service line x right doubles sideline",
+      "px": [
+        1178,
+        451
+      ],
+      "court": [
+        6.1,
+        8.68
+      ]
+    },
+    {
+      "name": "far short service line x centre line (T)",
+      "px": [
+        866,
+        425
+      ],
+      "court": [
+        3.05,
+        8.68
+      ]
+    },
+    {
+      "name": "right net post base",
+      "px": [
+        1185,
+        488
+      ],
+      "court": [
+        6.1,
+        6.7
+      ]
+    },
+    {
+      "name": "near doubles long service line x centre line",
+      "px": [
+        400,
+        670
+      ],
+      "court": [
+        3.05,
+        0.76
+      ]
+    }
+  ],
+  "H_court2img": [
+    [
+      121.3752332218666,
+      191.87740206365322,
+      -173.23415606651614
+    ],
+    [
+      -22.255106156013905,
+      43.40955894602819,
+      609.6266747997948
+    ],
+    [
+      -0.08743105158654219,
+      0.16410429042992303,
+      1.0
+    ]
+  ],
+  "H_img2court": [
+    [
+      0.004405337656577837,
+      0.017137098116178688,
+      -9.684077189158536
+    ],
+    [
+      0.0024149358963141,
+      -0.008263329653276006,
+      5.455895561253902
+    ],
+    [
+      -1.113803778998183e-05,
+      0.0028543623587786544,
+      -0.7420249220327145
+    ]
+  ],
+  "rms_px": 1.8944500036432252,
+  "max_px": 2.9397337304190154,
+  "loo_px": [
+    3.1976911366207794,
+    2.8481806536641847,
+    4.129666082075764,
+    0.9327387492824865,
+    0.6507371861226524,
+    7.900405634366136,
+    6.467033263360979,
+    2.9422116680417947,
+    42.11685556149416
+  ],
+  "pixels_per_metre": {
+    "1m across, near court (Y=2)": 174.81597974654022,
+    "1m across, at the net": 109.97378089707455,
+    "1m along, near court (Y=2)": 94.66721977485116,
+    "1m along, far court (Y=11)": 18.03148273358704
+  }
+}
