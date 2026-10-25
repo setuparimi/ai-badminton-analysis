@@ -6,7 +6,7 @@ For developers and curious players. Start with the [README](../README.md) for wh
 
 ```
 stages/        one script per stage, run in order (s00 ... s12) plus common.py (shared definitions)
-tools/         pick_court_points.py (click the court), anonymize.py (blur faces for examples)
+tools/         pick_court_points.py (click the court), anonymize.py (blur faces for examples), make_pipeline_diagram.py (draws docs/img/pipeline.png)
 tests/         fast unit tests: python -m unittest discover -s tests
 examples/      one reference match: anonymised numbers and blurred images only
 docs/          guides and the project report

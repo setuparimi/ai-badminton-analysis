@@ -1,5 +1,10 @@
 # Badminton Analysis
 
+![Licence: AGPL-3.0](https://img.shields.io/badge/licence-AGPL--3.0-blue)
+![Status: alpha](https://img.shields.io/badge/status-alpha-orange)
+![Python 3.10 to 3.12](https://img.shields.io/badge/python-3.10--3.12-blue)
+![Tested on macOS](https://img.shields.io/badge/tested%20on-macOS-lightgrey)
+
 Turn a video of a **doubles** badminton game into numbers you can act on: where each player stood, who served,
 how long the rallies were, how far you ran in rallies you won versus lost, how you hold your body, and a short
 list of moments worth re-watching. It runs on your own computer, costs nothing, and is built to be driven by an
@@ -9,18 +14,93 @@ writes the coaching notes from the numbers.
 > **Status: alpha.** Built and checked end to end on **one** video (an edited game with an on-screen scoreboard).
 > Everything else is untested. Read [What it cannot do yet](#what-it-cannot-do-yet) before you trust a result.
 
-![Match at a glance](examples/reference-match/images/01_match_summary.png)
+**Jump to:** [Example output](#example-output) · [Quick start](#quick-start) · [What it cannot do yet](#what-it-cannot-do-yet) · [How it works](#how-it-works) · [Privacy](#privacy-and-rights)
+
+![Match at a glance: score timeline and rally lengths](examples/reference-match/images/01_match_summary.png)
 
 ## What you get
 
 * `report.md`: the match in numbers, with how sure each number is, and the checks that ran.
-* About 11 images: score timeline, serving, rally length, you won-vs-lost, heatmaps, posture, coaching tips,
-  "moments to check" with video times, and a page on how reliable each part is.
+* About 11 images (all shown below): score timeline, serving, rally length, you won-vs-lost, heatmaps, all four players,
+  posture, coaching tips, "moments to check" with video times, a page on how reliable each part is, and the check pictures.
 * Optionally an overlay video (player labels, score bar, top-down mini-map, a spoken summary).
 
-See a full example, with faces blurred, in [`examples/reference-match/`](examples/reference-match/).
+## Example output
 
-![How sure is each number](examples/reference-match/images/10_how_sure.png)
+Everything in this section came from **one** reference game, the only video the pipeline has been built and checked
+on. The video itself is not in this repo. Faces and the crowd in the photographs are blurred, and all numbers are
+estimates from video. The files, data and full report are in [`examples/reference-match/`](examples/reference-match/).
+
+Blue always means your team (or a rally you won), orange means the opponents (or a rally you lost).
+
+### Serving and receiving
+
+![Serving and receiving: share of rallies won, by who served, with a timeline of every rally you served](examples/reference-match/images/02_serving.png)
+
+Your team won 61% of rallies when serving and 50% when receiving (p = 0.58, no real gap). Of the rallies you served you won
+4 of 10, your partner 9 of 13 (p = 0.22). The timeline marks every rally you served, with video times to check.
+
+### Rally length
+
+![Rally length: share of rallies won by duration, and every rally as a dot](examples/reference-match/images/03_rally_length.png)
+
+Rallies under 6 seconds were won 10 of 13 times, longer ones 19 of 39. That is a hint (p = 0.11), not proof. Each dot is one rally.
+
+### You: rallies won versus lost
+
+![Nine movement measures for you, split by won and lost rallies](examples/reference-match/images/04_you_won_vs_lost.png)
+
+Nine measures of how you moved, split by rallies won and lost. Almost everything is flat. One p-value is small (staying within
+1.5 m of your partner, p = 0.03), but with nine comparisons one is expected by chance, so the page marks it as a
+question for the video, not a finding.
+
+### Where you and your partner stood
+
+![Heatmaps of where you and your partner stood in won and lost rallies](examples/reference-match/images/05_heatmaps.png)
+
+Time spent in your own half of the court, from the court fit, shown separately for won and lost rallies. Darker means more time.
+Parts of the court outside the camera view are under-counted.
+
+### All four players
+
+![Distance, speed and serves for all four players](examples/reference-match/images/06_players.png)
+
+Distance run, distance per rally, mean speed and rallies served for all four players. Each was followed in 90% to 96% of frames.
+
+### Posture (near half only)
+
+![Knee angle and racket-hand height, with sample skeleton frames](examples/reference-match/images/07_posture.png)
+
+Knee angle and how often the racket hand is above the hip, with sample frames so you can see that the body landmarks sit on
+the body. It only works while a player is near the camera.
+
+### Coaching tips
+
+![Six coaching tips, each with the video times to watch and how sure the evidence is](examples/reference-match/images/08_coaching_tips.png)
+
+Written by the AI assistant from the numbers and ranked by how much the video supports them. Each tip says which times to watch
+and how sure it is. Where the data shows no difference, as with running here, the first tip says there is nothing to fix.
+
+### Moments to check on the video
+
+![A table of video times, rallies and what to look at](examples/reference-match/images/09_moments_to_check.png)
+
+A list of video times with the rally, the score and what to look at, so you can open the clip and see whether the numbers match
+what you remember.
+
+### How sure is each number?
+
+![Which rallies were independently confirmed, and the PASS or FAILED result of each stage](examples/reference-match/images/10_how_sure.png)
+
+Blue marks blocks of rallies whose winners were confirmed a second way; grey marks blocks that rest on one cue. The right side
+is the check each stage ran. Stage 9 (shuttle pickups) is marked **not used** because it did no better than chance.
+
+### How the computer saw the match
+
+![The court fit, the overlay video frames and the four players followed](examples/reference-match/images/11_how_it_was_seen.png)
+
+The check pictures behind the numbers: court lines fitted on the floor, the overlay video with labels, score bar and mini-map, and
+the four players followed. If a label sits on the wrong person, the numbers from that stage are wrong.
 
 ## Quick start
 
@@ -60,7 +140,11 @@ Please read this. It is the honest list.
 * **One game, about 50 rallies**: most comparisons cannot detect small effects. Treat patterns as questions to check on video.
 * **Tested on one machine and one video.** Expect to adjust things on yours. Please open an issue with what broke.
 
-## How it works, in one table
+## How it works
+
+![From a match video to a report: the stages in order, and which need a person](docs/img/pipeline.png)
+
+Blue steps run on their own and end with a PASS or FAILED check. Orange steps need a person to look, click or confirm.
 
 | stage | does | output |
 |---|---|---|
