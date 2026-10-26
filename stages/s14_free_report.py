@@ -43,8 +43,8 @@ from reportlab.platypus import (BaseDocTemplate, CondPageBreak, Frame, KeepToget
 from scipy.ndimage import gaussian_filter
 
 from common import NET_Y, TEAM_WIDTH, mmss
-from s13_pdf_report import (BLUE as PDF_BLUE, GOOD, INK, LINE, MARGIN, MUT, NumberedCanvas, ORANGE as PDF_ORANGE, SURF, KIND_COLOUR, KIND_ORDER,
-                            SCOUT_COLOUR, bullets, callout, card, esc, figure, grid, heading, load_items, load_scouting, make_styles, register_fonts,
+from s13_pdf_report import (BLUE as PDF_BLUE, GOOD, LINE, MARGIN, MUT, NumberedCanvas, ORANGE as PDF_ORANGE, SURF, KIND_COLOUR, KIND_ORDER,
+                            SCOUT_COLOUR, callout, card, esc, figure, grid, heading, load_items, load_scouting, make_styles, register_fonts,
                             safe, tiles)
 
 SURFC, TILEC, INKC, INK2C, MUTC, GRIDC, BASEC = "#fcfcfb", "#f1f0ec", "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
@@ -181,7 +181,7 @@ def heatmaps(cfg, out):
             if h:
                 ax.imshow(heat_img(h), extent=[0, TEAM_WIDTH, NET_Y, 0], cmap=CMAP_BLUE, vmin=0, vmax=1, aspect="equal", interpolation="bilinear", zorder=0)
             z = g["S"]["slots"][slot]["zones"]["depth"]
-            ax.set_title(f"{g['title']}: {name}\n{'near' if g['you_side'] == 'near' else 'far'} half  |  front {pct(z['front'])}  middle {pct(z['middle'])}  back {pct(z['back'])}",
+            ax.set_title(f"{g['title']}: {name}\n{ {'near': 'near half', 'far': 'far half', 'both': 'both halves'}[g['you_side']] }  |  front {pct(z['front'])}  middle {pct(z['middle'])}  back {pct(z['back'])}",
                          fontsize=11.5, color=INKC, loc="left")
         ax = axes[r][ncol - 1]
         draw_half(ax)
@@ -314,8 +314,9 @@ def near_games(cfg):
 
 def cover(cfg, S, W_, today):
     games = cfg["games"]
-    story = [Paragraph("BADMINTON ANALYSIS  |  MATCH REPORT", S["kicker"]), Spacer(1, 4 * mm), Paragraph("Match report", S["title"]),
-             Paragraph(esc(f"{cfg['label']}. {'Singles' if cfg['mode'] == 'singles' else 'Doubles'}, {len(games)} game{'s' if len(games) != 1 else ''}. Made {today}."), S["subtitle"])]
+    story = [Paragraph("BADMINTON ANALYSIS  |  SAMPLE REPORT, INVENTED DATA" if cfg.get("sample") else "BADMINTON ANALYSIS  |  MATCH REPORT", S["kicker"]), Spacer(1, 4 * mm),
+             Paragraph("Sample report" if cfg.get("sample") else "Match report", S["title"]),
+             Paragraph(esc(f"{cfg['label']}. {'Singles' if cfg['mode'] == 'singles' else 'Doubles'}, {len(games)} game{'s' if len(games) != 1 else ''}." + ("" if cfg.get("sample") else f" Made {today}.")), S["subtitle"])]
     singles = cfg["mode"] == "singles"
     facts = [["Player analysed", f"{cfg.get('you', 'you')} (\"you\" in this report)" + (f", {cfg['racket_hand']}-handed" if cfg.get("racket_hand") else "")]]
     if not singles:
@@ -329,6 +330,8 @@ def cover(cfg, S, W_, today):
     story.append(tiles([(str(len(games)), "games analysed"), (f"{dur:.0f} min", "of match video"), (str(plays), "plays found"),
                         (f"{np.mean(you):.0f} m", "you move per minute of play" + ("" if near_games(cfg) else " (far side)"))], S, W_))
     story.append(Spacer(1, 4 * mm))
+    if cfg.get("sample_note"):
+        story.append(callout("This is a sample", [cfg["sample_note"]], S, W_, PDF_ORANGE))
     story.append(callout("What this report can and cannot tell you", [
         "The video has no scoreboard, so it does not know who won each rally, who served, what shot was played or where the shuttle landed. "
         "Everything here comes from where the four players were and from the sound of the shuttle: positions, formations, movement, and how long plays and pauses lasted.",
@@ -372,7 +375,7 @@ def glance_section(cfg, S, W_):
     def row(label, fn):
         rows.append([label, *[fn(g) for g in cfg["games"]]])
     row("Result", lambda g: g.get("card") or "not shown")
-    row("You were on the", lambda g: f"{g['you_side']} half of the video")
+    row("You were on the", lambda g: ("both halves (ends changed at " + mmss(g["S"]["end_change_s"]) + ")") if g["you_side"] == "both" else f"{g['you_side']} half of the video")
     row("Plays found", lambda g: str(g["S"]["plays"]["n"]) + (f" (card implies {g['card_n']})" if g.get("card_n") else ""))
     row("Typical play", lambda g: f"{g['S']['plays']['median_s']:.1f} s (longest {g['S']['plays']['max_s']:.0f} s)")
     row("Plays under 5 s / over 10 s", lambda g: f"{pct(g['S']['plays']['short_share'])} / {pct(g['S']['plays']['long_share'])}")
@@ -403,6 +406,7 @@ def coaching_section(cfg, S, W_):
         items = [t for t in tips if t["kind"] == kind]
         if not items:
             continue
+        out.append(CondPageBreak(55 * mm))                     # a sub-heading never ends a page
         out.append(Paragraph(title, S["h2"]))
         for t in items:
             n += 1
@@ -494,6 +498,7 @@ def opponents_section(cfg, S, W_, imgs):
     n = 0
     for key, title in (("strengths", "What they do well"), ("weaknesses", "Where they may be open"), ("plan", "A plan against them")):
         if scout[key]:
+            out.append(CondPageBreak(55 * mm))
             out.append(Paragraph(title, S["h2"]))
             for t in scout[key]:
                 n += 1
@@ -567,7 +572,7 @@ def build(W, out, page, today):
             c.line(MARGIN, h - 15 * mm, w - MARGIN, h - 15 * mm)
             c.setFont("Body", 7.8)
             c.setFillColor(MUT)
-            c.drawString(MARGIN, h - 12.5 * mm, "BADMINTON ANALYSIS  |  MATCH REPORT (NO SCORE ON SCREEN)")
+            c.drawString(MARGIN, h - 12.5 * mm, "BADMINTON ANALYSIS  |  SAMPLE REPORT, INVENTED DATA" if cfg.get("sample") else "BADMINTON ANALYSIS  |  MATCH REPORT (NO SCORE ON SCREEN)")
             c.drawRightString(w - MARGIN, h - 12.5 * mm, safe(label))
         c.restoreState()
 

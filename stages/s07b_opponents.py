@@ -30,7 +30,7 @@ from pathlib import Path
 import numpy as np
 from scipy import stats
 
-from common import NET_Y, TEAM_WIDTH, load_config, own_half_coords
+from common import TEAM_WIDTH, load_config, own_half_coords
 
 OPP = ("B_opp1", "B_opp2")
 BUCKETS = [("under 6 s", 0, 6), ("6 to 10 s", 6, 10), ("over 10 s", 10, 99)]

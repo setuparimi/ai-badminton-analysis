@@ -34,8 +34,12 @@ ROOT = Path(__file__).resolve().parent.parent
 STAGES = ROOT / "stages"
 TOOLS = ROOT / "tools"
 sys.path.insert(0, str(STAGES))
+import numpy as np  # noqa: E402
 import common  # noqa: E402
 
+# Exit code 1 is a verdict, not a crash, for these stages (tracking: "look at the sheet"; posture: "too few usable samples" when you were far from the camera
+# for the whole game). The output files are still written, so the run goes on; tracking is judged separately below.
+OK_EXIT = {"s03_players.py": (0, 1), "s08_pose.py": (0, 1), "check_tracking.py": (0, 1)}
 MODES = common.MODES
 HANDS = common.HANDS
 
@@ -294,6 +298,44 @@ def game_commands(work, proxy, video, cfg_path, i, start, end, first_near, card,
     return out
 
 
+def cue_disagreement(players_npz, cand_npz):
+    """How often the label disagrees with the shorts, over the samples where the shorts can be read: (share of YOU labels on a dark reading, share of
+    PARTNER labels on a light one, samples read for each). An upper bound on wrong labels (some readings are noise); None without a candidate file."""
+    import numpy as np
+    if not Path(cand_npz).exists():
+        return None
+    c = np.load(cand_npz)
+    cols = [str(x) for x in c["cols"]]
+    ix = {k: i for i, k in enumerate(cols)}
+    if "sL" not in ix:
+        return None
+    D = c["data"]
+    H = float(c["frame_h"]) if "frame_h" in c.files else 720.0
+    by = {}
+    for i, f in enumerate(D[:, ix["f"]].astype(int)):
+        by.setdefault(f, []).append(i)
+    z = np.load(players_npz, allow_pickle=True)
+
+    def readings(slot):
+        out = np.full(len(z["frames"]), np.nan)
+        boxes, flags = z[f"{slot}_box"], z[f"{slot}_flag"]
+        for r in range(len(out)):
+            if flags[r] != 1 or np.isnan(boxes[r][0]):
+                continue
+            for i in by.get(int(z["frames"][r]), []):
+                if abs(D[i, ix["x1"]] - boxes[r][0]) < 1.5 and abs(D[i, ix["y2"]] - boxes[r][3]) < 1.5:
+                    if not common.shorts_unreliable(D[i, ix["x1"]], D[i, ix["y1"]], D[i, ix["x2"]], D[i, ix["y2"]], H):
+                        out[r] = D[i, ix["sL"]]
+                    break
+        return out
+
+    you, mate = readings("A_you"), readings("A_partner")
+    ny, nm = int((~np.isnan(you)).sum()), int((~np.isnan(mate)).sum())
+    if ny < 100 or nm < 100:
+        return None
+    return float(((you < 38) & ~np.isnan(you)).sum() / ny), float(((mate > 45) & ~np.isnan(mate)).sum() / nm), ny, nm
+
+
 def write_games_json(work, ans, games, cfg, you_describe_games):
     mode = common.match_mode(cfg)
     cards = parse_cards(ans.get("cards", ""), len(games))
@@ -312,6 +354,16 @@ def write_games_json(work, ans, games, cfg, you_describe_games):
         pj = work / f"g{i + 1}" / "players.json"
         if pj.exists():
             cov.append(json.loads(pj.read_text()).get("coverage", {}))
+    if mode == "doubles" and cfg["A_you"].get("shorts"):
+        dis = []
+        for i in range(len(games)):
+            d = cue_disagreement(work / f"g{i + 1}" / "players.npz", work / "cand.npz")
+            if d:
+                dis.append(f"game {i + 1}: {100 * d[0]:.0f}% of your labels and {100 * d[1]:.0f}% of your partner's")
+        if dis:
+            checks.append({"what": "Labels against the shorts", "how": "Where the shorts could be read, the label disagrees with them in " + "; ".join(dis) +
+                                                                      ". This is an upper bound on wrong labels (some readings are noise), and the wrong ones come in short runs, mostly when the two of you overlap or one of you is at the camera.",
+                           "level": "approximate"})
     if cov:
         yours = ", ".join(f"{100 * c.get('A_you', 0):.0f}%" for c in cov)
         checks.append({"what": "Who is who", "how": f"You were found in {yours} of the play time (game by game). The labels still have to be checked by eye on the label check sheets (work folder, g1/qa_check.jpg and so on); "
@@ -400,6 +452,8 @@ def pipeline(ans, work, args):
                 continue
             if script == "s03_players.py":
                 rc = R.run(label, script, sargs, ok_codes=(0, 1))
+                if not R.dry and not made.exists():            # exit code 1 without a result file is a crash, not a failed check
+                    R.fail(label, rc)
                 problem = verify_identity(made, seen, a, b) if made.exists() else None
                 if problem and not args.keep_going:
                     made.unlink()
@@ -411,7 +465,9 @@ def pipeline(ans, work, args):
                     raise SystemExit(f"\nStopped: the tracking check failed for game {i + 1} (see {made.with_suffix('.json')} and {made.with_name('s03_check.jpg')}).\n"
                                      "Usually someone is missing from many frames or the labels jump. Look at the sheet; if it is acceptable run again with --keep-going.")
             else:
-                R.run(label, script, sargs)
+                R.run(label, script, sargs, ok_codes=OK_EXIT.get(script, (0,)))
+                if script == "s08_pose.py" and not R.dry and not made.exists():
+                    raise SystemExit(f"\nStopped: '{label}' wrote no result ({made}). See {R.logs / (slug(label) + '.log')}.")
         qa = work / f"g{i + 1}" / "qa_check.jpg"
         if not have(qa):
             R.run(f"Making the label check sheet, game {i + 1}", "check_tracking.py", ["--proxy", proxy, "--players", work / f"g{i + 1}" / "players.npz", "--out", qa], ok_codes=(0, 1))

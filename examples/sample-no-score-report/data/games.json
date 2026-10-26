@@ -1,0 +1,35 @@
+{
+ "label": "Sample match (invented data)",
+ "mode": "doubles",
+ "racket_hand": "right",
+ "you": "navy top, white shorts",
+ "partner": "black top, black shorts",
+ "opponents": "two players in blue and red tops",
+ "games": [
+  {
+   "dir": "g1",
+   "title": "Game 1",
+   "card": "21-17"
+  },
+  {
+   "dir": "g2",
+   "title": "Game 2",
+   "card": "19-21"
+  }
+ ],
+ "sample": true,
+ "sample_note": "SAMPLE REPORT. Nobody played this match: two games of doubles were simulated and every number, chart and sentence below comes from invented data, made only to show what the report looks like. The scores are invented too.",
+ "card_note": "Invented scores, yours first: 21-17 and 19-21. There is no score on screen in a real video of this kind.",
+ "checks": [
+  {
+   "what": "Everything in this report",
+   "how": "Invented. It describes no real match, so none of it can be checked against a video.",
+   "level": "none"
+  },
+  {
+   "what": "Plays",
+   "how": "In a real run these come from the shuttle sound and the players' movement.",
+   "level": "approximate"
+  }
+ ]
+}

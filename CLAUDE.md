@@ -72,14 +72,12 @@ everyone boxed: you click yourself. Your partner and the opponents are found for
 1. Ask: "Did you film this video, or do you have permission to use it?" If not, do not download; ask for a file they have the right to use.
 2. Make sure yt-dlp is there (it is optional): `.venv/bin/pip install -r requirements-youtube.txt`. Tell the person what you are installing.
 3. Look first, download nothing: `.venv/bin/python tools/fetch_video.py "LINK" --info`. Show them the title, channel, length and size and ask for a clear yes to download.
-4. After the yes: `.venv/bin/python tools/fetch_video.py "LINK" --out-dir work/download --confirm-rights`. It saves `work/download/<id>.mp4` and `source.json`. It refuses
-   playlists, live streams, videos over 120 minutes or 2.5 GB, and anything that needs a login. If it fails, update yt-dlp (`pip install -U yt-dlp`) and try once more, then
-   tell the person and ask for a file.
-5. Use the saved file as the video for step 2 (`--src work/download/<id>.mp4`). Everything stays in `work/`, which is never committed.
-6. **Do not judge the scoreboard from a few frames.** A score overlay can flash for only 1 to 2 seconds per rally and sit in either top corner. Run stage 4a (it reports the corner and how many runs it found) before saying there is none. Title cards between games are normal in edited videos.
-7. **A downloaded match often will not fit the pipeline.** Before the long stages, check the stage 0 and 1 pictures (only if you may, rule 1) and say plainly if: the camera
-   cuts or pans (broadcast style), it is singles, the court is mostly hidden, or there is no on-screen scoreboard like the reference (then the run stops after stage 3 and there is no PDF).
-   Do not carry on with a video the pipeline cannot handle.
+4. After the yes, `tools/analyze.py --video "LINK" --yes ...` (step 1c) downloads it into `<work>/download/` (`--yes` means the person said they filmed the video or may use it); or run `.venv/bin/python tools/fetch_video.py "LINK" --out-dir work/download --confirm-rights`
+   yourself for the scoreboard route. It refuses playlists, live streams, videos over 120 minutes or 2.5 GB and anything that needs a login. If it fails, update yt-dlp (`pip install -U yt-dlp`) and try once more, then
+   tell the person and ask for a file. Everything stays in the work folder, which is never committed.
+5. **A downloaded match may not fit the pipeline.** Before the long stages, check the stage 0 and 1 pictures (only if you may, rule 1) and say plainly if the camera cuts or pans (broadcast style) or the court is mostly hidden:
+   do not carry on with a video the pipeline cannot handle. A video with no on-screen score is fine: the guided run gives the position-and-movement report.
+6. **Do not judge the scoreboard from a few frames.** A score overlay can flash for only 1 to 2 seconds per rally and sit in either top corner; stage 4a (scoreboard route) reports the corner and how many runs it found. Title cards between games are normal in edited videos.
 
 ## Step 1c: the guided run (no live score on screen, the usual case)
 

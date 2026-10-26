@@ -281,6 +281,37 @@ class TrackerCues(unittest.TestCase):
                 np.savez(p, data=np.array(rows, float), cols=np.array(["f", "x1", "y1", "x2", "y2", "conf", "X", "Y", "h_per_ppm"]), fps=30.0, stride=3)
                 self.assertEqual(s03.estimate_height_window(p), expect)
 
+    def test_a_label_that_the_clothes_keep_contradicting_is_corrected(self):
+        """after two players cross, the labels may be swapped; an unbroken track must not keep them swapped for ever"""
+        cfg = self.cfg()
+        n = 60
+        keys = ("x1", "y1", "x2", "y2", "conf", "X", "Y", "tL", "t_red", "t_blue", "t_green", "t_yellow", "t_orange", "lL", "l_white", "l_dark", "sL")
+        c = {k: np.zeros(2 * n) for k in keys}
+        c["f"] = np.repeat(np.arange(n) * 3.0, 2)
+        c["conf"][:] = 0.9
+        c["x1"][:], c["x2"][:], c["y1"][:], c["y2"][:] = 100, 160, 100, 300
+        c["Y"][:] = 3.0
+        c["X"][0::2], c["X"][1::2] = 2.0, 4.0                    # two people standing still
+        c["sL"][0::2], c["sL"][1::2] = 10.0, 80.0                # the left one wears dark shorts, the right one light ones
+        # the labels start swapped: you (light shorts) is first seen on the left person's spot
+        frames, pos, _ = s03.track(c, 30.0, 3, 1e9, "A", 0.0, cfg, min_appearance=0.1)
+        self.assertGreater(np.nanmean(pos["A_you"][-10:, 0]), 3.5, "you should end on the person with the light shorts (right)")
+        self.assertLess(np.nanmean(pos["A_partner"][-10:, 0]), 2.5)
+
+    def test_a_candidate_with_no_readable_shorts_does_not_stop_the_tracker(self):
+        cfg = self.cfg()
+        n = 6
+        keys = ("x1", "y1", "x2", "y2", "conf", "X", "Y", "tL", "t_red", "t_blue", "t_green", "t_yellow", "t_orange", "lL", "l_white", "l_dark", "sL")
+        c = {k: np.zeros(n) for k in keys}
+        c["f"] = np.arange(n) * 3.0
+        c["conf"][:] = 0.9
+        c["x1"][:], c["x2"][:], c["y1"][:], c["y2"][:] = 100, 160, 100, 300
+        c["X"][:], c["Y"][:] = 2.0, 3.0
+        c["sL"][:] = np.nan                                      # the band was empty
+        c["tL"][2] = np.nan                                      # and one torso could not be read either
+        frames, pos, _ = s03.track(c, 30.0, 3, 1e9, "A", 0.0, cfg, min_appearance=0.1)
+        self.assertEqual(len(frames), n)
+
     def test_an_unbroken_track_keeps_its_label_when_the_clothes_misread_for_a_moment(self):
         cfg = self.cfg()
         n = 12
@@ -303,6 +334,33 @@ class TrackerCues(unittest.TestCase):
 def common_no_change():
     import common
     return common.NO_CHANGE
+
+
+class EndChange(unittest.TestCase):
+    def test_left_and_right_follow_the_team_through_an_end_change(self):
+        """a player who stands on the camera's left (X = 1) before the teams change ends and on the camera's right (X = 5) after is on the SAME side of their own half"""
+        n = 400
+        z = fake_game(n=n)
+        t = z["t"]
+        z["tc"] = np.float64(t[0] + 20.0)                              # the teams change ends 20 s in
+        before = t < z["tc"]
+        for k in SLOTS:
+            xy = np.array(z[f"{k}_xy"], float)
+            xy[:, 0] = 1.0
+            xy[:, 1] = np.where((k[0] == "A") == before, 3.0, 10.0)      # team A is near before the change, far after
+            if k[0] == "A":
+                xy[~before, 0] = 5.1
+            else:
+                xy[:, 0] = 5.1 if k == "B_opp1" else 1.0
+            z[f"{k}_xy"] = xy
+        windows = [{"start": float(t[0]) + 2, "end": float(t[-1]) - 2, "dur": float(t[-1] - t[0] - 4)}]
+        st = fs.analyse(z, windows)
+        self.assertEqual(st["slots"]["A_you"]["side"], "both")
+        self.assertAlmostEqual(st["end_change_s"], float(t[0]) + 20.0, delta=0.5)
+        you = st["slots"]["A_you"]
+        # team A faces the net from the near end first (own left = camera left, u = X = 1.0), then from the far end (own left = camera right, u = 6.1 - 5.1 = 1.0)
+        self.assertAlmostEqual(you["mean_u"], 1.0, delta=0.1)
+        self.assertGreater(you["zones"]["width"]["left"], 0.95)
 
 
 class Singles(unittest.TestCase):
@@ -356,6 +414,24 @@ class Words(unittest.TestCase):
         for t in tips:
             self.assertIn(t["kind"], ("improve", "check", "strength"))
             self.assertTrue(t.get("sure"), t["title"])
+
+
+class SampleReport(unittest.TestCase):
+    def test_the_sample_is_built_from_invented_data_and_says_so(self):
+        import make_sample_report as msr
+        with tempfile.TemporaryDirectory() as tmp:
+            pdf = msr.build(Path(tmp) / "sample", seed=3)
+            self.assertTrue(pdf.stat().st_size > 20000)
+            games = json.loads((Path(tmp) / "sample" / "data" / "games.json").read_text())
+            self.assertTrue(games["sample"])
+            self.assertIn("invented", games["sample_note"].lower())
+            text = (Path(tmp) / "sample" / "README.md").read_text().lower()
+            self.assertIn("nobody played this match", text)
+            import subprocess
+            out = subprocess.run(["pdftotext", str(pdf), "-"], capture_output=True, text=True).stdout if __import__("shutil").which("pdftotext") else None
+            if out is not None:
+                self.assertIn("SAMPLE REPORT", out)
+                self.assertIn("invented", out.lower())
 
 
 class CheckSheet(unittest.TestCase):

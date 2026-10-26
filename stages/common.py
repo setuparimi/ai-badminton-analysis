@@ -82,9 +82,10 @@ TEAM_WIDTH = 6.1     # court metres: doubles width
 
 def own_half_coords(xy, team_is_near):
     """court (X, Y) rows -> (u, d) in a team's own half: u across (their left to right), d metres from the net.
-    xy is an (n, 2) array (nan rows allowed); returns two arrays of length n."""
+    xy is an (n, 2) array (nan rows allowed); returns two arrays of length n.
+    team_is_near may be one True/False or an array of n values (a team that changes ends in the middle of a game is near for the first part only)."""
     xy = np.asarray(xy, float).reshape(-1, 2)
-    return (xy[:, 0] if team_is_near else TEAM_WIDTH - xy[:, 0]), np.abs(xy[:, 1] - NET_Y)
+    return np.where(np.asarray(team_is_near, bool), xy[:, 0], TEAM_WIDTH - xy[:, 0]), np.abs(xy[:, 1] - NET_Y)
 
 
 # ---------------------------------------------------------------- config

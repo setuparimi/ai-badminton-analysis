@@ -6,7 +6,7 @@ For developers and curious players. Start with the [README](../README.md) for wh
 
 ```
 stages/        one script per stage, run in order (s00 ... s14a) plus common.py (shared definitions)
-tools/         analyze.py (the guided run: questions, clicks, PDF), pick_court_points.py (click the court), pick_players.py (click yourself), check_tracking.py (the label check sheet), fetch_video.py (optional: save one YouTube video you may use), anonymize.py (blur faces for examples), make_pipeline_diagram.py (draws docs/img/pipeline.png)
+tools/         analyze.py (the guided run: questions, clicks, PDF), make_sample_report.py (the sample report from invented data), pick_court_points.py (click the court), pick_players.py (click yourself), check_tracking.py (the label check sheet), fetch_video.py (optional: save one YouTube video you may use), anonymize.py (blur faces for examples), make_pipeline_diagram.py (draws docs/img/pipeline.png)
 tests/         fast unit tests: python -m unittest discover -s tests
 examples/      one reference match: anonymised numbers and blurred images only
 docs/          guides and the project report
@@ -65,7 +65,7 @@ How the pieces decide:
   Opponents who look alike are tracked as a pair. The direction of the cue (who is the lighter one) comes from the moments right around your click; the rest of the followed video only tests whether it holds. The shorts are
   not read from a box that is wide (an arm out puts bright floor in the middle of it) or cut off at the top or bottom of the picture (the band lands on the shirt, so white shorts read dark): there the tracker leans on where
   the person was a moment ago. After tracking, `tools/analyze.py` checks that the track labelled YOU really is where you clicked yourself, and stops if the labels are inverted.
-* **Which end you start at.** Teams swap ends between games, so the side alternates from the game of the picture on; the tracker also reads it from the clothes (which half your distinctive clothes are on) and prefers the clothes when they are clear. It looks for one mid-game swap (the decider) in the same way.
+* **Which end you start at.** Teams swap ends between games, so the side alternates from the game of the picture on; the tracker also reads it from the clothes (which half your distinctive clothes are on) and prefers the clothes when they are clear. It looks for one mid-game swap (the decider) in the same way, and the positions of a team that changes ends are mirrored back from that moment on, so left and right stay the team's own. An unbroken track is trusted over the clothes for a momentary misreading, but not for more than 1.2 s of readable clothes that contradict it.
 * **Plays.** The sound track is band-passed (1.8 to 9 kHz); peaks 3 times above the local median are shuttle hits. Hit density and mean player speed are z-scored, averaged, and a play is where the average is above the Otsu threshold (with hysteresis), at least 2.5 s, gaps under 2 s merged.
   Checked on one match with result cards: 37 and 32 found against 40 and 34 with the final code (an earlier tracker gave 39 and 33). Neighbouring courts add hits, so a count is an estimate.
 * **What is left out.** Winners, serves, shots, errors: nothing in the video says them. The report says so on its first page.

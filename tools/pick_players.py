@@ -374,6 +374,24 @@ def team_cues(a, b, pairs=None):
     return None
 
 
+MIN_OPPONENT_GAP = 40.0   # torso lightness (Lab, 0-255) between two opponents in non-bright shirts for following them one by one to be worth it
+
+
+def _clear_for_opponents(cues, a, b):
+    """Following the two opponents one by one is only worth it when the cue is robust: light against dark shorts, a bright shirt colour (red, blue, green,
+    yellow, orange) on one of them, or two plain shirts (black, white, grey) whose torsos differ clearly in lightness AND stay apart over the seconds around the picture. Black against grey a few Lab units
+    apart, or two shades, fall apart over a whole game in a dim hall, and the player that is lost costs more than the telling-apart is worth: those
+    opponents are tracked as a pair."""
+    ca, cb, _ = cues
+    if ca.get("shorts") or cb.get("shorts"):
+        return True
+    if ca.get("tone") or cb.get("tone"):
+        return False
+    if ca["shirt"] in common.CHROMATIC or cb["shirt"] in common.CHROMATIC:
+        return True
+    return abs(a["tL"] - b["tL"]) >= MIN_OPPONENT_GAP and "right in" in cues[2]          # and it held up over the seconds around the picture
+
+
 def build_config(frame, roles, mode="doubles", hand=None, name="", ctx=None):
     """Turn a chosen picture and its roles into the players_config.json content (and a plain sentence about how people are told apart).
     Raises ValueError with a plain message when it cannot be done."""
@@ -407,9 +425,11 @@ def build_config(frame, roles, mode="doubles", hand=None, name="", ctx=None):
         cfg["A_you"], cfg["A_partner"], how = mine
         notes.append(f"You and your partner are told apart {how}.")
         theirs = team_cues(box["B_opp1"], box["B_opp2"], seed_pairs(ctx, frame["f"], box["B_opp1"], box["B_opp2"]) if ctx else None)
+        if theirs is not None and not _clear_for_opponents(theirs, box["B_opp1"], box["B_opp2"]):
+            theirs = None
         if theirs is None:
             cfg["B_opp1"], cfg["B_opp2"] = {"shirt": "any"}, {"shirt": "any"}
-            notes.append("The two opponents look alike, so they are tracked as a pair (their individual numbers will not be reported).")
+            notes.append("The two opponents look alike (or only differ in shades that fall apart in this light), so they are tracked as a pair and their individual numbers will not be reported.")
         else:
             cfg["B_opp1"], cfg["B_opp2"], how = theirs
             notes.append(f"The opponents are told apart {how}.")
@@ -535,7 +555,7 @@ def synthetic_frames(w=640, h=360):
     ok, buf = cv2.imencode(".jpg", img)
     uri = "data:image/jpeg;base64," + base64.b64encode(buf).decode()
     # two near (white shirt, red shirt) and two far (black, grey); shorts are alike, so the shirts tell people apart
-    spec = [("white", 200, 70.0), ("red", 90, 72.0), ("black", 40, 20.0), ("grey", 120, 22.0)]
+    spec = [("white", 200, 70.0), ("red", 90, 72.0), ("black", 40, 20.0), ("blue", 120, 22.0)]
     boxes = [{"id": i, "x1": 40.0 + 120 * i, "y1": 80.0, "x2": 100.0 + 120 * i, "y2": 300.0, "shirt": sh, "score": 0.9, "rgb": [200, 200, 200],
               "half": "near" if i < 2 else "far", "tL": tl, "sL": sl, "X": 1.0 + 1.0 * i, "Y": 3.0 if i < 2 else 10.0} for i, (sh, tl, sl) in enumerate(spec)]
     return [{"f": 0, "t": 10.0, "w": w, "h": h, "img": uri, "boxes": boxes}]
@@ -593,7 +613,7 @@ def selftest(log=print):
             thread.join(10)
             check("server shut down after saving", not thread.is_alive())
             cfg = json.loads(out.read_text()) if out.exists() else {}
-            check("config has the four shirts, the hand and the name", [cfg.get(s, {}).get("shirt") for s in common.SLOTS] == ["red", "white", "black", "grey"]
+            check("config has the four shirts, the hand and the name", [cfg.get(s, {}).get("shirt") for s in common.SLOTS] == ["red", "white", "black", "blue"]
                   and cfg.get("A_you", {}).get("name") == "Sam" and cfg.get("_match", {}).get("hand") == "left")
             check("stage 3 accepts the file", bool(out.exists()) and bool(common.load_config(out)))
         except Exception as e:

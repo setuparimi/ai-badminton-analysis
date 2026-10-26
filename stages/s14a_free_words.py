@@ -94,7 +94,7 @@ def tips_doubles(cfg):
         who, shares = ("your partner", rear) if min(rear) >= 0.6 else ("you", [1 - r for r in rear])
         swaps = vals(G, lambda g: team(g)["rear_swaps"])
         out.append({"kind": "check", "title": "Who plays the back court, and is it on purpose?",
-                    "body": f"When you did go front and back, {who} {'was' if who == 'you' else 'was'} the one at the back in {join_pct(shares)} of those moments"
+                    "body": f"When you did go front and back, {who} {'were' if who == 'you' else 'was'} the one at the back in {join_pct(shares)} of those moments"
                             f": "
                             f"{'you were mostly the front or middle player' if who == 'your partner' else 'your partner was mostly the front or middle player'}. The back-court job swapped between you "
                             f"{both(swaps)} times. That is a consistent split, which is good if you chose it. It is worth checking that the swaps happen cleanly "

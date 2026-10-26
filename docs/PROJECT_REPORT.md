@@ -75,7 +75,7 @@ very consistent but is only checked indirectly there. The report and the "how su
 
 ## 7. Limitations
 
-Doubles only; fixed camera; one game; one end change at most; one tested video. Far-court positions are coarse; shuttle events are not tracked; winners need a
+At version 0.1: doubles only; fixed camera; one game; one end change at most; one tested video (version 0.2 relaxes the first, third and last of these; see its section at the end). Far-court positions are coarse; shuttle events are not tracked; winners need a
 scoreboard or a hand-written score; start detection is a suggestion; player identity depends on shirt colours; macOS-only scoreboard reader; Linux and Windows untested.
 
 ## 8. What to build next (ordered by value)

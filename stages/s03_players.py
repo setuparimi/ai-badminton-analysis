@@ -91,6 +91,10 @@ def signature_mask(c, cfg):
         return sig[0], c["t_" + sig[1]] > 0.12
     feats = {k: c[k] for k in FEATS + ("sL",) if k in c}
     feats["wide"] = shorts_unreliable(c["x1"], c["y1"], c["x2"], c["y2"], c.get("_H", 720.0))
+    if "sL" in feats:
+        bad = ~np.isfinite(feats["sL"])
+        feats["wide"] = feats["wide"] | bad
+        feats["sL"] = np.where(bad, 0.0, feats["sL"])
     p = slot_probs(cfg, feats)
     n = len(c["f"])
     P = {k: np.broadcast_to(np.asarray(v, float), (n,)) for k, v in p.items()}
@@ -133,10 +137,16 @@ def early_side(c, fps, start, sig_team, sig_mask, seconds=90.0):
     return (sig_team if near >= 0.5 else other(sig_team)), max(near, 1 - near)
 
 
+PERSIST = 12         # samples (1.2 s) of readable clothes that contradict a label before an unbroken track stops being trusted over them
+
+
 def team_prob(cand_i, c, cfg):
+    """(probability of each slot from the clothes, True if the shorts could not be read for this box)"""
     f = {k: c[k][cand_i] for k in FEATS + ("sL",) if k in c}
     f["wide"] = bool(shorts_unreliable(c["x1"][cand_i], c["y1"][cand_i], c["x2"][cand_i], c["y2"][cand_i], c.get("_H", 720.0)))
-    return slot_probs(cfg, f)
+    if "sL" in f and not np.isfinite(f["sL"]):             # an empty band (a box at the very edge): no reading, not a NaN that poisons the assignment
+        f["sL"], f["wide"] = 0.0, True
+    return slot_probs(cfg, f), f["wide"]
 
 
 def track(c, fps, stride, tc, first_near, start, cfg, min_appearance=0.0):
@@ -148,6 +158,7 @@ def track(c, fps, stride, tc, first_near, start, cfg, min_appearance=0.0):
     pos = {k: np.full((n, 2), np.nan, np.float32) for k in IDS}
     box = {k: np.full((n, 5), np.nan, np.float32) for k in IDS}
     last = {k: None for k in IDS}  # (frame_index_in_array, X, Y)
+    bad = {k: 0 for k in IDS}      # consecutive samples in which readable clothes contradict the person this slot holds
     for r, f in enumerate(frames):
         t = f / fps
         cands = dedupe(by_f.get(int(f), []), c)
@@ -155,9 +166,11 @@ def track(c, fps, stride, tc, first_near, start, cfg, min_appearance=0.0):
             continue
         near_team = near_team_at(t, tc, first_near)
         cost = np.full((len(cands), 4), 1e6)
+        info = {}
         for a, i in enumerate(cands):
             Y = c["Y"][i]
-            p = team_prob(i, c, cfg)
+            p, unreadable = team_prob(i, c, cfg)
+            info[a] = (p, unreadable)
             for b, k in enumerate(IDS):
                 if cfg[k].get("inactive"):
                     continue
@@ -168,19 +181,27 @@ def track(c, fps, stride, tc, first_near, start, cfg, min_appearance=0.0):
                 if last[k] is not None and r - last[k][0] <= 10:
                     d = np.hypot(c["X"][i] - last[k][1], c["Y"][i] - last[k][2])
                     move = 1.2 * min(d / 1.5, 3.0)
-                    tight = d < 0.6 and r - last[k][0] <= 3          # this slot was here a moment ago: the person is almost certainly the same
+                    tight = d < 0.6 and r - last[k][0] <= 3 and bad[k] < PERSIST   # this slot was here a moment ago: the person is almost certainly the same
                 if p[k] < min_appearance and not tight:               # clothes clearly say this is someone else (unless the track runs on unbroken)
                     continue
                 cue = -np.log(p[k] + 0.03)
                 cost[a, b] = (0.3 * cue if tight else cue) + move
+        cost = np.nan_to_num(cost, nan=1e6, posinf=1e6, neginf=1e6)         # a feature that could not be read makes a pairing impossible, it must not stop the run
         ri, ci = linear_sum_assignment(cost)
+        held = set()
         for a, b in zip(ri, ci):
             if cost[a, b] > 4.5:
                 continue
+            held.add(IDS[b])
             k, i = IDS[b], cands[a]
+            p_k, unreadable = info[a]
+            bad[k] = bad[k] + 1 if (min_appearance > 0 and not unreadable and p_k[k] < min_appearance) else 0
             pos[k][r] = (c["X"][i], c["Y"][i])
             box[k][r] = (c["x1"][i], c["y1"][i], c["x2"][i], c["y2"][i], c["conf"][i])
             last[k] = (r, c["X"][i], c["Y"][i])
+        for k in IDS:
+            if k not in held:
+                bad[k] = 0
     return frames, pos, box
 
 

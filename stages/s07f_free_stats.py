@@ -23,7 +23,7 @@ from pathlib import Path
 
 import numpy as np
 
-from common import NET_Y, SLOTS, TEAM_WIDTH, active_slots, load_config, match_mode, own_half_coords
+from common import NET_Y, SLOTS, TEAM_WIDTH, active_slots, load_config, match_mode, near_team_at, own_half_coords
 
 FRONT_D, REAR_D = 2.2, 4.5                    # metres from the net: front court below, back court from
 LEFT_U, RIGHT_U = TEAM_WIDTH / 3, 2 * TEAM_WIDTH / 3
@@ -171,12 +171,14 @@ def analyse(z, windows, cfg=None):
     dt = float(z["stride"]) / float(z["fps"])
     play = play_mask(t, windows)
     near_team = str(z["first_near"])
+    swap_s = float(z["tc"]) if "tc" in z and float(z["tc"]) < 1e8 else None        # the teams changed ends in the middle of this game
     singles = bool(cfg) and match_mode(cfg) == "singles"
     act = active_slots(cfg) if cfg else list(SLOTS)
     smooth_w = max(3, int(round(1.0 / dt)))
     own = {}
+    tc = float(z["tc"]) if "tc" in z else 1e9
     for k in act:
-        team_is_near = (k[0] == near_team)
+        team_is_near = np.array([near_team_at(x, tc, near_team) == k[0] for x in t])        # per sample: the teams may change ends once
         u, d = own_half_coords(np.asarray(z[f"{k}_xy"], float), team_is_near)
         own[k] = (u, d)
     slots, blocks = {}, {}
@@ -184,7 +186,7 @@ def analyse(z, windows, cfg=None):
     for k in act:
         u, d = own[k]
         slots[k] = player_stats(np.stack([u, d], 1), play, dt, smooth_w, singles)
-        slots[k]["side"] = "near" if k[0] == near_team else "far"
+        slots[k]["side"] = "both" if swap_s else ("near" if k[0] == near_team else "far")
         us, ds = smooth_nan(u, smooth_w), smooth_nan(d, smooth_w)
         step = np.full(len(t), np.nan)
         step[1:] = np.hypot(np.diff(us), np.diff(ds))
@@ -201,9 +203,9 @@ def analyse(z, windows, cfg=None):
             f = formation(own[a][0], own[a][1], own[b][0], own[b][1], play)
             if f:
                 f["slots"] = [a, b]
-                f["side"] = "near" if team == near_team else "far"
+                f["side"] = "both" if swap_s else ("near" if team == near_team else "far")
             teams[team] = f
-    return {"mode": "singles" if singles else "doubles", "start": round(float(t[0]), 1), "end": round(float(t[-1]), 1), "near_team": near_team, "slots": slots,
+    return {"mode": "singles" if singles else "doubles", "end_change_s": round(swap_s, 1) if swap_s else None, "start": round(float(t[0]), 1), "end": round(float(t[-1]), 1), "near_team": near_team, "slots": slots,
             "teams": teams, "blocks": blocks, "plays": summarise_windows(windows, float(t[0]), float(t[-1])),
             "accuracy": {"near": "good: width and depth to about 0.3 m", "far": "width good, depth rougher (the far half is seen small); distance covered runs high"}}
 

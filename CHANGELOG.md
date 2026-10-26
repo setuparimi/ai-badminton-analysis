@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.1 (alpha)
+
+Fixes found by running the guided route on a second, three-game match.
+
+* **A game with an end change** (the decider, where the teams swap ends at 11 points): left and right were mirrored for the second part, because positions assumed the team stayed on one half. They now follow the team through the change, and such a game is reported as played on both halves.
+* **The guided run no longer stops** when the posture stage says "too few usable samples" (you were far from the camera for a whole game: the normal case for the second of two games). A crash in the tracker is told apart from a failed tracking check.
+* **The tracker no longer crashes** on a candidate whose clothing could not be read (an empty band at the edge of the picture).
+* **An unbroken track is not trusted for ever over the clothes**: after 1.2 s of readable clothes that contradict a label, the label can move.
+* **The report quantifies the labels**: how often the label disagrees with the readable shorts, per game, next to what was checked by eye.
+* **A sample report** for the route without a score, from invented data (`tools/make_sample_report.py`, `examples/sample-no-score-report/`): every page says it is a sample, so the layout can be shown without anybody's real weaknesses.
+* Opponents are followed one by one only when the cue is robust (light or dark shorts, a bright shirt colour, or plain shirts that stay clearly apart over the followed seconds); otherwise they are tracked as a pair.
+* The README is shorter; unused imports removed; "you was" fixed in the generated words.
+* 196 tests.
+
 ## 0.2.0 (alpha)
 
 A guided run, a report that needs no on-screen score, singles, several games in one video.

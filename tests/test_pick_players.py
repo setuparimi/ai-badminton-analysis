@@ -139,7 +139,7 @@ class Config(unittest.TestCase):
     def test_doubles_config_has_match_hand_and_cues(self):
         cfg, msg = pp.build_config(self.fr, self.roles, "doubles", "left", " Sam ")
         self.assertEqual(cfg["_match"], {"mode": "doubles", "hand": "left", "seen": {"t": 10.0, "you_half": "near", "you_xy": [1.0, 3.0], "partner_xy": [2.0, 3.0]}})
-        self.assertEqual([cfg[s]["shirt"] for s in common.SLOTS], ["red", "white", "black", "grey"])
+        self.assertEqual([cfg[s]["shirt"] for s in common.SLOTS], ["red", "white", "black", "blue"])
         self.assertEqual(cfg["A_you"]["name"], "Sam")
         self.assertIn("told apart", msg)
 
@@ -156,6 +156,17 @@ class Config(unittest.TestCase):
         self.assertEqual((cfg["B_opp1"]["shirt"], cfg["B_opp2"]["shirt"]), ("any", "any"))
         self.assertIn("as a pair", msg)
         self.assertTrue(common.load_config(self._write(cfg))["_match"]["opponents_indistinct"])
+
+    def test_opponents_in_black_and_grey_are_tracked_as_a_pair_but_a_bright_shirt_is_followed(self):
+        fr = pp.synthetic_frames()[0]
+        fr["boxes"][2].update(shirt="black", score=0.95, tL=30.0, sL=10.0)
+        fr["boxes"][3].update(shirt="grey", score=0.95, tL=120.0, sL=12.0)
+        cfg, msg = pp.build_config(fr, self.roles, "doubles", "right")
+        self.assertEqual((cfg["B_opp1"]["shirt"], cfg["B_opp2"]["shirt"]), ("any", "any"))
+        self.assertIn("as a pair", msg)
+        fr["boxes"][3].update(shirt="blue", score=0.95)
+        cfg, msg = pp.build_config(fr, self.roles, "doubles", "right")
+        self.assertEqual((cfg["B_opp1"]["shirt"], cfg["B_opp2"]["shirt"]), ("black", "blue"))
 
     def test_teammates_that_look_alike_are_refused(self):
         fr = pp.synthetic_frames()[0]

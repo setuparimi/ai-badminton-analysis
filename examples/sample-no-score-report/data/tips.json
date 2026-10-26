@@ -1,0 +1,43 @@
+[
+ {
+  "kind": "improve",
+  "title": "Try going front and back more often",
+  "body": "Your pair stood front-and-back (one of you at least 2.5 m deeper than the other) for only 6% (game 1) and 13% (game 2) of play, and the front court (the first 2.2 m from the net) held you for 0% (game 1) and 4% (game 2) of the time. Most of the time you were side by side in the middle of your half (85% (game 1) and 76% (game 2)). The video cannot show whether you were attacking or defending at those moments, so this is a question, not a verdict.",
+  "try": "In a practice game, agree that after an attacking shot (a smash or a steep drop) one of you steps in to the net and the other holds the back, then compare how those rallies go with your usual side-by-side ones.",
+  "watch": "Watch the longest plays listed at the end of this report and notice who is where when you hit downwards.",
+  "sure": "Where you stood: solid when you were near the camera, a little rougher in depth when far. Why you stood there: not measured."
+ },
+ {
+  "kind": "improve",
+  "title": "Spread out a little when defending",
+  "body": "You and your partner were usually only 1.4 m (game 1) and 1.4 m (game 2) apart across the court and within 1.5 m of each other for 55% (game 1) and 55% (game 2) of play. Splitting the width of the court in half would put you about 3 m apart. A narrow pair leaves wide gaps at both sidelines. The opponents did the same (48% (game 1) and 56% (game 2) of the time within 1.5 m), so it may be normal at this level, but it is also a gap that a wide cross-court shot can find.",
+  "try": "When you defend side by side, aim to stand about half the court width apart and each own your half, with the middle shared by whoever has the forehand.",
+  "sure": "Solid when you were near the camera; approximate when far."
+ },
+ {
+  "kind": "check",
+  "title": "Who plays the back court, and is it on purpose?",
+  "body": "When you did go front and back, you were the one at the back in 88% and 61% of those moments: your partner was mostly the front or middle player. The back-court job swapped between you 1 (game 1) and 4 (game 2) times. That is a consistent split, which is good if you chose it. It is worth checking that the swaps happen cleanly and that you are not both left in the mid-court when the shuttle goes to the back.",
+  "watch": "Look for rallies in the longest plays where both of you are in the middle of the court at the same time.",
+  "sure": "Approximate: it rests on the share of play when you were front and back."
+ },
+ {
+  "kind": "check",
+  "title": "Stand a little lower in your ready position",
+  "body": "Your knees were bent below 150 degrees in only 19% of the body-point samples (your partner 12%); the rest of the time you were standing upright or walking. Your feet were about 1.4 shoulder widths apart. A lower, wider base helps you push off quickly in any direction.",
+  "try": "Between shots, sink a little at the knees with the weight on the balls of your feet, so the first step comes from a loaded position.",
+  "sure": "Approximate. It uses a body-point model on frames where you were close to the camera (about 1,281 samples); the view from behind makes knee angles less exact."
+ },
+ {
+  "kind": "strength",
+  "title": "Your racket hand is up and ready",
+  "body": "Your racket hand was held up (wrist above your hip) in 82% of the body-point samples, and your partner's in 88%. That is a good habit in doubles, where the shuttle comes back fast. That is the hand you told us you use (right).",
+  "sure": "Approximate, from about 1,281 samples of you."
+ },
+ {
+  "kind": "strength",
+  "title": "You keep your work rate steady",
+  "body": "You moved 51 to 59 metres per minute of play across all the 2-minute blocks, with no steady fade. Over a whole game you averaged 56 (game 1) and 60 (game 2) metres per play-minute, your partner 59 (game 1) and 58 (game 2).",
+  "sure": "Approximate: each block holds about a minute of play. Numbers for a game where you are on the far half read a little high."
+ }
+]

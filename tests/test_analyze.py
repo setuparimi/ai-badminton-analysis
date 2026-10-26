@@ -149,6 +149,25 @@ class Plan(unittest.TestCase):
         self.assertEqual((saved["mode"], saved["hand"], saved["cards"]), ("doubles", "left", "21-19,21-13"))
 
 
+class ExitCodes(unittest.TestCase):
+    def test_posture_with_too_few_samples_does_not_stop_a_run(self):
+        """you are far from the camera for a whole game: the posture stage says 'too few usable samples' (exit 1) but still writes its file"""
+        self.assertIn(1, an.OK_EXIT["s08_pose.py"])
+        self.assertIn(1, an.OK_EXIT["s03_players.py"])
+        self.assertNotIn("s07f_free_stats.py", an.OK_EXIT)         # a real crash elsewhere must still stop the run
+
+    def test_a_script_that_exits_1_is_tolerated_only_where_listed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            work = Path(tmp)
+            script = work / "exit_one.py"
+            script.write_text("import sys; print('verdict'); sys.exit(1)")
+            R = an.Runner(work)
+            self.assertEqual(R.run("tolerated", str(script), [], ok_codes=(0, 1)), 1)
+            with self.assertRaises(SystemExit) as cm:
+                R.run("not tolerated", str(script), [])
+            self.assertIn("verdict", str(cm.exception))
+
+
 class Resuming(unittest.TestCase):
     def test_waiting_for_a_step_that_was_skipped_is_fine(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -198,6 +217,32 @@ class Identity(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertIsNone(an.verify_identity(self.npz(tmp, 4.0, 1.5), self.seen, 700.0, 1100.0))
             self.assertIsNone(an.verify_identity(self.npz(tmp, 4.0, 1.5), {}, 8.0, 600.0))
+
+
+class CueCheck(unittest.TestCase):
+    def test_labels_against_the_shorts(self):
+        import numpy as np
+        n = 400
+        cols = ["f", "x1", "y1", "x2", "y2", "conf", "X", "Y", "sL"]
+        rows = []
+        for r in range(n):
+            f = 3 * r
+            rows.append([f, 100, 100, 160, 300, 0.9, 2.0, 3.0, 80.0])      # you: light shorts
+            rows.append([f, 400, 100, 460, 300, 0.9, 4.0, 3.0, 10.0])      # your partner: dark
+        with tempfile.TemporaryDirectory() as tmp:
+            cand = Path(tmp) / "cand.npz"
+            np.savez(cand, data=np.array(rows, float), cols=np.array(cols), fps=30.0, stride=3, frame_h=720)
+            z = {"frames": np.arange(n) * 3, "t": np.arange(n) * 0.1}
+            you = np.tile(np.array([100, 100, 160, 300, 0.9], np.float32), (n, 1))
+            mate = np.tile(np.array([400, 100, 460, 300, 0.9], np.float32), (n, 1))
+            for slot, box in (("A_you", you), ("A_partner", mate)):
+                z[f"{slot}_box"], z[f"{slot}_flag"] = box.copy(), np.ones(n, np.int8)
+            z["A_you_box"][:40] = mate[:40]                                  # the first 10% of the time you are labelled on your partner
+            np.savez(Path(tmp) / "players.npz", **z)
+            got = an.cue_disagreement(Path(tmp) / "players.npz", cand)
+        self.assertAlmostEqual(got[0], 0.10, delta=0.01)
+        self.assertEqual(got[1], 0.0)
+        self.assertIsNone(an.cue_disagreement(Path(tmp) / "players.npz", Path(tmp) / "nope.npz"))
 
 
 class GamesJson(unittest.TestCase):

@@ -1,0 +1,29 @@
+{
+ "strengths": [
+  {
+   "title": "How they set up as a pair",
+   "body": "The two opponents stood side by side for 84% and 81% of play and front-and-back for 8% and 10%; they were within 1.5 m of each other across the court for 48% and 56% of the time. They defend as a tight pair around the middle.",
+   "sure": "Pair numbers from positions only: no shot data. Solid when they were near the camera, rougher when far."
+  }
+ ],
+ "weaknesses": [
+  {
+   "title": "Wide sidelines",
+   "body": "Because they bunch (within 1.5 m across for more than half the time), the outer 2 m or more on each side of their half is often unguarded.",
+   "sure": "Approximate; width is the more reliable direction of the tracking."
+  },
+  {
+   "title": "The front court was left empty in game 2",
+   "body": "In game 2 the opponents spent only 3% to 6% of play in the front court (the first 2.2 m from the net) and stood on average 3.8 m from the net (your pair 3.8 m). If that is how they defend, short net shots and drops are the space they leave.",
+   "sure": "Position only: it does not show whether net shots won points against them."
+  }
+ ],
+ "plan": [
+  {
+   "title": "Test the space they leave",
+   "body": "Mix soft shots to the net and wide cross-court shots into your usual exchanges, and watch the longest plays listed at the end to see how they respond.",
+   "try": "Pick two plays per game to rewatch and note where each opponent was when you hit the shuttle.",
+   "sure": "This is a hypothesis from positions only. The score is not in the video, so it cannot say which tactic won points."
+  }
+ ]
+}
