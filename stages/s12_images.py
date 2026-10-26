@@ -2,7 +2,7 @@
 """Stage 12 - IMAGES.
 
 Renders every statistic, metric and tip from the analysis as standalone PNG images in
-work/images/. Every number is read from the stage output files; the wording that depends on
+work/images/ (01 to 11 about you and your team, 12 and 13 about the opponents). Every number is read from the stage output files; the wording that depends on
 the result (for example "no real gap") is chosen from the numbers. Coaching tips are NOT
 written here: the AI assistant (or you) writes work/tips.json (see CLAUDE.md) and the tips image
 is drawn from it.
@@ -32,7 +32,7 @@ from matplotlib.patches import FancyBboxPatch, Patch
 from scipy.ndimage import gaussian_filter
 from scipy.stats import fisher_exact
 
-from common import NO_CHANGE, chain_status, load_config, team_phrase
+from common import NO_CHANGE, chain_status, load_config, own_half_coords, team_phrase
 
 SURF, TILE, INK, INK2, MUT, GRID, BASE = "#fcfcfb", "#f1f0ec", "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 BLUE, ORANGE = "#2a78d6", "#eb6834"
@@ -54,10 +54,10 @@ def pword(p):
     return "probably real" if p < 0.01 else ("suggestive" if p < 0.05 else ("a hint only" if p < 0.2 else "no real gap"))
 
 
-def head(fig, title, sub=None, y=0.965):
+def head(fig, title, sub=None, y=0.965, gap=0.06):
     fig.text(0.04, y, title, fontsize=27, fontweight="bold", color=INK, va="top")
     if sub:
-        fig.text(0.04, y - 0.06, sub, fontsize=15, color=INK2, va="top")
+        fig.text(0.04, y - gap, sub, fontsize=15, color=INK2, va="top")
 
 
 def foot(fig, extra=""):
@@ -96,7 +96,8 @@ def load(W):
     L = lambda n: json.loads((W / n).read_text())
     return dict(R=L("report_data.json"), P=L("points.json")["rallies"], S=L("serves.json"), M=L("motion.json"),
                 PO=L("pose_stats.json")["stats"], PK=L("pickups.json"), PL=L("players.json"), CAL=L("calib.json"),
-                SC=L("score.json"), PI=L("proxy_info.json"), DETS=L("dets.json"), CFG=load_config(W / "players_config.json"))
+                SC=L("score.json"), PI=L("proxy_info.json"), DETS=L("dets.json"), CFG=load_config(W / "players_config.json"),
+                OPP=L("opponents.json") if (W / "opponents.json").exists() else None)
 
 
 def near_pose(d):
@@ -340,15 +341,25 @@ def img_players(d, out):
 
 
 # ------------------------------------------------------------------ 07 posture
-def img_posture(d, out, W, ev):
+def img_posture(d, out, W, ev, photos=True):
+    """07_posture.png has the skeleton photo strip (face-blurred if --evidence-dir is blurred); 07_posture_charts.png has none,
+    so it is safe to put in a document you share."""
     you, mate = near_pose(d)
     if not you:
-        print("  skipped 07_posture.png: no near-half posture numbers")
+        print("  skipped 07_posture: no near-half posture numbers")
         return None
-    arm = "left" if d["PO"]["A_you"].get("racket_arm") == "L" else "right"
-    fig = plt.figure(figsize=(13, 9))
-    head(fig, "Posture (near half only)", f"{you['rallies']} rallies, {you['samples']} frames of you. Body landmarks need a big person, so this only works while you are near the camera.")
-    ax = fig.add_axes([0.06, 0.50, 0.26, 0.28])
+    strip = ev("skeleton_strip.jpg", "s08_check.jpg") if photos else None
+    if photos and not strip:
+        return None
+    H = 9.0 if strip else 6.9
+    cut = 0.0 if strip else 2.1                      # inches of the 9-inch layout that are left out without the photo strip
+    fy = lambda f9: (f9 * 9.0 - cut) / H             # a position in the 9-inch layout -> this figure
+    fh = lambda f9: f9 * 9.0 / H
+    arm = d["PO"]["A_you"].get("racket_hand") or ("left" if d["PO"]["A_you"].get("racket_arm") == "L" else "right")
+    fig = plt.figure(figsize=(13, H))
+    head(fig, "Posture (near half only)", f"{you['rallies']} rallies, {you['samples']} frames of you. Body landmarks need a big person, so this only works while you are near the camera.",
+         y=1 - 0.315 / H, gap=0.54 / H)
+    ax = fig.add_axes([0.06, fy(0.50), 0.26, fh(0.28)])
     for i, (nm, v) in enumerate((("You", you["knee_median"]), ("Partner", mate["knee_median"]))):
         ax.plot([v], [i], "o", ms=22, color=BLUE, mec=SURF, mew=2)
         ax.text(v, i + 0.28, f"{v:.0f}°", ha="center", fontsize=18, fontweight="bold", color=INK)
@@ -370,35 +381,56 @@ def img_posture(d, out, W, ev):
         ax.set_title(title, loc="left", fontsize=15, color=INK, pad=8); clean(ax)
         ax.text(0, -0.17, notes, transform=ax.transAxes, fontsize=11.5, color=INK2, va="top")
 
-    grouped([0.40, 0.50, 0.26, 0.28], "Frames with knees bent (< 150°)", "bent_lt150", "Knees under 150 degrees count as bent.")
-    grouped([0.72, 0.50, 0.26, 0.28], "Racket hand held above the hip", "racket_up_share", f"Racket hand detected as the {arm}.")
-    strip = ev("skeleton_strip.jpg", "s08_check.jpg")
+    grouped([0.40, fy(0.50), 0.26, fh(0.28)], "Frames with knees bent (< 150°)", "bent_lt150", "Knees under 150 degrees count as bent.")
+    grouped([0.72, fy(0.50), 0.26, fh(0.28)], "Racket hand held above the hip", "racket_up_share", f"Racket hand detected as the {arm}.")
     if strip:
         ax = fig.add_axes([0.04, 0.03, 0.92, 0.19]); ax.axis("off")
         ax.imshow(mpimg.imread(strip), aspect="auto"); ax.set_title("Skeleton check: sample frames of you, landmarks should sit on the body", loc="left", fontsize=13, color=INK2, pad=4)
-    fig.text(0.06, 0.315, f"You: knees bent in {you['bent_lt150']:.0%} of frames vs {mate['bent_lt150']:.0%} for your partner; racket hand up {you['racket_up_share']:.0%} (partner {mate['racket_up_share']:.0%}).", fontsize=12.5, color=INK2)
-    fig.legend(handles=[Patch(color=BLUE, label="rallies won"), Patch(color=ORANGE, label="rallies lost")], loc="upper right", bbox_to_anchor=(0.97, 0.87), ncol=2, fontsize=13)
-    return save(fig, out, "07_posture.png")
+    fig.text(0.06, fy(0.315), f"You: knees bent in {you['bent_lt150']:.0%} of frames vs {mate['bent_lt150']:.0%} for your partner; racket hand up {you['racket_up_share']:.0%} (partner {mate['racket_up_share']:.0%}).", fontsize=12.5, color=INK2)
+    fig.legend(handles=[Patch(color=BLUE, label="rallies won"), Patch(color=ORANGE, label="rallies lost")], loc="upper right", bbox_to_anchor=(0.97, fy(0.87)), ncol=2, fontsize=13)
+    if not strip:
+        foot(fig, "Charts only: no photographs.")
+    return save(fig, out, "07_posture.png" if strip else "07_posture_charts.png")
 
 
 # ------------------------------------------------------------------ 08 tips (written by the assistant)
+KIND_LABEL = {"strength": "WORKING WELL", "improve": "WORK ON THIS", "check": "CHECK ON THE VIDEO"}
+
+
 def img_tips(d, out, W, tips_path):
     if not tips_path.exists():
         print(f"  skipped 08_coaching_tips.png: {tips_path.name} not found (the AI assistant writes it, see CLAUDE.md)")
         return None
     tips = json.loads(tips_path.read_text())
-    n = len(tips)
-    fig = plt.figure(figsize=(10, 2.2 + 2.45 * n))
-    head(fig, "Coaching tips", "Ranked by how much the video supports them. All times are video time.", y=0.985)
-    top, step = 1 - 1.55 / fig.get_figheight() - 0.02, 2.45 / fig.get_figheight()
-    for i, t in enumerate(tips):
-        y = top - i * step
-        fig.patches.append(FancyBboxPatch((0.04, y - step * 0.9), 0.92, step * 0.93, boxstyle="round,pad=0,rounding_size=0.012", fc=TILE, ec="none", transform=fig.transFigure))
-        fig.text(0.065, y - 0.012, str(i + 1), fontsize=26, fontweight="bold", color=BLUE, va="top")
-        fig.text(0.115, y - 0.014, t["title"], fontsize=17.5, fontweight="bold", color=INK, va="top")
-        fig.text(0.115, y - 0.040, "\n".join(textwrap.wrap(t["body"], 92)), fontsize=12.2, color=INK, va="top", linespacing=1.32)
-        fig.text(0.115, y - step * 0.60, "\n".join(textwrap.wrap(t["watch"], 88)), fontsize=11.8, color=INK2, va="top", fontweight="bold")
-        fig.text(0.115, y - step * 0.84, t["sure"], fontsize=11.2, color=MUT, va="top")
+    wrap = lambda s, n: textwrap.wrap(s, n) or [""]
+    LH = 0.215                                          # inches per text line
+    cards = []
+    for t in tips:
+        body, tr = wrap(t["body"], 92), wrap("Try: " + t["try"], 88) if t.get("try") else []
+        watch, sure = (wrap(t["watch"], 88) if t.get("watch") else []), (wrap(t["sure"], 100) if t.get("sure") else [])
+        h = 0.72 + LH * len(body) + (0.12 + LH * len(tr) if tr else 0) + (0.12 + LH * len(watch) if watch else 0) + (0.10 + 0.2 * len(sure) if sure else 0) + 0.2
+        cards.append((t, body, tr, watch, sure, h))
+    gap = 0.16
+    H = 1.7 + sum(c[-1] for c in cards) + gap * len(cards)
+    fy = lambda inch: inch / H
+    fig = plt.figure(figsize=(10, H))
+    head(fig, "Coaching tips", "Ranked by how much the video supports them. All times are video time.", y=1 - 0.2 / H, gap=0.62 / H)
+    top = H - 1.45
+    for i, (t, body, tr, watch, sure, h) in enumerate(cards):
+        fig.patches.append(FancyBboxPatch((0.04, fy(top - h)), 0.92, h / H, boxstyle="round,pad=0,rounding_size=0.012", fc=TILE, ec="none", transform=fig.transFigure))
+        fig.text(0.065, fy(top - 0.14), str(i + 1), fontsize=26, fontweight="bold", color=BLUE, va="top")
+        if KIND_LABEL.get(t.get("kind")):
+            fig.text(0.94, fy(top - 0.17), KIND_LABEL[t["kind"]], fontsize=9.5, fontweight="bold", color=MUT, va="top", ha="right")
+        fig.text(0.115, fy(top - 0.15), t["title"], fontsize=17.5, fontweight="bold", color=INK, va="top")
+        y = top - 0.72
+        fig.text(0.115, fy(y), "\n".join(body), fontsize=12.2, color=INK, va="top", linespacing=1.32)
+        y -= LH * len(body)
+        for lines, colour, weight, space in ((tr, BLUE, "bold", 0.12), (watch, INK2, "bold", 0.12), (sure, MUT, "normal", 0.10)):
+            if lines:
+                y -= space
+                fig.text(0.115, fy(y), "\n".join(lines), fontsize=11.8 if weight == "bold" else 11.2, color=colour, va="top", fontweight=weight, linespacing=1.3)
+                y -= (LH if weight == "bold" else 0.2) * len(lines)
+        top -= h + gap
     foot(fig)
     return save(fig, out, "08_coaching_tips.png")
 
@@ -508,6 +540,135 @@ def img_evidence(d, out, ev):
     return save(fig, out, "11_how_it_was_seen.png")
 
 
+# ------------------------------------------------------------------ 12 / 13 the opponents
+OPP_IDS = ("B_opp1", "B_opp2")
+OPP_CMAP = LinearSegmentedColormap.from_list("opp", [SURF, "#fde3d6", "#f8b898", "#ef8250", "#c9501f", "#7a2c0e"])
+ZONE_LATERAL, ZONE_DEPTH = ("left", "centre", "right"), ("front", "mid", "back")
+
+
+def opp_labels(d):
+    return [f"Opp {i + 1}\n({d['CFG'][k]['describe']})" for i, k in enumerate(OPP_IDS)]
+
+
+def img_opponents(d, out):
+    O = d["OPP"]
+    if not O:
+        print("  skipped 12_opponents.png: opponents.json not found (stage 7b)")
+        return None
+    R, Q = O["results"], O["players"]
+    lab = opp_labels(d)
+    fig = plt.figure(figsize=(13, 8.8))
+    head(fig, "The opponents", "Orange = the opponents. How they did, and how they moved.")
+
+    def share_panel(rect, title, labels, vals, ns, note=None):
+        ax = fig.add_axes(rect)
+        x = np.arange(len(vals))
+        pc = [100 * v / n if n else 0 for v, n in zip(vals, ns)]
+        ax.bar(x, pc, width=0.5 if len(vals) < 3 else 0.72, color=ORANGE)
+        for xi, v, n, p in zip(x, vals, ns, pc):
+            barlabel(ax, xi, p, f"{p:.0f}%" if n else "n/a", dy=1.5, size=19)
+            ax.text(xi, p / 2 if n else 5, f"{v} of {n}", ha="center", va="center", color="white" if n else INK2,
+                    fontsize=13 if len(vals) < 3 else 11.5, fontweight="bold")
+        ax.axhline(50, color=BASE, lw=1.2)
+        ax.set_xticks(x); ax.set_xticklabels(labels, fontsize=12.5); ax.set_ylim(0, 105); ax.set_yticks([0, 50, 100]); ax.set_yticklabels(["0", "50", "100%"])
+        ax.set_title(title, loc="left", fontsize=15, color=INK, pad=10); clean(ax)
+        if note:
+            ax.text(0.0, -0.24, "\n".join(textwrap.wrap(note, 44)), transform=ax.transAxes, fontsize=11.5, color=INK2, va="top")
+
+    sv, rc = R["serving"], R["receiving"]
+    share_panel([0.06, 0.52, 0.26, 0.27], "Share of rallies they won", ["when they\nserved", "when they\nreceived"], [sv[0], rc[0]], [sv[1], rc[1]],
+                f"p = {R['serve_vs_receive_p']:.2f}: {pword(R['serve_vs_receive_p'])}." if R["serve_vs_receive_p"] is not None else None)
+    bl = R["by_length"]
+    sl = R["short_vs_long"]
+    share_panel([0.38, 0.52, 0.26, 0.27], "By rally length", [" ".join(b["bucket"].split()[:-2]) + "\n" + " ".join(b["bucket"].split()[-2:]) for b in bl], [b["won"] for b in bl], [b["n"] for b in bl],
+                f"{bl[0]['bucket']} vs longer: {sl['short'][0]} of {sl['short'][1]} against {sl['longer'][0]} of {sl['longer'][1]}" +
+                (f" (p = {sl['p']:.2f}): {pword(sl['p'])}." if sl["p"] is not None else "."))
+    bs = R["by_server"]
+    share_panel([0.70, 0.52, 0.26, 0.27], "When each of them served", lab, [bs[k][0] for k in OPP_IDS], [bs[k][1] for k in OPP_IDS],
+                f"{R['server_unknown']} rallies are left out: the server could not be identified.")
+
+    specs = [("Distance per rally (m)", [Q[k]["distance_per_rally"] for k in OPP_IDS], "{:.1f}", 1),
+             ("Mean speed (m/s)", [Q[k]["mean_speed"] for k in OPP_IDS], "{:.2f}", 1),
+             ("Time at the back (%)", [Q[k]["back"] for k in OPP_IDS], "{:.0f}", 100),
+             ("Plays the net side (% of rallies)", [Q[k]["net_side_share"] for k in OPP_IDS], "{:.0f}", 100)]
+    for i, (title, vals, fmt, mult) in enumerate(specs):
+        ax = fig.add_axes([0.06 + i * 0.238, 0.13, 0.19, 0.22])
+        vals = [(v or 0) * mult for v in vals]
+        ax.bar([0, 1], vals, width=0.55, color=ORANGE)
+        top = max(vals) * 1.3 or 1
+        for xi, v in enumerate(vals):
+            barlabel(ax, xi, v, fmt.format(v), dy=top * 0.02, size=16)
+        ax.set_ylim(0, top); ax.set_yticks([]); ax.set_xticks([0, 1]); ax.set_xticklabels(lab, fontsize=11.5)
+        ax.set_title(title, loc="left", fontsize=13.5, color=INK, pad=8); ax.spines["left"].set_visible(False); ax.tick_params(length=0)
+    foot(fig, f"Time at the back and net side use the {O['rallies_used_for_depth']} rallies where they were on the {O['depth_numbers_from']} half (far-half depth is less reliable).")
+    return save(fig, out, "12_opponents.png")
+
+
+def img_opp_positions(d, out, W):
+    O = d["OPP"]
+    if not O or "zones" not in O:
+        print("  skipped 13_opponent_positions.png: no zone numbers (stage 7b needs players.npz)")
+        return None
+    z = np.load(W / "players.npz")
+    t = z["t"]
+    rows = [r for r in d["M"]["rallies"] if O["depth_numbers_from"] == "all" or not r["A_is_near"]]
+    grids = {}
+    for k in OPP_IDS:
+        H = np.zeros((int(WCT / 0.25) + 1, int(NET / 0.25) + 1))
+        for r in rows:
+            m = (t >= r["start"] + 0.3) & (t < r["end"] - 0.3)
+            u, dd = own_half_coords(z[f"{k}_xy"][m], not r["A_is_near"])
+            ok = ~np.isnan(u)
+            for uu, v in zip(u[ok], dd[ok]):
+                H[int(np.clip(uu / 0.25, 0, H.shape[0] - 1)), int(np.clip(v / 0.25, 0, H.shape[1] - 1))] += 1
+        H = gaussian_filter(H, 1.2)
+        grids[k] = H / max(H.sum(), 1e-9)
+    vmax = max(g.max() for g in grids.values())
+    fig = plt.figure(figsize=(13, 6.9))
+    head(fig, "Where the opponents stood", f"Their own half seen from behind them, net at the top. {len(rows)} rallies with them on the {O['depth_numbers_from']} half.")
+
+    def court(ax):
+        for xx in (0.46, WCT - 0.46):
+            ax.axvline(xx, color=INK2, lw=0.8, alpha=0.45)
+        ax.axvline(WCT / 2, ymin=0, ymax=(NET - 1.98) / NET, color=INK2, lw=0.8, alpha=0.45)
+        ax.axhline(1.98, color=INK2, lw=0.8, alpha=0.45); ax.axhline(NET - 0.76, color=INK2, lw=0.8, alpha=0.45)
+        ax.axhline(0, color=INK, lw=3.5)
+        ax.set_xlim(0, WCT); ax.set_ylim(NET, -0.15)
+        for s in ("left", "bottom"):
+            ax.spines[s].set_visible(False)
+        ax.tick_params(length=0)
+
+    for i, k in enumerate(OPP_IDS):
+        ax = fig.add_axes([0.07 + i * 0.30, 0.13, 0.25, 0.60])
+        ax.imshow(grids[k].T, origin="upper", extent=[0, WCT, NET, 0], cmap=OPP_CMAP, vmin=0, vmax=vmax, aspect="equal")
+        court(ax)
+        ax.set_title(f"Opp {i + 1} ({d['CFG'][k]['describe']})", loc="left", fontsize=15, color=INK, pad=6)
+        ax.set_xlabel("across their half, their left to right (m)", fontsize=11); ax.set_ylabel("m from the net", fontsize=11)
+    cov = O["zones"]["coverage"]
+    M = np.array([[cov[f"{ZONE_DEPTH[j]} {ZONE_LATERAL[i]}"] or 0 for i in range(3)] for j in range(3)])
+    ax = fig.add_axes([0.69, 0.22, 0.27, 0.51])
+    ax.imshow(M, cmap=OPP_CMAP, vmin=0, vmax=1, aspect="auto", extent=[0, 3, 3, 0])
+    for j in range(3):
+        for i in range(3):
+            ax.text(i + 0.5, j + 0.5, f"{M[j, i]:.0%}", ha="center", va="center", fontsize=19, fontweight="bold", color="white" if M[j, i] > 0.5 else INK)
+    for v in (1, 2):
+        ax.axvline(v, color=SURF, lw=3); ax.axhline(v, color=SURF, lw=3)
+    ax.axhline(0, color=INK, lw=3.5)
+    ax.set_xticks([0.5, 1.5, 2.5]); ax.set_xticklabels(ZONE_LATERAL, fontsize=13); ax.set_yticks([0.5, 1.5, 2.5]); ax.set_yticklabels(ZONE_DEPTH, fontsize=13)
+    ax.set_xlim(0, 3); ax.set_ylim(3, -0.05)
+    for s in ax.spines.values():
+        s.set_visible(False)
+    ax.tick_params(length=0)
+    ax.set_title("How much of each zone they covered", loc="left", fontsize=15, color=INK, pad=6)
+    note = (f"Share of time at least one of them stood within {O['zones']['within_m']:g} m of the middle of the zone. "
+            "It shows where they stood, not where they lost points.")
+    if O["depth_numbers_from"] == "near":
+        note += " Far-half positions are rougher, so only near-half rallies are used."
+    fig.text(0.69, 0.155, "\n".join(textwrap.wrap(note, 46)), fontsize=11, color=INK2, va="top", linespacing=1.3)
+    foot(fig)
+    return save(fig, out, "13_opponent_positions.png")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--work", required=True)
@@ -533,8 +694,9 @@ def main():
     d = load(W)
     print("rendering images ->", out)
     paths = [img_summary(d, out), img_serve(d, out), img_length(d, out), img_movement(d, out), img_heat(d, out, W), img_players(d, out),
-             img_posture(d, out, W, ev), img_tips(d, out, W, Path(args.tips) if args.tips else W / "tips.json"), img_watch(d, out),
-             img_reliability(d, out), img_evidence(d, out, ev)]
+             img_posture(d, out, W, ev), img_posture(d, out, W, ev, photos=False),
+             img_tips(d, out, W, Path(args.tips) if args.tips else W / "tips.json"), img_watch(d, out),
+             img_reliability(d, out), img_evidence(d, out, ev), img_opponents(d, out), img_opp_positions(d, out, W)]
     print(f"{sum(p is not None for p in paths)} images")
 
 

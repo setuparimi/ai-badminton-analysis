@@ -99,3 +99,57 @@ assistant other than Claude Code. Frames an assistant looks at leave your comput
 
 `examples/reference-match/data/` holds every result file. The video is not included, so the numbers cannot be regenerated from scratch without your own video of the same match; they are provided so
 you can see exactly what each stage produces and in what format.
+
+## Update: the PDF report
+
+After the first release the project was extended so that one run ends in a document a player can read and share.
+
+* **Who is who by clicking.** `tools/pick_players.py` replaces typing shirt colours: a local page shows pictures from the start of the game, the person clicks the
+  player to analyse, their partner and the two opponents, and the tool reads and checks the shirt colours. Tested on the reference video with real page events:
+  the saved config equalled the hand-written one and tracking was identical. Lesson: colour reading is imperfect under changing light (a dark top was read as blue
+  or white in some pictures), so the page ranks pictures with four distinct colours first and always lets the person correct a colour.
+* **Opponent scouting.** `s07b_opponents.py` turns the same tracks into the other team's results, roles, pair shape and a 3 x 3 coverage map. A check on the data found that
+  far-half depth is squeezed towards the net (almost nobody is ever "at the back" there), so role and zone numbers use only the rallies when the opponents were near the camera.
+  There is still no shuttle tracking, so nothing is said about shots.
+* **PDF.** `s13_pdf_report.py` lays out the numbers and the assistant's words (`tips.json`, `scouting.json`, validated) with embedded fonts, charts only by default. A first render
+  with standard fonts looked wrong in one viewer (bold shown as regular) and would have broken accents in a name; embedding fonts fixed both.
+* **Scanner.** `tools/check_repo.sh` flagged "email addresses" inside the PDF's compressed image data; it now scans a PDF's extracted text and metadata and lists PDFs for a human to read.
+
+## Update: fetching a YouTube video
+
+The first release asked for a file and said so plainly ("no downloader"). That was reversed on request, with limits: an optional `tools/fetch_video.py` saves **one** YouTube video, only
+after the person confirms they filmed it or may use it, and nothing is vendored (yt-dlp is installed separately). The risks it is built around: other people's copyright and YouTube's terms
+(a confirmation, a look-up before any download, no bulk or playlist use), a hostile link (one host family, one extractor, no userinfo or odd ports), hostile text in a title (cleaned, never used
+as a file name), a hostile or broken file (new empty folder, ffprobe check, length match) and credentials (no logins, no browser cookies). Tested without YouTube by pointing the real yt-dlp at a
+local web server serving the reference video: the saved file was byte-identical (same SHA-256), and `run_all.sh` given a YouTube-style link reused it and ran stages 0 and 1 on it exactly as on the original (6,827 detection records both times). Not tested against YouTube itself, which changes often.
+Honest limit: most YouTube matches will not fit the pipeline (broadcast camera work, singles, no scoreboard), so a link usually gets a person to "stopped after stage 3", not to a PDF.
+The most useful next step for that case is still a way to enter the score by hand.
+
+## Update: three more videos (what a second and third video taught)
+
+Run on a tournament video from a videographer (two sets, score overlay top left, glossy floor, spectators at the court edge) and on two matches from a wide-angle camera in a
+multi-court hall, the pipeline needed changes the reference video never asked for. Fixed and tested: stage 1 treated title cards as missed detections (now listed as cutaways);
+the score overlay reader only looked top right and assumed one game (now it finds the corner, and splits games at each 0-0 or at a title card, with zero corrections needed on the
+tournament video's 86 runs); and two teammates in two shades of one colour could not be told apart (now a light/dark tone in the config).
+Not solved, and said so: on the tournament video player tracking failed its own visual check (the partner is sometimes beyond the sideline near the camera, where a court model
+anchored only on the net half is least accurate, and spectators sit at the court edge), so no report was written from it. The two wide-angle matches have no per-rally score at all
+(only a game label and a final-result card), so winners, serve and won-versus-lost analysis are impossible from the video; a positions-and-movement report without winners would need
+a score-free report mode that does not exist yet. Lesson: judge fit from the whole video, not five frames (the overlay that "did not exist" flashed for 1.5 s per rally), and never carry on past a failed label check.
+
+## Version 0.2: a guided run and a report without a score
+
+What changed and why. The first version needed a yellow on-screen score to say anything about rallies, which excludes most matches people film themselves. Version 0.2 adds a route that needs no score
+and a single guided entry point, and was built on two real club matches (19 and 30 minutes, 2 and 3 games, a wide-angle camera behind the baseline in a hall with several courts). Only the first match was taken all the way to a report; for the second the court could not be fitted from painted lines alone (the lens bends them and neighbouring courts have look-alike lines), which is why the court page asks the person to click.
+
+* **One command with the questions asked up front** (`tools/analyze.py`): video, singles or doubles, left or right hand, live score or not, when each game starts, each game's final score. Then two clicks. Everything else runs.
+* **One click instead of four.** Click yourself; the partner and opponents follow from which half of the court they stand on. The cue that tells you from your partner is chosen by trying every candidate on about 12 seconds of tracked video.
+* **Telling people apart in a dim hall.** Shirt colours failed: under hall lighting every torso read near black. The cue that worked was the brightness of the shorts (hip to mid-thigh): light shorts 60 to 140, dark 0 to 20 on a 0-255 scale.
+* **A wide-angle lens broke the person-size filter.** Real near players measured 2.3 to 3.2 times the local scale and were thrown away (coverage 60%). The window now follows the video's own median (coverage 96 to 98%).
+* **Shorts are not read from boxes that cannot be read.** A fresh-clone test run came out with YOU and PARTNER inverted on all twelve check moments: the click had landed on a partner standing at the camera with an arm out (bright floor in the middle of the box read 161 for black shorts),
+  and a player cut off at the bottom of the picture read 7 for white ones. Wide boxes and boxes touching the edge now say nothing about shorts, the cue's direction is taken from the readable moments nearest the click, and the guided run verifies after tracking that the YOU track is where the person clicked.
+* **Continuity beats a momentary clothes reading.** A visual check found the "partner" label on the user for about a second while their shorts read dark for a moment. A slot that was at this spot 0.3 s ago keeps its person.
+* **A check sheet nobody can skip.** `tools/check_tracking.py` makes twelve moments per game, six of them at the closest crossings. On the checked game the first pass looked clean on 12 moments and the larger sheet found a wrong label; with the final tracker 2 of 12 game-1 moments were still swapped (your partner at the camera at the start; the two of you overlapping) and all 10 game-2 moments were right.
+  The reports now say how many moments were looked at and how many were wrong.
+* **Plays from sound and movement** because there is no score to anchor rallies. Validated against result cards (the one thing the video gives): 37 and 32 found against 40 and 34.
+* **Pose handedness.** The pose model said the (left-handed) player was right-handed. Its left and right labels are mirrored for people seen from behind, so the hand the player declares is used and the model's guess is not printed.
+* **Honest limits, version 0.2:** one fixed camera; singles only on synthetic data; far-side depth and distance are rougher; the sound includes neighbouring courts; the report cannot say who won anything.

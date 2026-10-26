@@ -25,3 +25,4 @@ print("ultralytics:", ultralytics.__version__)
 print("Apple GPU (MPS) available:", torch.backends.mps.is_available(), "| CUDA available:", torch.cuda.is_available())
 PY
 echo "Done. Next: read docs/USING_WITH_CLAUDE_CODE.md or run the steps in run_all.sh"
+echo "Optional, to analyse a YouTube video you filmed:  .venv/bin/pip install -r requirements-youtube.txt"

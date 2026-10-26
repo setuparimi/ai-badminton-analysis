@@ -82,14 +82,15 @@ def main():
                 cx = (x1 + x2) / 2
                 torso = region_stats(img, lab, hsv, cx - 0.22 * w, y1 + 0.18 * h, cx + 0.22 * w, y1 + 0.45 * h)
                 legs = region_stats(img, lab, hsv, cx - 0.22 * w, y1 + 0.55 * h, cx + 0.22 * w, y1 + 0.75 * h)
-                rows.append([idx, x1, y1, x2, y2, conf, X, Y, h / ppm_across(X, Y)] + torso + legs)
+                shorts = region_stats(img, lab, hsv, cx - 0.20 * w, y1 + 0.46 * h, cx + 0.20 * w, y1 + 0.56 * h)[0]   # median Lab lightness at hip to mid-thigh
+                rows.append([idx, x1, y1, x2, y2, conf, X, Y, h / ppm_across(X, Y)] + torso + legs + [shorts])
         idx += 1
     cap.release()
     cols = ["f", "x1", "y1", "x2", "y2", "conf", "X", "Y", "h_per_ppm",
             "tL", "ta", "tb", "t_red", "t_white", "t_dark", "t_blue", "t_green", "t_yellow", "t_orange",
-            "lL", "la", "lb", "l_red", "l_white", "l_dark", "l_blue", "l_green", "l_yellow", "l_orange"]
+            "lL", "la", "lb", "l_red", "l_white", "l_dark", "l_blue", "l_green", "l_yellow", "l_orange", "sL"]
     arr = np.array(rows, np.float32)
-    np.savez_compressed(args.out, data=arr, cols=np.array(cols), fps=dets["fps"], stride=stride)
+    np.savez_compressed(args.out, data=arr, cols=np.array(cols), fps=dets["fps"], stride=stride, frame_h=dets["height"])
     print(f"{len(arr)} candidate boxes near the court from {len(frames)} sampled frames -> {args.out}")
 
 

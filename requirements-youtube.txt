@@ -1,0 +1,3 @@
+# Optional: only needed to fetch a YouTube video with tools/fetch_video.py. Not part of this project; installed separately.
+# YouTube changes often, so this is a minimum version: if a download fails, run  pip install -U yt-dlp
+yt-dlp>=2026.10.21

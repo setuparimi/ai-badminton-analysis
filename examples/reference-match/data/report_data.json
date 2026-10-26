@@ -466,6 +466,108 @@
      }
     }
    }
+  },
+  "B_opp1": {
+   "knee_median": 166.54393005371094,
+   "stance_median": 1.6690641641616821,
+   "racket_arm": "R",
+   "by_side": {
+    "near": {
+     "samples": 2271,
+     "rallies": 28,
+     "knee_median": 166.23166275024414,
+     "bent_lt150": 0.11985688729874776,
+     "stance_median": 1.8138266205787659,
+     "racket_up_share": 0.5596153846153846,
+     "won": {
+      "samples": 1203,
+      "rallies": 15,
+      "knee_median": 166.68268585205078,
+      "bent_lt150": 0.13554987212276215,
+      "racket_up_share": 0.5236329935125116
+     },
+     "lost": {
+      "samples": 1068,
+      "rallies": 13,
+      "knee_median": 165.8924102783203,
+      "bent_lt150": 0.10253998118532455,
+      "racket_up_share": 0.5984015984015985
+     }
+    },
+    "far": {
+     "samples": 196,
+     "rallies": 17,
+     "knee_median": 173.1702651977539,
+     "bent_lt150": 0.05641025641025641,
+     "stance_median": 0.6495059728622437,
+     "racket_up_share": 0.8967391304347826,
+     "won": {
+      "samples": 103,
+      "rallies": 9,
+      "knee_median": 172.28568267822266,
+      "bent_lt150": 0.04854368932038835,
+      "racket_up_share": 0.8888888888888888
+     },
+     "lost": {
+      "samples": 93,
+      "rallies": 8,
+      "knee_median": 173.91583251953125,
+      "bent_lt150": 0.06521739130434782,
+      "racket_up_share": 0.9058823529411765
+     }
+    }
+   }
+  },
+  "B_opp2": {
+   "knee_median": 169.47282791137695,
+   "stance_median": 1.1547714471817017,
+   "racket_arm": "L",
+   "by_side": {
+    "near": {
+     "samples": 2262,
+     "rallies": 28,
+     "knee_median": 167.8954200744629,
+     "bent_lt150": 0.12645739910313902,
+     "stance_median": 1.333419680595398,
+     "racket_up_share": 0.9344632768361582,
+     "won": {
+      "samples": 1242,
+      "rallies": 15,
+      "knee_median": 167.1918182373047,
+      "bent_lt150": 0.14074074074074075,
+      "racket_up_share": 0.9136904761904762
+     },
+     "lost": {
+      "samples": 1020,
+      "rallies": 13,
+      "knee_median": 168.79725646972656,
+      "bent_lt150": 0.10935960591133005,
+      "racket_up_share": 0.9619422572178478
+     }
+    },
+    "far": {
+     "samples": 332,
+     "rallies": 14,
+     "knee_median": 174.29980850219727,
+     "bent_lt150": 0.006060606060606061,
+     "stance_median": 0.7793733477592468,
+     "racket_up_share": 0.8957654723127035,
+     "won": {
+      "samples": 160,
+      "rallies": 7,
+      "knee_median": 174.71368789672852,
+      "bent_lt150": 0.0,
+      "racket_up_share": 0.8860759493670886
+     },
+     "lost": {
+      "samples": 172,
+      "rallies": 7,
+      "knee_median": 173.80749130249023,
+      "bent_lt150": 0.011764705882352941,
+      "racket_up_share": 0.9060402684563759
+     }
+    }
+   }
   }
  },
  "pickups": {

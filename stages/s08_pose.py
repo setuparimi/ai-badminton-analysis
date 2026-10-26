@@ -12,6 +12,7 @@ tall are used; on this camera that means the near half of the court only.
 Run:
     python stages/s08_pose.py --proxy work/proxy.mp4 --players work/players.npz \
         --points work/points.json --out work/pose_stats.json
+    (no score on screen: --windows work/play_windows.json in place of --points)
 """
 import argparse
 import json
@@ -20,7 +21,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from common import near_team_at
+from common import active_slots, load_config, near_team_at
 
 SK = [(5, 7), (7, 9), (6, 8), (8, 10), (5, 6), (5, 11), (6, 12), (11, 12), (11, 13), (13, 15), (12, 14), (14, 16)]
 
@@ -66,12 +67,15 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--proxy", required=True)
     ap.add_argument("--players", required=True)
-    ap.add_argument("--points", required=True)
+    ap.add_argument("--points", help="points.json from stage 6 (rallies with winners)")
+    ap.add_argument("--windows", help="play_windows.json from stage 6f instead, for a video with no score: the same measurements, but no won-versus-lost split")
     ap.add_argument("--out", required=True)
     ap.add_argument("--model", default="yolo11m-pose.pt")
     ap.add_argument("--weights-dir", default="models")
     ap.add_argument("--min-height", type=float, default=150)
-    ap.add_argument("--who", default="A_you,A_partner")
+    ap.add_argument("--who", default="A_you,A_partner,B_opp1,B_opp2",
+                    help="slots to measure (default: all that play; the opponents' numbers feed the scouting page)")
+    ap.add_argument("--config", help="players_config.json (default: next to --players); gives the hand you said you use and, in singles, who plays")
     args = ap.parse_args()
 
     import os
@@ -88,8 +92,17 @@ def main():
 
     z = np.load(args.players)
     frames, t = z["frames"], z["t"]
-    R = json.loads(Path(args.points).read_text())["rallies"][:-1]
-    who = args.who.split(",")
+    if bool(args.points) == bool(args.windows):
+        raise SystemExit("give exactly one of --points and --windows")
+    if args.windows:
+        R = [{"rally": i, "start": w["start"], "end": w["end"], "user_team_won": None}
+             for i, w in enumerate(json.loads(Path(args.windows).read_text())["windows"], 1)]
+    else:
+        R = json.loads(Path(args.points).read_text())["rallies"][:-1]
+    cfg_path = Path(args.config) if args.config else Path(args.players).with_name("players_config.json")
+    cfg = load_config(cfg_path) if cfg_path.exists() else None
+    who = [k for k in args.who.split(",") if cfg is None or k in active_slots(cfg)]
+    declared_hand = cfg["_match"].get("hand") if cfg else None
 
     # samples: detected boxes (flag 1) tall enough, inside a rally window
     jobs = {}
@@ -182,6 +195,8 @@ def main():
                                    "stance_won": agg(won, "stance"), "stance_lost": agg(lost, "stance"),
                                    "racket_up_won": agg([r for r in won if r[f"{dom}_seen"]], f"{dom}_up"),
                                    "racket_up_lost": agg([r for r in lost if r[f"{dom}_seen"]], f"{dom}_up")}
+    if declared_hand and "A_you" in stats:
+        stats["A_you"]["racket_hand"] = declared_hand          # what the player said; the model's own left/right is mirrored for people seen from behind
     for k in who:
         if k not in stats:
             continue

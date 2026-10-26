@@ -30,14 +30,29 @@ done <<< "$FILES"
 pat_secret='gh[pousr]_[A-Za-z0-9]{20,}|sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|(password|passwd|secret|api[_-]?key|token)[[:space:]]*[:=][[:space:]]*["'"'"']?[A-Za-z0-9/+_.-]{12,}'
 pat_path='/Users/[A-Za-z0-9._-]+|/home/[A-Za-z0-9._-]+|[A-Za-z]:\\Users\\'
 pat_email='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
+PDFTXT=$(mktemp)
+trap 'rm -f "$TMP" "$PDFTXT"' EXIT
 while IFS= read -r f; do
   [ -f "$f" ] || continue
   [ "$f" = "tools/check_repo.sh" ] && continue
-  grep -Iq . "$f" 2>/dev/null || continue            # skip binary files (images)
-  if grep -InE "$pat_secret" "$f" >"$TMP" 2>/dev/null; then note "possible secret in $f:"; sed 's/^/    /' "$TMP" | cut -c1-120; fi
-  if grep -InE "$pat_path" "$f" >"$TMP" 2>/dev/null; then note "home path in $f:"; sed 's/^/    /' "$TMP" | cut -c1-120; fi
-  if grep -InE "$pat_email" "$f" 2>/dev/null | grep -vE 'noreply@anthropic\.com|users\.noreply\.github\.com' >"$TMP" && [ -s "$TMP" ]; then note "email address in $f:"; sed 's/^/    /' "$TMP" | cut -c1-120; fi
-  if [ -n "${PII_TERMS:-}" ] && grep -InEi "$PII_TERMS" "$f" >"$TMP" 2>/dev/null; then note "personal term in $f:"; sed 's/^/    /' "$TMP" | cut -c1-120; fi
+  src="$f"
+  case "$f" in
+    *.pdf|*.PDF)
+      # a PDF is mostly compressed binary: scan the words a reader would see, plus its title and author fields
+      if command -v pdftotext >/dev/null 2>&1; then
+        pdftotext -q "$f" "$PDFTXT" 2>/dev/null || : > "$PDFTXT"
+        grep -a -o '/\(Author\|Title\|Subject\|Creator\|Keywords\) ([^)]*)' "$f" >> "$PDFTXT" 2>/dev/null
+        src="$PDFTXT"
+      else
+        echo "NOTE: $f was not scanned (pdftotext is not installed; on a Mac: brew install poppler). Read it yourself before pushing."
+        continue
+      fi ;;
+    *) grep -Iq . "$f" 2>/dev/null || continue ;;     # skip binary files (images)
+  esac
+  if grep -InE "$pat_secret" "$src" >"$TMP" 2>/dev/null; then note "possible secret in $f:"; sed 's/^/    /' "$TMP" | cut -c1-120; fi
+  if grep -InE "$pat_path" "$src" >"$TMP" 2>/dev/null; then note "home path in $f:"; sed 's/^/    /' "$TMP" | cut -c1-120; fi
+  if grep -InE "$pat_email" "$src" 2>/dev/null | grep -vE 'noreply@anthropic\.com|users\.noreply\.github\.com' >"$TMP" && [ -s "$TMP" ]; then note "email address in $f:"; sed 's/^/    /' "$TMP" | cut -c1-120; fi
+  if [ -n "${PII_TERMS:-}" ] && grep -InEi "$PII_TERMS" "$src" >"$TMP" 2>/dev/null; then note "personal term in $f:"; sed 's/^/    /' "$TMP" | cut -c1-120; fi
 done <<< "$FILES"
 
 # 4. git history (author names and emails that would become public)
@@ -48,6 +63,8 @@ fi
 # 5. images: a person must look at each one
 echo; echo "Images that would be published (look at every one for faces, names and plates):"
 echo "$FILES" | grep -iE '\.(png|jpe?g|gif|webp|svg)$' | sed 's/^/    /'
+PDFS=$(echo "$FILES" | grep -iE '\.pdf$' || true)
+[ -n "$PDFS" ] && { echo; echo "PDFs that would be published (open each one and read every page for faces and names):"; echo "$PDFS" | sed 's/^/    /'; }
 
 echo
 if [ "$bad" -eq 0 ]; then echo "check_repo: no secrets, home paths, emails, videos or big files found."; else echo "check_repo: FIX THE ITEMS ABOVE BEFORE PUSHING."; fi

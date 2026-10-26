@@ -8,7 +8,7 @@ Thank you. This is an alpha project built on one video, so the most valuable con
    comfortable) a blurred check image. Never attach unblurred frames of other people.
 2. **Score entry**: a small tool that builds `overlay.json` from a written list of who won each rally (see `docs/HOW_IT_WORKS.md`, "Scores").
 3. **A scoreboard reader** that works on Linux and Windows (the current one uses Apple's Vision framework, macOS only).
-4. **Singles support** and **more than one end change**.
+4. **Singles on a real video** (it runs on synthetic data only) and a rally-by-rally score entered by hand, which would give the no-score route winners.
 5. **Shuttle tracking** (needs a video of about 1080p or better) and **racket-hit detection from the audio**.
 6. Tests for logic that is not images or models.
 

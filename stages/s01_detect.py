@@ -10,8 +10,9 @@ Run:
     python stages/s01_detect.py --proxy work/proxy.mp4 --out work/dets.json
 
 Outputs:
-    dets.json        {"frames": [{"f": frame_index, "t": seconds, "b": [[x1,y1,x2,y2,conf], ...]}]}
-                     coordinates are pixels of the proxy video
+    dets.json        {"cutaways": [[start_s, end_s], ...], "frames": [{"f": frame_index, "t": seconds, "b": [[x1,y1,x2,y2,conf], ...]}]}
+                     coordinates are pixels of the proxy video. "cutaways" are title cards and the like (2 s or more with nobody in
+                     view); they are listed, not treated as detection failures.
     s01_check.jpg    6 frames with the detected boxes drawn on, next to dets.json
 """
 import argparse
@@ -26,6 +27,8 @@ os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")  # let unsupported MPS
 
 import cv2
 import numpy as np
+
+from common import cutaway_runs
 
 
 def pick_device(arg):
@@ -86,6 +89,7 @@ def main():
     ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--device", default="auto", help="auto, mps or cpu")
     ap.add_argument("--max-seconds", type=float, default=0, help="only process the first N seconds (testing)")
+    ap.add_argument("--recheck", action="store_true", help="do not detect again: re-run the checks on the existing dets.json (and add the title-card list to it)")
     args = ap.parse_args()
 
     proxy, out = Path(args.proxy), Path(args.out)
@@ -101,57 +105,66 @@ def main():
     limit = int(args.max_seconds * fps) if args.max_seconds else None
     approx_total = limit or int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
-    device = pick_device(args.device)
-    model = load_model(args.model, args.weights_dir)
-    print(f"proxy {W}x{H} @ {fps:.2f} fps | model {args.model} | imgsz {args.imgsz} | "
-          f"device {device} | conf {args.conf} | every {args.stride}rd frame")
+    if args.recheck:
+        previous = json.loads(out.read_text())
+        frames, idx, elapsed = previous["frames"], previous["n_proxy_frames"], 0.0
+        print(f"re-checking {out.name} ({len(frames)} sampled frames); nothing is detected again")
+    else:
+        device = pick_device(args.device)
+        model = load_model(args.model, args.weights_dir)
+        print(f"proxy {W}x{H} @ {fps:.2f} fps | model {args.model} | imgsz {args.imgsz} | "
+              f"device {device} | conf {args.conf} | every {args.stride}rd frame")
 
-    frames, batch, batch_idx = [], [], []
+        frames, batch, batch_idx = [], [], []
 
-    def flush():
-        res = model.predict(batch, imgsz=args.imgsz, conf=args.conf, iou=args.iou,
-                            classes=[0], device=device, verbose=False)
-        for fi, r in zip(batch_idx, res):
-            xyxy, cf = r.boxes.xyxy.cpu().numpy(), r.boxes.conf.cpu().numpy()
-            b = [[round(float(x1), 1), round(float(y1), 1), round(float(x2), 1), round(float(y2), 1),
-                  round(float(c), 3)] for (x1, y1, x2, y2), c in zip(xyxy, cf)]
-            b.sort(key=lambda v: -(v[3] - v[1]))  # biggest (nearest) first
-            frames.append({"f": fi, "t": round(fi / fps, 3), "b": b})
-        batch.clear()
-        batch_idx.clear()
+        def flush():
+            res = model.predict(batch, imgsz=args.imgsz, conf=args.conf, iou=args.iou,
+                                classes=[0], device=device, verbose=False)
+            for fi, r in zip(batch_idx, res):
+                xyxy, cf = r.boxes.xyxy.cpu().numpy(), r.boxes.conf.cpu().numpy()
+                b = [[round(float(x1), 1), round(float(y1), 1), round(float(x2), 1), round(float(y2), 1),
+                      round(float(c), 3)] for (x1, y1, x2, y2), c in zip(xyxy, cf)]
+                b.sort(key=lambda v: -(v[3] - v[1]))  # biggest (nearest) first
+                frames.append({"f": fi, "t": round(fi / fps, 3), "b": b})
+            batch.clear()
+            batch_idx.clear()
 
-    t0, idx, next_report = time.time(), 0, 0.1
-    while True:
-        if limit is not None and idx >= limit:
-            break
-        if not cap.grab():
-            break
-        if idx % args.stride == 0:
-            ok, img = cap.retrieve()
-            if not ok:
+        t0, idx, next_report = time.time(), 0, 0.1
+        while True:
+            if limit is not None and idx >= limit:
                 break
-            batch.append(img)
-            batch_idx.append(idx)
-            if len(batch) == args.batch:
-                flush()
-        idx += 1
-        if approx_total and idx / approx_total >= next_report:
-            el = time.time() - t0
-            print(f"  {int(100 * idx / approx_total):3d}%  {len(frames) / el:5.1f} det-frames/s  "
-                  f"elapsed {el:4.0f}s  eta {el * (approx_total / idx - 1):4.0f}s")
-            next_report += 0.1
-    if batch:
-        flush()
-    cap.release()
-    elapsed = time.time() - t0
-
-    meta = {"stage": 1, "proxy": proxy.name, "width": W, "height": H, "fps": fps,
-            "stride": args.stride, "model": args.model, "imgsz": args.imgsz, "conf": args.conf,
-            "iou": args.iou, "n_proxy_frames": idx}
-    out.write_text(json.dumps({**meta, "frames": frames}, separators=(",", ":")))
+            if not cap.grab():
+                break
+            if idx % args.stride == 0:
+                ok, img = cap.retrieve()
+                if not ok:
+                    break
+                batch.append(img)
+                batch_idx.append(idx)
+                if len(batch) == args.batch:
+                    flush()
+            idx += 1
+            if approx_total and idx / approx_total >= next_report:
+                el = time.time() - t0
+                print(f"  {int(100 * idx / approx_total):3d}%  {len(frames) / el:5.1f} det-frames/s  "
+                      f"elapsed {el:4.0f}s  eta {el * (approx_total / idx - 1):4.0f}s")
+                next_report += 0.1
+        if batch:
+            flush()
+        cap.release()
+        elapsed = time.time() - t0
 
     counts = np.array([len(f["b"]) for f in frames])
     idxs = [f["f"] for f in frames]
+    cutaways, stray = cutaway_runs(counts, idxs, fps)
+    if args.recheck:
+        meta = {k: v for k, v in previous.items() if k != "frames"}
+        meta["cutaways"] = cutaways
+    else:
+        meta = {"stage": 1, "proxy": proxy.name, "width": W, "height": H, "fps": fps,
+                "stride": args.stride, "model": args.model, "imgsz": args.imgsz, "conf": args.conf,
+                "iou": args.iou, "n_proxy_frames": idx, "cutaways": cutaways}
+    out.write_text(json.dumps({**meta, "frames": frames}, separators=(",", ":")))
     allb = [b for f in frames for b in f["b"]]
     checks = []
 
@@ -167,8 +180,8 @@ def main():
     check("boxes lie inside the frame",
           all(-2 <= b[0] and -2 <= b[1] and b[2] <= W + 2 and b[3] <= H + 2 and b[0] < b[2] and b[1] < b[3]
               for b in allb), f"{len(allb)} boxes checked")
-    zero = float((counts == 0).mean())
-    check("almost no frames with zero people", zero < 0.01, f"{100 * zero:.2f}% of frames empty")
+    cards = (f"; {len(cutaways)} title card(s) of 2 s or more, not counted: " + ", ".join(f"{a:.0f}-{b:.0f} s" for a, b in cutaways)) if cutaways else ""
+    check("almost no frames with zero people (title cards aside)", stray < 0.01, f"{100 * stray:.2f}% of frames empty{cards}")
     check("persons per frame plausible (court + crowd)", 4 <= np.median(counts) <= 80,
           f"min {counts.min()}  median {int(np.median(counts))}  max {counts.max()}")
 
@@ -180,7 +193,8 @@ def main():
     print()
     for name, ok, detail in checks:
         print(f"[{'PASS' if ok else 'FAIL'}] {name}: {detail}")
-    print(f"\nspeed  : {len(frames) / elapsed:.1f} frames/s, {elapsed:.0f} s total")
+    if elapsed:
+        print(f"\nspeed  : {len(frames) / elapsed:.1f} frames/s, {elapsed:.0f} s total")
     print(f"dets   : {out}  ({out.stat().st_size / 1e6:.1f} MB)")
     print(f"sheet  : {sheet}   <- open this and count the players in every tile")
     bad = [c for c in checks if not c[1]]

@@ -126,7 +126,7 @@ def main():
         out["check"]["end_change"] = mmss(PL["tc"]) if PL["tc"] < 1e8 else None
 
     out["motion_summary"], out["motion_totals"] = M["summary"], M["totals"]
-    out["pose"] = {k: {kk: v for kk, v in s.items() if kk in ("racket_arm", "by_side", "knee_median", "stance_median")} for k, s in PO.items()}
+    out["pose"] = {k: {kk: v for kk, v in s.items() if kk in ("racket_arm", "racket_hand", "by_side", "knee_median", "stance_median")} for k, s in PO.items()}
     out["pickups"] = {"usable": PK["usable"], "single_team_rallies": PK["rallies_with_single_bending_team"],
                       "agree": PK["agree_with_loser"], "p": PK["p_value"]}
     out["tracking"] = PL["coverage"]

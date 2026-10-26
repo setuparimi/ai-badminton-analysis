@@ -97,5 +97,100 @@ class FindStart(unittest.TestCase):
         self.assertEqual(fs.quiet_windows(t, energy, np.zeros(len(t)), 0.8, 1.5), [])
 
 
+class Shades(unittest.TestCase):
+    """Two teammates in the same colour but different shades (royal blue and teal, say) can be told apart."""
+    ROYAL = {"tL": 85.0, "t_red": 0.0, "t_blue": 0.7, "t_green": 0.0, "t_yellow": 0.0, "t_orange": 0.0}
+    TEAL = {"tL": 138.0, "t_red": 0.0, "t_blue": 0.7, "t_green": 0.0, "t_yellow": 0.0, "t_orange": 0.0}
+
+    def test_without_a_shade_both_look_blue(self):
+        self.assertGreater(common.colour_score("blue", self.ROYAL), 0.99)
+        self.assertGreater(common.colour_score("blue", self.TEAL), 0.99)
+
+    def test_a_shade_separates_them(self):
+        split = 112.0
+        self.assertGreater(common.colour_score("blue", self.ROYAL, "dark", split), 0.9)
+        self.assertLess(common.colour_score("blue", self.ROYAL, "light", split), 0.1)
+        self.assertGreater(common.colour_score("blue", self.TEAL, "light", split), 0.9)
+        self.assertLess(common.colour_score("blue", self.TEAL, "dark", split), 0.1)
+
+    def write(self, **slots):
+        base = {"A_you": {"shirt": "blue"}, "A_partner": {"shirt": "blue"}, "B_opp1": {"shirt": "red"}, "B_opp2": {"shirt": "black"}}
+        for k, v in slots.items():
+            base[k] = {**base[k], **v}
+        d = tempfile.mkdtemp()
+        path = Path(d) / "c.json"
+        path.write_text(json.dumps(base))
+        return path
+
+    def test_config_allows_same_colour_only_with_opposite_shades(self):
+        common.load_config(self.write(A_you={"tone": "dark"}, A_partner={"tone": "light"}))
+        for bad in (dict(), dict(A_you={"tone": "dark"}), dict(A_you={"tone": "dark"}, A_partner={"tone": "dark"})):
+            with self.subTest(bad), self.assertRaises(SystemExit):
+                common.load_config(self.write(**bad))
+        with self.assertRaises(SystemExit):
+            common.load_config(self.write(A_you={"tone": "medium"}, A_partner={"shirt": "green"}))
+
+    def test_slot_probs_use_the_shade_and_ignore_it_when_absent(self):
+        cfg = common.load_config(self.write(A_you={"tone": "dark", "tone_split": 112.0}, A_partner={"tone": "light", "tone_split": 112.0}))
+        p = common.slot_probs(cfg, self.ROYAL)
+        self.assertGreater(p["A_you"], 0.9)
+        self.assertLess(p["A_partner"], 0.1)
+        plain = common.load_config(self.write(A_partner={"shirt": "green"}))
+        self.assertGreater(common.slot_probs(plain, self.TEAL)["A_you"], 0.99)
+
+
+class ShortsAndAnyShirt(unittest.TestCase):
+    """In a dim hall every shirt reads dark; shorts (read from the legs) can tell two teammates apart instead."""
+    WHITE_LEGS = {"tL": 20.0, "t_red": 0, "t_blue": 0, "t_green": 0, "t_yellow": 0, "t_orange": 0, "lL": 200.0, "l_white": 0.5, "l_dark": 0.0}
+    DARK_LEGS = {"tL": 20.0, "t_red": 0, "t_blue": 0, "t_green": 0, "t_yellow": 0, "t_orange": 0, "lL": 40.0, "l_white": 0.0, "l_dark": 0.8}
+
+    def write(self, **slots):
+        base = {"A_you": {"shirt": "any", "shorts": "white"}, "A_partner": {"shirt": "any", "shorts": "dark"},
+                "B_opp1": {"shirt": "blue"}, "B_opp2": {"shirt": "black"}}
+        for k, v in slots.items():
+            base[k] = v
+        path = Path(tempfile.mkdtemp()) / "c.json"
+        path.write_text(json.dumps(base))
+        return path
+
+    def test_shorts_scores(self):
+        self.assertGreater(common.shorts_score("white", self.WHITE_LEGS), 0.9)
+        self.assertLess(common.shorts_score("white", self.DARK_LEGS), 0.05)
+        self.assertGreater(common.shorts_score("dark", self.DARK_LEGS), 0.9)
+        self.assertLess(common.shorts_score("dark", self.WHITE_LEGS), 0.05)
+
+    def test_shorts_band_in_a_dim_hall(self):
+        dim_white = dict(self.DARK_LEGS, sL=80.0)          # white shorts read about 60 to 140 here
+        dim_black = dict(self.DARK_LEGS, sL=10.0)
+        self.assertGreater(common.shorts_score("white", dim_white), 0.9)
+        self.assertLess(common.shorts_score("white", dim_black), 0.05)
+        self.assertGreater(common.shorts_score("dark", dim_black), 0.9)
+        self.assertLess(common.shorts_score("dark", dim_white), 0.05)
+        cfg = common.load_config(self.write())
+        p = common.slot_probs(cfg, dim_white)
+        self.assertGreater(p["A_you"], 0.9)
+        self.assertLess(p["A_partner"], 0.05)
+
+    def test_slot_probs_follow_the_legs_when_the_shirt_is_any(self):
+        cfg = common.load_config(self.write())
+        p = common.slot_probs(cfg, self.WHITE_LEGS)
+        self.assertGreater(p["A_you"], 0.9)
+        self.assertLess(p["A_partner"], 0.05)
+        q = common.slot_probs(cfg, self.DARK_LEGS)
+        self.assertGreater(q["A_partner"], 0.9)
+        self.assertLess(q["A_you"], 0.05)
+
+    def test_config_rules(self):
+        with self.assertRaises(SystemExit):                       # "any" shirt with no shorts: nothing to tell the player by
+            common.load_config(self.write(A_you={"shirt": "any"}))
+        with self.assertRaises(SystemExit):                       # two teammates with the same shorts and no other difference
+            common.load_config(self.write(A_partner={"shirt": "any", "shorts": "white"}))
+        with self.assertRaises(SystemExit):
+            common.load_config(self.write(A_you={"shirt": "any", "shorts": "plaid"}))
+        with self.assertRaises(SystemExit):                       # "any" next to a plain red shirt, with no shorts to separate them: refused
+            common.load_config(self.write(A_partner={"shirt": "red"}, A_you={"shirt": "any", "shorts": "white"}))
+        common.load_config(self.write(A_partner={"shirt": "red", "shorts": "dark"}, A_you={"shirt": "any", "shorts": "white"}))
+
+
 if __name__ == "__main__":
     unittest.main()

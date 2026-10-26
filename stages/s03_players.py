@@ -27,14 +27,14 @@ import cv2
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 
-from common import NO_CHANGE, SLOTS as IDS, load_config, near_team_at, other, signature, slot_probs
+from common import NO_CHANGE, SLOTS as IDS, active_slots, load_config, match_mode, near_team_at, other, shorts_unreliable, signature, slot_probs
 
 NET_Y = 6.7
 COLOURS = {"A_partner": (0, 0, 255), "A_you": (0, 255, 255), "B_opp1": (255, 0, 0), "B_opp2": (0, 200, 0)}
-FEATS = ("tL", "t_red", "t_blue", "t_green", "t_yellow", "t_orange")
+FEATS = ("tL", "t_red", "t_blue", "t_green", "t_yellow", "t_orange", "lL", "l_white", "l_dark")
 
 
-def load_candidates(path, start, min_conf):
+def load_candidates(path, start, min_conf, margin=1.0, margin_far=0.3, end=None, height_ratio=(1.25, 2.5)):
     z = np.load(path)
     D, cols = z["data"], list(z["cols"])
     c = {k: D[:, i] for i, k in enumerate(cols)}
@@ -42,9 +42,26 @@ def load_candidates(path, start, min_conf):
     t = c["f"] / fps
     X, Y = c["X"], c["Y"]
     far = Y >= NET_Y
-    ok = (c["conf"] >= min_conf) & (c["h_per_ppm"] > 1.25) & (c["h_per_ppm"] < 2.5) & (t >= start) \
-        & (Y > -2.5) & (Y < 13.8) & np.where(far, (X > -0.3) & (X < 6.4), (X > -1.0) & (X < 7.0))
-    return {k: v[ok] for k, v in c.items()}, fps, stride
+    ok = (c["conf"] >= min_conf) & (c["h_per_ppm"] > height_ratio[0]) & (c["h_per_ppm"] < height_ratio[1]) & (t >= start) & (t < (end if end else 1e9)) \
+        & (Y > -2.5) & (Y < 13.8) & np.where(far, (X > -margin_far) & (X < 6.1 + margin_far), (X > -margin) & (X < 6.1 + margin))
+    out = {k: v[ok] for k, v in c.items()}
+    out["_H"] = float(z["frame_h"]) if "frame_h" in z else 720.0            # the picture's height (older candidate files: the proxy is 720 high)
+    return out, fps, stride
+
+
+def estimate_height_window(path):
+    """(low, high) for how tall a person's box may be, in metres by the court's own scale. A wide-angle lens makes real players read taller
+    than a normal lens does, so the window follows the video: the median over confident near-half boxes decides. Normal videos (median up
+    to 2.1) keep 1.25 to 2.5; wider ones get 0.55 to 1.55 times their median (2.45 gives 1.35 to 3.8)."""
+    z = np.load(path)
+    d = {k: z["data"][:, i] for i, k in enumerate(list(z["cols"]))}
+    m = (d["conf"] > 0.6) & (d["Y"] > 0) & (d["Y"] < 6.2) & (d["X"] > -0.5) & (d["X"] < 6.6) & ((d["y2"] - d["y1"]) > 90)
+    if m.sum() < 200:
+        return 1.25, 2.5
+    med = float(np.median(d["h_per_ppm"][m]))
+    if med <= 2.1:
+        return 1.25, 2.5
+    return round(0.55 * med, 2), round(min(5.0, 1.55 * med), 2)
 
 
 def dedupe(idxs, c):
@@ -65,12 +82,29 @@ def dedupe(idxs, c):
     return keep
 
 
-def find_end_change(c, fps, start, sig_team, sig_colour):
-    """When do the teams swap ends? Looks at where the signature shirt colour (worn by sig_team) is
-    seen, far half or near half, over time. Returns (tc, first_near_team, strength); tc is NO_CHANGE
-    if the teams never swap."""
+def signature_mask(c, cfg):
+    """(team, per-candidate mask) of detections that clearly belong to one named person, used to see which half that team is on.
+    A chromatic shirt colour is the best cue. Without one, A_you's clothes are used where they are clearly not the partner's (in singles:
+    not the opponent's), e.g. light shorts when the partner wears dark ones. Returns (None, None) if there is nothing to go on."""
+    sig = signature(cfg)
+    if sig is not None:
+        return sig[0], c["t_" + sig[1]] > 0.12
+    feats = {k: c[k] for k in FEATS + ("sL",) if k in c}
+    feats["wide"] = shorts_unreliable(c["x1"], c["y1"], c["x2"], c["y2"], c.get("_H", 720.0))
+    p = slot_probs(cfg, feats)
+    n = len(c["f"])
+    P = {k: np.broadcast_to(np.asarray(v, float), (n,)) for k, v in p.items()}
+    rival = "B_opp1" if match_mode(cfg) == "singles" else "A_partner"
+    if cfg["A_you"]["shirt"] == "any" and not cfg["A_you"].get("shorts"):
+        return None, None
+    return "A", (P["A_you"] >= 0.85) & (P[rival] <= 0.2)
+
+
+def find_end_change(c, fps, start, sig_team, sig_mask):
+    """When do the teams swap ends? Looks at where the detections in sig_mask (worn by sig_team) are seen, far half or near half, over
+    time. Returns (tc, first_near_team, strength); tc is NO_CHANGE if the teams never swap."""
     t = c["f"] / fps
-    sig = c["t_" + sig_colour] > 0.12
+    sig = np.asarray(sig_mask, bool)
     grid = np.arange(start + 3, t.max() - 3, 1.0)
     s = []
     for g in grid:
@@ -89,11 +123,23 @@ def find_end_change(c, fps, start, sig_team, sig_colour):
     return NO_CHANGE, (other(sig_team) if s.mean() > 0 else sig_team), best
 
 
+def early_side(c, fps, start, sig_team, sig_mask, seconds=90.0):
+    """(team on the near half at the start, share of the evidence that says so): the first `seconds` of the game."""
+    t = c["f"] / fps
+    m = (t >= start) & (t < start + seconds) & np.asarray(sig_mask, bool)
+    if m.sum() < 15:
+        return None, 0.0
+    near = float((c["Y"][m] < NET_Y).mean())
+    return (sig_team if near >= 0.5 else other(sig_team)), max(near, 1 - near)
+
+
 def team_prob(cand_i, c, cfg):
-    return slot_probs(cfg, {k: c[k][cand_i] for k in FEATS})
+    f = {k: c[k][cand_i] for k in FEATS + ("sL",) if k in c}
+    f["wide"] = bool(shorts_unreliable(c["x1"][cand_i], c["y1"][cand_i], c["x2"][cand_i], c["y2"][cand_i], c.get("_H", 720.0)))
+    return slot_probs(cfg, f)
 
 
-def track(c, fps, stride, tc, first_near, start, cfg):
+def track(c, fps, stride, tc, first_near, start, cfg, min_appearance=0.0):
     by_f = {}
     for i in range(len(c["f"])):
         by_f.setdefault(int(c["f"][i]), []).append(i)
@@ -113,14 +159,20 @@ def track(c, fps, stride, tc, first_near, start, cfg):
             Y = c["Y"][i]
             p = team_prob(i, c, cfg)
             for b, k in enumerate(IDS):
+                if cfg[k].get("inactive"):
+                    continue
                 team_is_near = (k[0] == near_team)
                 if (Y < 6.2 and not team_is_near) or (Y > 7.2 and team_is_near):
                     continue
-                move = 0.0
+                move, tight = 0.0, False
                 if last[k] is not None and r - last[k][0] <= 10:
                     d = np.hypot(c["X"][i] - last[k][1], c["Y"][i] - last[k][2])
                     move = 1.2 * min(d / 1.5, 3.0)
-                cost[a, b] = -np.log(p[k] + 0.03) + move
+                    tight = d < 0.6 and r - last[k][0] <= 3          # this slot was here a moment ago: the person is almost certainly the same
+                if p[k] < min_appearance and not tight:               # clothes clearly say this is someone else (unless the track runs on unbroken)
+                    continue
+                cue = -np.log(p[k] + 0.03)
+                cost[a, b] = (0.3 * cue if tight else cue) + move
         ri, ci = linear_sum_assignment(cost)
         for a, b in zip(ri, ci):
             if cost[a, b] > 4.5:
@@ -175,29 +227,65 @@ def main():
     ap.add_argument("--start", type=float, required=True, help="second the real game starts (skip any teaser)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--min-conf", type=float, default=0.25)
+    ap.add_argument("--end", type=float, help="second the game ends (default: the end of the video); use it for a video with several games")
+    ap.add_argument("--margin", type=float, default=1.0, help="metres beyond the near sidelines where a person may still be a player (default %(default)s; smaller keeps neighbouring courts out)")
+    ap.add_argument("--margin-far", type=float, default=0.3, help="the same for the far half (default %(default)s)")
+    ap.add_argument("--height-ratio", default="auto", help="LOW,HIGH: how tall a person's box may be, in metres by the court's own scale "
+                    "(default auto: 1.25,2.5 for a normal lens, wider when the video was filmed with a wide-angle lens, see estimate_height_window)")
+    ap.add_argument("--min-appearance", default="auto", help="a person is never given a slot whose clothes match with less than this "
+                    "probability (default auto: 0.1 when players are told apart by shorts or shade, otherwise off; 0.1 stops the tracker handing the "
+                    "partner's label to you when the partner is out of view)")
     ap.add_argument("--config", help="players_config.json (default: next to --out)")
     ap.add_argument("--end-change", default="auto", help="auto, none, or the second the teams swapped ends")
     ap.add_argument("--first-near", choices=["A", "B"], help="team on the near half at the start (needed with --end-change none or a number)")
     args = ap.parse_args()
 
     cfg = load_config(args.config or Path(args.out).with_name("players_config.json"))
-    c, fps, stride = load_candidates(args.cand, args.start, args.min_conf)
-    sig = signature(cfg)
-    strength = float("nan")
-    if args.end_change == "auto":
-        if sig is None:
-            raise SystemExit("No shirt in players_config.json has a bright colour (red, blue, green, yellow, orange), so the "
-                             "end change cannot be found automatically. Pass --end-change none (or SECONDS) and --first-near A|B.")
-        tc, first_near, strength = find_end_change(c, fps, args.start, *sig)
-        what = "never (teams stay on their halves)" if tc == NO_CHANGE else f"t = {tc:.0f} s"
-        print(f"end change: {what}; team {first_near} starts on the near half (signature {sig[1]} of team {sig[0]}, separation {strength:.2f})")
+    if args.height_ratio == "auto":
+        lo, hi = estimate_height_window(args.cand)
+        print(f"person size window: {lo} to {hi} (from the video's lens)")
     else:
-        if not args.first_near:
-            raise SystemExit("--first-near A|B is needed together with --end-change none or SECONDS")
-        tc = NO_CHANGE if args.end_change == "none" else float(args.end_change)
+        lo, hi = (float(v) for v in args.height_ratio.split(","))
+    c, fps, stride = load_candidates(args.cand, args.start, args.min_conf, args.margin, args.margin_far, args.end, (lo, hi))
+    if args.min_appearance == "auto":
+        cues = any(cfg[k].get("shorts") or cfg[k].get("tone") for k in active_slots(cfg))
+        min_app = 0.1 if cues else 0.0
+    else:
+        min_app = float(args.min_appearance)
+    sig_team, sig_mask = signature_mask(c, cfg)
+    side, share = early_side(c, fps, args.start, sig_team, sig_mask) if sig_team is not None else (None, 0.0)
+    if args.end_change == "auto":
+        if sig_team is None:
+            if not args.first_near:
+                raise SystemExit("Nothing in players_config.json is distinctive enough to see which half a team is on (no bright shirt, no clear "
+                                 "shorts). Pass --end-change none (or SECONDS) and --first-near A|B.")
+            tc, first_near, strength = NO_CHANGE, args.first_near, float("nan")
+            print(f"end change: not looked for (no distinctive clothes); team {first_near} starts on the near half as given")
+        else:
+            tc, first_near, strength = find_end_change(c, fps, args.start, sig_team, sig_mask)
+            if tc == NO_CHANGE:
+                if side is not None and share >= 0.85:
+                    if args.first_near and side != args.first_near:
+                        print(f"note: the clothes say team {side} starts on the near half ({100 * share:.0f}% of the first 90 s); using that instead of --first-near {args.first_near}")
+                    first_near = side
+                elif args.first_near:
+                    first_near = args.first_near
+            what = "never (teams stay on their halves)" if tc == NO_CHANGE else f"t = {tc:.0f} s"
+            print(f"end change: {what}; team {first_near} starts on the near half (separation {strength:.2f})")
+    else:
         first_near = args.first_near
+        if not first_near:
+            if side is None or share < 0.7:
+                raise SystemExit("--first-near A|B is needed together with --end-change none or SECONDS (the clothes do not say which team starts on the near half)")
+            first_near = side
+            print(f"team {first_near} starts on the near half ({100 * share:.0f}% of the first 90 s of evidence)")
+        elif side is not None and share >= 0.85 and side != first_near:
+            print(f"WARNING: the clothes say team {side} is on the near half at the start ({100 * share:.0f}% of the evidence), "
+                  f"but --first-near {first_near} was given. Check which end you were at.")
+        strength = float("nan")
+        tc = NO_CHANGE if args.end_change == "none" else float(args.end_change)
         print(f"end change given by hand: {args.end_change}; team {first_near} starts on the near half")
-    frames, pos_raw, box = track(c, fps, stride, tc, first_near, args.start, cfg)
+    frames, pos_raw, box = track(c, fps, stride, tc, first_near, args.start, cfg, min_app)
     pos, flag = clean(pos_raw)
     t = frames / fps
 
@@ -208,13 +296,14 @@ def main():
         save[f"{k}_xy"], save[f"{k}_flag"], save[f"{k}_box"] = pos[k], flag[k], box[k]
     np.savez_compressed(out, **save)
 
-    cov = {k: float((flag[k] > 0).mean()) for k in IDS}
-    det = {k: float((flag[k] == 1).mean()) for k in IDS}
+    act = active_slots(cfg)
+    cov = {k: float((flag[k] > 0).mean()) for k in act}
+    det = {k: float((flag[k] == 1).mean()) for k in act}
     speeds = {}
-    for k in IDS:
+    for k in act:
         v = np.linalg.norm(np.diff(pos[k], axis=0), axis=1) / (stride / fps)
         v = v[~np.isnan(v)]
-        speeds[k] = (float(np.median(v)), float(np.percentile(v, 99)), float((v > 9).mean()))
+        speeds[k] = (float(np.median(v)), float(np.percentile(v, 99)), float((v > 9).mean())) if len(v) else (float("nan"),) * 3
     summ = {"tc": tc, "first_near": first_near, "start": args.start, "coverage": cov, "detected_only": det,
             "speed_median_p99_over9": speeds}
     out.with_suffix(".json").write_text(json.dumps(summ, indent=1))
@@ -226,7 +315,7 @@ def main():
     for r in picks:
         cap.set(cv2.CAP_PROP_POS_FRAMES, int(frames[r]))
         ok, img = cap.read()
-        for k in IDS:
+        for k in act:
             if flag[k][r] and not np.isnan(box[k][r][0]):
                 x1, y1, x2, y2, _ = box[k][r]
                 cv2.rectangle(img, (int(x1), int(y1)), (int(x2), int(y2)), COLOURS[k], 3)
@@ -238,10 +327,10 @@ def main():
                 np.vstack([np.hstack(tiles[:3]), np.hstack(tiles[3:])]), [cv2.IMWRITE_JPEG_QUALITY, 92])
 
     print("\nper player: frames with a position (detected + filled) | detected only | median speed m/s | 99th pct | share > 9 m/s")
-    for k in IDS:
+    for k in act:
         print(f"  {k:8s} {100 * cov[k]:5.1f}% | {100 * det[k]:5.1f}% | {speeds[k][0]:.2f} | {speeds[k][1]:.2f} | {100 * speeds[k][2]:.2f}%")
     print(f"\ntracks : {out}\nsummary: {out.with_suffix('.json')}\nsheet  : {out.with_name('s03_check.jpg')}  <- every label must sit on the right person")
-    ok = all(cov[k] > 0.6 for k in IDS) and all(speeds[k][2] < 0.01 for k in IDS) and (tc == NO_CHANGE or strength >= 0.35 or args.end_change != "auto")
+    ok = all(cov[k] > 0.6 for k in act) and all(speeds[k][2] < 0.01 for k in act) and (tc == NO_CHANGE or strength >= 0.35 or args.end_change != "auto")
     print("\nSTAGE 3 " + ("PASSED (automatic checks); now do the visual check." if ok else "FAILED: see numbers above."))
     raise SystemExit(0 if ok else 1)
 

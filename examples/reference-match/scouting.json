@@ -1,0 +1,74 @@
+{
+  "strengths": [
+    {
+      "title": "Once a rally settles, they are an even match",
+      "body": "In rallies longer than 6 seconds the opponents won 20 of 39 (51%), including 9 of 17 over 10 seconds (53%).",
+      "watch": "Long rallies they won: 7:03 (R33, 19 s), 0:51 (R1, 18 s), 3:38 (R15, 14 s), 9:56 (R48, 12 s).",
+      "sure": "How sure: low to medium. 39 rallies; the video cannot show which shots decided them."
+    },
+    {
+      "title": "Opponent 2 plays the net and does most of the serving",
+      "body": "Opponent 2 (grey top) won 5 of the 10 rallies they served and was the player nearer the net in 70% of the 28 rallies when the opponents were near the camera. Opponent 2 ran 7.3 m per rally against 6.9 m for Opponent 1.",
+      "watch": "Opponent 2's serves: 0:51, 1:24, 3:27, 3:55, 4:14, 5:34, 6:50, 7:24, 8:34, 9:35.",
+      "sure": "How sure: low. 10 serves and 28 rallies; who served is inferred."
+    },
+    {
+      "title": "They can string points together",
+      "body": "Their best run was 6 points, from rally 12 at 3:05, the same length as your best run.",
+      "watch": "Watch rallies 12 to 17, 3:05 to 4:05, to see what changed.",
+      "sure": "How sure: high that it happened (scoreboard); why it happened is not visible."
+    }
+  ],
+  "weaknesses": [
+    {
+      "title": "Quick points go against them",
+      "body": "The opponents won only 3 of the 13 rallies that ended within 6 seconds (23%), against 20 of 39 longer ones (51%). This is the same finding as your quick-point record, seen from their side.",
+      "watch": "Short rallies your team won: 2:22 (R8), 2:50 (R10), 2:57 (R11), 5:04 (R22), 6:37 (R30), 7:57 (R37).",
+      "sure": "How sure: low to medium. 13 short rallies, p about 0.11."
+    },
+    {
+      "title": "A little weaker when receiving, but not clearly",
+      "body": "They won 11 of 28 rallies (39%) when receiving and 12 of 24 (50%) when serving (p = 0.58).",
+      "sure": "How sure: low. No real gap: do not build a plan on this."
+    },
+    {
+      "title": "Opponent 1's serve rarely paid off",
+      "body": "Opponent 1 (dark top) won 1 of the 5 rallies they served; Opponent 2 won 5 of 10. In 14 rallies the server could not be identified.",
+      "watch": "Opponent 1's serves: 1:49 (R5, theirs), 2:01 (R6), 4:29 (R20), 9:12 (R44), 10:22 (R50).",
+      "sure": "How sure: very low. Five serves."
+    },
+    {
+      "title": "A question for the video: side-by-side defence",
+      "body": "Their pair stood side by side 6% of the time in rallies they won and 15% in rallies they lost (p = 0.04). It is one of five comparisons, so a result like this can easily be chance.",
+      "watch": "Rallies they lost while most side by side: 2:12 (R7), 6:10 (R28), 8:18 (R39), 10:54 (R52).",
+      "sure": "How sure: lowest. One small p among five, and positions of overlapping players are the roughest."
+    },
+    {
+      "title": "Their side lanes were thinly covered",
+      "body": "In the 28 rallies when they were near the camera, at least one of them stood within 1.5 m of the middle of the middle lane for 81% of the time in mid-court and 74% at the back. The left and right lanes were covered only about 20% of the time, and the front corners 3% and 7%. This shows where they stood, not where they lost points.",
+      "sure": "How sure: low to medium. Positions are good near the camera but this is one game and says nothing about shot placement."
+    }
+  ],
+  "plan": [
+    {
+      "title": "Try to finish early",
+      "body": "They struggle most in rallies under 6 seconds. Attack the first loose ball instead of resetting, and count how many of your next game's rallies end early and who wins them.",
+      "sure": "Built on a low-confidence hint (p about 0.11): a test to run, not a rule."
+    },
+    {
+      "title": "Test the side lanes and back corners",
+      "body": "They mostly held the middle lane. Try placing some shots wide and deep and watch whether they are stretched. The video cannot say where your shots landed, so note it yourself.",
+      "sure": "A test to run: the video shows where they stood, not where points were lost."
+    },
+    {
+      "title": "Be patient in long rallies",
+      "body": "In rallies over 6 seconds they win about half, so they are as good as you there. Have your reset plan ready (see your coaching plan) and avoid gambling when the rally is level.",
+      "sure": "General advice backed by the long-rally record above."
+    },
+    {
+      "title": "Check which hand each of them uses",
+      "body": "The program guessed Opponent 1 right-handed (8 of 11 overhead frames) and Opponent 2 left-handed (16 of 24, not clear). Left- and right-handers have different backhand corners; confirm on the video before you plan around it.",
+      "sure": "How sure: low. A few dozen frames."
+    }
+  ]
+}

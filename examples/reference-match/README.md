@@ -15,13 +15,15 @@ numbers, a report and images with people's faces blurred.
 
 | path | what |
 |---|---|
-| `report.md` | the full report this pipeline writes (numbers, limits, checks, coaching) |
-| `images/` | the 11 images; photographs in them are anonymised (faces and crowd blurred). **Look at them for yourself before reusing them** |
-| `data/` | every result file: `points.json` (rallies), `score.json`, `serves.json`, `motion.json`, `pose_stats.json`, `pickups.json`, `report_data.json`, `players.json`, `calib.json`, `overlay.json` |
+| `match_report.pdf` | **the PDF report** (13 pages): cover, match, coaching plan, charts, opponent scouting, moments to check, how sure. Charts only, no photographs |
+| `pdf_preview/` | three page images of the PDF, used in the main README |
+| `report.md` | the same facts as text (numbers, limits, checks, coaching and scouting notes) |
+| `images/` | the 14 images (01 to 11 about you and your team, 12 and 13 about the opponents); photographs in `07_posture.png` and `11_how_it_was_seen.png` are anonymised (faces and crowd blurred), the others are charts. `07_posture_charts.png` has no photographs. **Look at them for yourself before reusing them** |
+| `data/` | every result file: `points.json` (rallies), `score.json`, `serves.json`, `motion.json`, `pose_stats.json`, `pickups.json`, `report_data.json`, `players.json`, `calib.json`, `overlay.json`, `opponents.json` (the scouting numbers) |
 | `players_config.json` | the four shirt colours used to tell the players apart |
 | `court_points.json` | the court landmarks clicked on this camera view (pixels and metres) |
 | `game_start.json` | the confirmed start of the game and its first serve window |
-| `tips.json`, `coaching.md` | the coaching written by the AI assistant from the numbers, under the rules in `CLAUDE.md` |
+| `tips.json`, `scouting.json` | the coaching plan and the opponent scouting notes, written by the AI assistant from the numbers under the rules in `CLAUDE.md` |
 
 ## Use it
 

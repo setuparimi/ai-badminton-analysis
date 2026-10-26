@@ -1,0 +1,246 @@
+{
+ "stage": "7b",
+ "rallies_compared": 52,
+ "depth_numbers_from": "near",
+ "rallies_used_for_depth": 28,
+ "results": {
+  "decided": 52,
+  "serving": [
+   12,
+   24
+  ],
+  "receiving": [
+   11,
+   28
+  ],
+  "serve_vs_receive_p": 0.5766979270157737,
+  "by_server": {
+   "B_opp1": [
+    1,
+    5
+   ],
+   "B_opp2": [
+    5,
+    10
+   ]
+  },
+  "server_unknown": 14,
+  "by_length": [
+   {
+    "bucket": "under 6 s",
+    "n": 13,
+    "won": 3
+   },
+   {
+    "bucket": "6 to 10 s",
+    "n": 22,
+    "won": 11
+   },
+   {
+    "bucket": "over 10 s",
+    "n": 17,
+    "won": 9
+   }
+  ],
+  "longest_run": {
+   "length": 6,
+   "rally": 12,
+   "start": 185.7
+  },
+  "short_vs_long": {
+   "short": [
+    3,
+    13
+   ],
+   "longer": [
+    20,
+    39
+   ],
+   "p": 0.10970872400564724
+  },
+  "quarters": [
+   {
+    "rallies": "1-13",
+    "won": 6,
+    "n": 13
+   },
+   {
+    "rallies": "14-26",
+    "won": 7,
+    "n": 13
+   },
+   {
+    "rallies": "27-39",
+    "won": 5,
+    "n": 13
+   },
+   {
+    "rallies": "40-52",
+    "won": 5,
+    "n": 13
+   }
+  ]
+ },
+ "players": {
+  "B_opp1": {
+   "rallies": 47,
+   "rallies_used_for_depth": 27,
+   "distance_per_rally": 6.908510638297871,
+   "total_distance": 324.69999999999993,
+   "mean_speed": 0.8248936170212766,
+   "peak_speed": 2.6925531914893615,
+   "front": 0.060925925925925925,
+   "mid": 0.30796296296296294,
+   "back": 0.6311111111111111,
+   "mean_depth": 4.388518518518519,
+   "mean_lateral_from_centre": 0.6422222222222224,
+   "net_side_share": 0.2962962962962963,
+   "pose": {
+    "racket_arm": "R",
+    "overhead_left": 3,
+    "overhead_right": 8,
+    "racket_arm_clear": true,
+    "samples": 2467,
+    "knee_median": 166.23166275024414,
+    "bent_lt150": 0.11985688729874776,
+    "racket_up_share": 0.5596153846153846
+   },
+   "describe": "dark top"
+  },
+  "B_opp2": {
+   "rallies": 52,
+   "rallies_used_for_depth": 28,
+   "distance_per_rally": 7.259615384615383,
+   "total_distance": 377.50000000000006,
+   "mean_speed": 0.8334615384615385,
+   "peak_speed": 2.6550000000000007,
+   "front": 0.28967857142857145,
+   "mid": 0.4337857142857144,
+   "back": 0.2765357142857143,
+   "mean_depth": 3.524642857142857,
+   "mean_lateral_from_centre": 0.7374999999999998,
+   "net_side_share": 0.7037037037037037,
+   "pose": {
+    "racket_arm": "L",
+    "overhead_left": 16,
+    "overhead_right": 8,
+    "racket_arm_clear": false,
+    "samples": 2594,
+    "knee_median": 167.8954200744629,
+    "bent_lt150": 0.12645739910313902,
+    "racket_up_share": 0.9344632768361582
+   },
+   "describe": "grey top"
+  }
+ },
+ "role": {
+  "rallies_with_both": 27
+ },
+ "pair": {
+  "overall": {
+   "open_gap_mean": 3.1892857142857145,
+   "crowded": 0.21396428571428566,
+   "stacked": 0.5702142857142858,
+   "front_back": 0.4232857142857143,
+   "side_by_side": 0.0894642857142857
+  },
+  "won_vs_lost": {
+   "open_gap_mean": {
+    "won": 3.1669565217391304,
+    "lost": 3.107241379310344,
+    "p": 0.361614813720307,
+    "n_won": 23,
+    "n_lost": 29
+   },
+   "crowded": {
+    "won": 0.2906086956521739,
+    "lost": 0.2074137931034483,
+    "p": 0.26099305296508624,
+    "n_won": 23,
+    "n_lost": 29
+   },
+   "stacked": {
+    "won": 0.5640000000000001,
+    "lost": 0.49527586206896557,
+    "p": 0.39153482554082353,
+    "n_won": 23,
+    "n_lost": 29
+   },
+   "front_back": {
+    "won": 0.3418260869565218,
+    "lost": 0.3249310344827586,
+    "p": 0.9412327085299701,
+    "n_won": 23,
+    "n_lost": 29
+   },
+   "side_by_side": {
+    "won": 0.05930434782608696,
+    "lost": 0.14662068965517244,
+    "p": 0.044789813588809735,
+    "n_won": 23,
+    "n_lost": 29
+   }
+  },
+  "rallies_used": 28,
+  "n_comparisons": 5
+ },
+ "zones": {
+  "samples_pair": 2301,
+  "within_m": 1.5,
+  "occupancy": {
+   "B_opp1": {
+    "front left": 0.010706638115631691,
+    "mid left": 0.029122055674518203,
+    "back left": 0.07366167023554604,
+    "front centre": 0.06595289079229122,
+    "mid centre": 0.20813704496788007,
+    "back centre": 0.47623126338329763,
+    "front right": 0.013276231263383297,
+    "mid right": 0.04967880085653105,
+    "back right": 0.07323340471092077
+   },
+   "B_opp2": {
+    "front left": 0.017284991568296795,
+    "mid left": 0.10244519392917369,
+    "back left": 0.0657672849915683,
+    "front centre": 0.19561551433389546,
+    "mid centre": 0.3309443507588533,
+    "back centre": 0.1897133220910624,
+    "front right": 0.03035413153456998,
+    "mid right": 0.02993254637436762,
+    "back right": 0.03794266441821248
+   }
+  },
+  "coverage": {
+   "front left": 0.03215993046501521,
+   "mid left": 0.196870925684485,
+   "back left": 0.21903520208604954,
+   "front centre": 0.37114298131247286,
+   "mid centre": 0.8126901347240331,
+   "back centre": 0.7379400260756193,
+   "front right": 0.06779661016949153,
+   "mid right": 0.21251629726205998,
+   "back right": 0.19252498913515861
+  },
+  "least_covered": [
+   {
+    "zone": "front left",
+    "share": 0.03215993046501521
+   },
+   {
+    "zone": "front right",
+    "share": 0.06779661016949153
+   }
+  ],
+  "most_covered": [
+   {
+    "zone": "mid centre",
+    "share": 0.8126901347240331
+   },
+   {
+    "zone": "back centre",
+    "share": 0.7379400260756193
+   }
+  ]
+ }
+}

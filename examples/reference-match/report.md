@@ -99,12 +99,165 @@ Pickups (stage 9): not usable on this video: in 18 of 52 rallies exactly one tea
 
 ## Coaching
 
-What the numbers support, in order of confidence. Times are video time.
+### What to work on
 
-1. **Nothing in your running separates won from lost rallies.** Distance, speed and court position are about the same in both (all p above 0.2). With 28 against 23 rallies a small effect could be hidden, but there is no sign that you run less, or sit deeper, in the rallies you lose.
-2. **Look at your own serve.** You won 4 of 10 points on your serve against 9 of 13 on your partner's (p about 0.22, so a hint only). Watch 1:35, 4:23, 6:24, 7:36, 9:00 and 9:56 and ask whether the serve is too high or too predictable, and what the third shot looks like.
-3. **Finish quickly, and prepare for long rallies.** Your team won 10 of 13 rallies under 6 s, but 19 of 39 longer ones (p about 0.11). Check the three longest rallies you lost: R33 at 7:03, R1 at 0:51 and R15 at 3:38, and see who is pushed back first.
-4. **Ready posture.** Your legs are nearly straight in 82% of near-half frames (median 166 degrees), slightly more bent than your partner's. Your left racket hand is held up 84% of the time. A lower, bent-knee stance is general advice for a faster first step; this video does not test it, and posture does not differ between won and lost rallies.
-5. **A question for the video: compactness.** Your pair is closer together in rallies you win (26% of the time within 1.5 m against 16%), but this is one of nine comparisons, the average gap in your half is the same in won and lost rallies, and it is not significant on either half of the court alone. Watch R2 at 1:12, R19 at 4:23 and R43 at 9:00.
-6. **Momentum.** Points won by quarter were 7/13, 6/13, 8/13 and 8/13: no collapse and a small lift late. The opponents' six-point run from R12 at 3:05 is the stretch to watch to see what changed.
+**1. Look at your own serve**
+
+Your team won 4 of the 10 rallies you served, against 9 of the 13 your partner served. Overall your team won 17 of 28 rallies on serve (61%), so the team's serving record is not weak overall.
+
+Try next time: Watch your six lost serves and ask: is it too high, too predictable, or is the third shot the problem? Change one thing next game (height, placement or the plan for the third shot) and count again. General advice, not tested by this video: mixing a short serve with a flick serve makes the receiver's first move harder to guess.
+
+Watch your lost serves: 1:35 (R4), 4:23 (R19), 6:24 (R29), 7:36 (R35), 9:00 (R43), 9:56 (R48).
+
+How sure: low. Ten serves is a hint, not proof (p about 0.22), and who served is inferred from where the players stand.
+
+**2. Have a plan for the long rallies**
+
+Your team won 10 of 13 rallies under 6 s (77%) but only 19 of 39 longer ones (49%), and 8 of 17 over 10 s (47%). The video cannot show which shots were played.
+
+Try next time: Agree what you do when the first attack does not end the point: where you reset the rally (a clear to the back, a lift to the middle), and who covers the net. General advice; then check whether the long-rally record moves in your next game.
+
+Watch the long rallies you lost: 0:51 (R1, 18 s), 3:38 (R15, 14 s), 7:03 (R33, 19 s), 9:20 (R45, 12 s).
+
+How sure: low to medium. 13 short rallies against 39 longer ones, p about 0.11.
+
+**3. Ready stance: get lower**
+
+Your legs were nearly straight (knees not bent below 150 degrees) in 82% of the frames where you were near the camera; your typical knee angle was 166 degrees against 168 for your partner. Posture was the same in won and lost rallies (bent in 17% and 18% of frames).
+
+Try next time: General advice, not tested by this video: a bent-knee ready position usually gives a quicker first step. Next game, the share of bent-knee frames is the number to move.
+
+Watch your stance in any rally after 6:19, when you are on the near side of the court.
+
+How sure: medium for the measurement (1,926 frames of you in 25 rallies, near half only). Whether a lower stance wins you more points is not tested here.
+
+### Questions to check on the video
+
+**4. A question for the video: stay compact?**
+
+You and your partner were within 1.5 m of each other 26% of the time in rallies you won and 16% in rallies you lost (p = 0.03). It is one of nine comparisons, so about one result like this is expected by chance, and on each half of the court alone it is not significant (p = 0.12 and 0.17).
+
+Try next time: Watch the clips and see whether being far apart left a gap the opponents used. If it did, agree who takes the middle.
+
+Watch the lost rallies where you two were furthest apart: 4:23 (R19), 1:12 (R2), 9:00 (R43), 9:20 (R45).
+
+How sure: lowest. One small p among nine; tracking is weakest when players overlap.
+
+### What is working
+
+**5. Your team wins the quick points**
+
+Your team won 10 of 13 rallies that ended within 6 seconds (77%).
+
+Try next time: Keep attacking the first loose ball. General advice: when a point is going your way early, do not slow it down.
+
+Watch some of them: 2:22 (R8), 2:50 (R10), 2:57 (R11), 5:04 (R22), 6:37 (R30), 7:57 (R37).
+
+How sure: low to medium. 13 short rallies; p about 0.11.
+
+**6. Running is not what separates won from lost rallies**
+
+You covered 400 m, the most of the four players (your partner 392 m, the opponents 325 m and 377 m). Per rally you ran 8.0 m in won and 7.7 m in lost rallies, at 0.91 and 0.83 m/s, and spent 12% and 16% of the time at the back (all p above 0.2).
+
+Nothing to fix here: this is not a fitness problem.
+
+How sure: medium. Small effects could hide in 28 won and 23 lost rallies; far-court distances are rougher.
+
+**7. A steady game from start to finish**
+
+Your team won 7, 6, 8 and 8 of 13 rallies in the four quarters of the game. The score was tied 8 times with 7 lead changes, and your team led 29-23 before the last rally. Your best run was 6 points from 2:01.
+
+Watch your run from 2:01 (R6) to see what worked.
+
+How sure: high. This is read straight from the scoreboard.
+
+### What the opponents do well
+
+**1. Once a rally settles, they are an even match**
+
+In rallies longer than 6 seconds the opponents won 20 of 39 (51%), including 9 of 17 over 10 seconds (53%).
+
+Long rallies they won: 7:03 (R33, 19 s), 0:51 (R1, 18 s), 3:38 (R15, 14 s), 9:56 (R48, 12 s).
+
+How sure: low to medium. 39 rallies; the video cannot show which shots decided them.
+
+**2. Opponent 2 plays the net and does most of the serving**
+
+Opponent 2 (grey top) won 5 of the 10 rallies they served and was the player nearer the net in 70% of the 28 rallies when the opponents were near the camera. Opponent 2 ran 7.3 m per rally against 6.9 m for Opponent 1.
+
+Opponent 2's serves: 0:51, 1:24, 3:27, 3:55, 4:14, 5:34, 6:50, 7:24, 8:34, 9:35.
+
+How sure: low. 10 serves and 28 rallies; who served is inferred.
+
+**3. They can string points together**
+
+Their best run was 6 points, from rally 12 at 3:05, the same length as your best run.
+
+Watch rallies 12 to 17, 3:05 to 4:05, to see what changed.
+
+How sure: high that it happened (scoreboard); why it happened is not visible.
+
+### Possible openings
+
+**4. Quick points go against them**
+
+The opponents won only 3 of the 13 rallies that ended within 6 seconds (23%), against 20 of 39 longer ones (51%). This is the same finding as your quick-point record, seen from their side.
+
+Short rallies your team won: 2:22 (R8), 2:50 (R10), 2:57 (R11), 5:04 (R22), 6:37 (R30), 7:57 (R37).
+
+How sure: low to medium. 13 short rallies, p about 0.11.
+
+**5. A little weaker when receiving, but not clearly**
+
+They won 11 of 28 rallies (39%) when receiving and 12 of 24 (50%) when serving (p = 0.58).
+
+How sure: low. No real gap: do not build a plan on this.
+
+**6. Opponent 1's serve rarely paid off**
+
+Opponent 1 (dark top) won 1 of the 5 rallies they served; Opponent 2 won 5 of 10. In 14 rallies the server could not be identified.
+
+Opponent 1's serves: 1:49 (R5, theirs), 2:01 (R6), 4:29 (R20), 9:12 (R44), 10:22 (R50).
+
+How sure: very low. Five serves.
+
+**7. A question for the video: side-by-side defence**
+
+Their pair stood side by side 6% of the time in rallies they won and 15% in rallies they lost (p = 0.04). It is one of five comparisons, so a result like this can easily be chance.
+
+Rallies they lost while most side by side: 2:12 (R7), 6:10 (R28), 8:18 (R39), 10:54 (R52).
+
+How sure: lowest. One small p among five, and positions of overlapping players are the roughest.
+
+**8. Their side lanes were thinly covered**
+
+In the 28 rallies when they were near the camera, at least one of them stood within 1.5 m of the middle of the middle lane for 81% of the time in mid-court and 74% at the back. The left and right lanes were covered only about 20% of the time, and the front corners 3% and 7%. This shows where they stood, not where they lost points.
+
+How sure: low to medium. Positions are good near the camera but this is one game and says nothing about shot placement.
+
+### Game plan to try
+
+**9. Try to finish early**
+
+They struggle most in rallies under 6 seconds. Attack the first loose ball instead of resetting, and count how many of your next game's rallies end early and who wins them.
+
+Built on a low-confidence hint (p about 0.11): a test to run, not a rule.
+
+**10. Test the side lanes and back corners**
+
+They mostly held the middle lane. Try placing some shots wide and deep and watch whether they are stretched. The video cannot say where your shots landed, so note it yourself.
+
+A test to run: the video shows where they stood, not where points were lost.
+
+**11. Be patient in long rallies**
+
+In rallies over 6 seconds they win about half, so they are as good as you there. Have your reset plan ready (see your coaching plan) and avoid gambling when the rally is level.
+
+General advice backed by the long-rally record above.
+
+**12. Check which hand each of them uses**
+
+The program guessed Opponent 1 right-handed (8 of 11 overhead frames) and Opponent 2 left-handed (16 of 24, not clear). Left- and right-handers have different backhand corners; confirm on the video before you plan around it.
+
+How sure: low. A few dozen frames.
 
